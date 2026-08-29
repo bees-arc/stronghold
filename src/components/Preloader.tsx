@@ -104,12 +104,12 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             animate="animate"
             className="flex flex-col items-center gap-4"
           >
-            <Logo className="w-16 h-20 text-accent-navy" />
+            <Logo className="w-16 h-20 text-[#0e1b30]" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold tracking-[0.25em] text-accent-navy leading-none font-sans mt-3">
+              <span className="text-2xl font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans mt-3">
                 STRONGHOLD
               </span>
-              <span className="text-[10px] tracking-[0.22em] text-accent-navy/60 font-semibold leading-none mt-2 font-sans">
+              <span className="text-[10px] tracking-[0.22em] text-[#0e1b30]/60 font-semibold leading-none mt-2 font-sans">
                 SECURITY & INVESTIGATION
               </span>
             </div>
@@ -120,13 +120,13 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             variants={textVariants}
             initial="initial"
             animate="animate"
-            className="text-4xl md:text-5xl lg:text-6xl font-serif text-accent-navy tracking-tight flex items-center gap-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#0e1b30] tracking-tight flex items-center gap-4"
           >
             {/* Subtle index tracker */}
-            <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2">
+            <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2 font-normal">
               0{index + 1}
             </span>
-            <span className="italic font-light font-serif text-accent-navy/90">
+            <span className="font-bold font-sans text-[#0e1b30] not-italic">
               {words[index]}
             </span>
           </motion.p>

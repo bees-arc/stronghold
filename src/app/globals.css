@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d1520;
-  --foreground: #e8e2d9;
-  --surface-ivory: #131e2e;
-  --surface-grey: #0f1929;
-  --accent-navy: #e8e2d9;       /* Text / headings — warm off-white on dark bg */
-  --navy-dark: #0e1b30;         /* Dark navy for bg-navy-dark card/section backgrounds */
-  --accent-gold: #c5a059;
-  --border-thin: rgba(232, 226, 217, 0.08);
-  --border-thin-light: rgba(255, 255, 255, 0.10);
+  --background: #0b1119;          /* Deeper charcoal-black */
+  --foreground: #ddd8cf;           /* Slightly warmer off-white */
+  --surface-ivory: #111b28;        /* Dark panel */
+  --surface-grey: #0d1622;         /* Deeper panel */
+  --accent-navy: #ddd8cf;          /* Headings / text on dark bg */
+  --navy-dark: #0e1b30;            /* Dark navy backgrounds */
+  --accent-gold: #c5a059;          /* Brand gold */
+  --border-thin: rgba(221, 216, 207, 0.12);  /* More visible borders */
+  --border-thin-light: rgba(255, 255, 255, 0.12);
 }
 
 @theme inline {
@@ -37,6 +37,18 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global grain/noise texture — fixed overlay gives rugged tactile feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: overlay;
 }
 
 /* Custom premium scrollbar */
@@ -72,12 +84,12 @@ html {
   z-index: 1;
 }
 
-/* Thin Grid Patterns */
+/* Thin Grid Patterns — slightly more visible for rugged feel */
 .grid-lines {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(14, 27, 48, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(14, 27, 48, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(221, 216, 207, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 216, 207, 0.04) 1px, transparent 1px);
 }
 
 .radar-sweep {
@@ -135,4 +147,41 @@ html {
   .custom-cursor-active [role="button"] {
     cursor: none;
   }
+}
+
+/* ─── RUGGED UTILITIES ─────────────────────────────── */
+
+/* Hard slash divider before section headings */
+.rugged-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+.rugged-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent-gold);
+}
+
+/* Thick gold top-border on cards for military feel */
+.card-rugged {
+  border-top: 2px solid var(--accent-gold);
+  border-left: 1px solid rgba(221,216,207,0.1);
+  border-right: 1px solid rgba(221,216,207,0.1);
+  border-bottom: 1px solid rgba(221,216,207,0.1);
+}
+
+/* Heavy uppercase heading */
+.heading-rugged {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 1.0;
 }

@@ -385,7 +385,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="institutions" />
               <div className="relative z-10">
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
                   INSTITUTIONS
                 </h3>
               </div>
@@ -398,7 +398,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="residential" />
               <div className="relative z-10">
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
                   PRIVATE & RESIDENTIAL
                 </h3>
               </div>
@@ -425,7 +425,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="events" />
               <div className="relative z-10">
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
                   EVENTS
                 </h3>
               </div>
@@ -498,7 +498,7 @@ export default function Home() {
           
           <div className="mb-20 text-center max-w-xl mx-auto">
 
-            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
+            <h2 className="text-3xl md:text-4xl font-sans font-black text-accent-navy tracking-tight mt-4">
               BUILT ON EXPERIENCE. DESIGNED FOR TOMORROW.
             </h2>
           </div>
@@ -583,7 +583,7 @@ export default function Home() {
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
 
-                <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4 mb-12">
+                <h2 className="text-3xl md:text-4xl font-sans font-black text-accent-navy tracking-tight mt-4 mb-12">
                   OUR CORE ETHOS
                 </h2>
                 
@@ -645,7 +645,7 @@ export default function Home() {
           
           <div className="mb-20 text-center max-w-xl mx-auto">
 
-            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
+            <h2 className="text-3xl md:text-4xl font-sans font-black text-accent-navy tracking-tight mt-4">
               HOW WE WORK
             </h2>
             <p className="text-xs font-sans text-accent-navy/60 mt-4 leading-relaxed">
@@ -702,7 +702,7 @@ export default function Home() {
                     </div>
 
                     <div className="relative z-10">
-                      <h3 className="text-xl md:text-2xl font-serif text-accent-navy font-light mb-3">
+                      <h3 className="text-xl md:text-2xl font-sans font-black text-accent-navy tracking-tight mb-3">
                         {t.phase}
                       </h3>
                       <p className="text-xs sm:text-sm font-sans text-accent-navy/80 leading-relaxed mb-3 max-w-2xl">
@@ -768,7 +768,7 @@ export default function Home() {
           
           <div className="mb-20">
 
-            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
+            <h2 className="text-3xl md:text-4xl font-sans font-black text-accent-navy tracking-tight mt-4">
               EXPERIENCE BEHIND THE STRONGHOLD.
             </h2>
           </div>
@@ -914,7 +914,7 @@ export default function Home() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
 
-              <h2 className="text-4xl md:text-5xl font-serif text-accent-navy font-light leading-tight mt-6">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-accent-navy tracking-tight leading-tight mt-6">
                 YOUR SECURITY SHOULD NEVER BE AN AFTERTHOUGHT.
               </h2>
               <p className="text-sm font-sans text-accent-navy/60 mt-6 leading-relaxed max-w-sm">
@@ -1078,4 +1078,6 @@ export default function Home() {
     </>
   );
 }
+
+
 
