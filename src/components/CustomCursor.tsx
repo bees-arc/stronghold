@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [mounted, setMounted] = useState(false);
-  const [hoverType, setHoverType] = useState<"default" | "hover" | "magnetic" | "red">("default");
+  const [hoverType, setHoverType] = useState<"default" | "hover" | "magnetic" | "gold">("default");
   const [cursorText, setCursorText] = useState("");
 
   const cursorX = useMotionValue(-100);
@@ -36,8 +36,8 @@ export default function CustomCursor() {
         if (interactiveEl.classList.contains("bento-card-interactive")) {
           setHoverType("magnetic");
           setCursorText("EXPLORE");
-        } else if (interactiveEl.classList.contains("button-red-accent")) {
-          setHoverType("red");
+        } else if (interactiveEl.classList.contains("button-gold-accent")) {
+          setHoverType("gold");
           setCursorText("");
         } else {
           setHoverType("hover");
@@ -60,8 +60,8 @@ export default function CustomCursor() {
 
   if (!mounted) return null;
 
-  const size = hoverType === "magnetic" ? 80 : hoverType === "hover" ? 48 : hoverType === "red" ? 16 : 8;
-  const isRed = hoverType === "red";
+  const size = hoverType === "magnetic" ? 80 : hoverType === "hover" ? 48 : hoverType === "gold" ? 16 : 8;
+  const isGold = hoverType === "gold";
 
   return (
     <motion.div
@@ -73,8 +73,8 @@ export default function CustomCursor() {
         translateY: "-50%",
         width: size,
         height: size,
-        backgroundColor: isRed 
-          ? "#d9383a" 
+        backgroundColor: isGold 
+          ? "#c5a059" 
           : hoverType === "magnetic" 
             ? "rgba(14, 27, 48, 0.08)" 
             : hoverType === "hover" 

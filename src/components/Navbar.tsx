@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,17 +47,14 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 border-b ${
           scrolled
-            ? "bg-[rgba(250,249,246,0.85)] backdrop-blur-md py-4 border-border-thin"
-            : "bg-transparent py-6 border-transparent"
+            ? "bg-[rgba(255,255,255,0.92)] backdrop-blur-md py-3.5 border-border-thin"
+            : "bg-transparent py-5 border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-          {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="relative w-7 h-7 flex items-center justify-center border border-accent-navy/20 rounded-sm overflow-hidden bg-white/40">
-              <span className="text-[10px] font-bold text-accent-navy tracking-tighter">SH</span>
-              <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-accent-red" />
-            </div>
+          {/* Brand Logo & Name */}
+          <a href="#" className="flex items-center gap-3 group">
+            <Logo className="w-8 h-10 transition-transform group-hover:scale-102 duration-300" />
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-[0.25em] text-accent-navy leading-none font-sans">
                 STRONGHOLD
@@ -76,7 +74,7 @@ export default function Navbar() {
                 className="text-xs font-bold tracking-[0.15em] text-accent-navy/70 hover:text-accent-navy transition-colors relative py-2 group font-sans"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent-red transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-accent-gold transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -85,17 +83,17 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="#contact"
-              className="group flex items-center gap-2 border border-accent-navy px-5 py-2.5 text-xs font-bold tracking-[0.15em] hover:bg-accent-navy hover:text-white transition-all duration-300"
+              className="group flex items-center gap-2 border border-accent-navy px-5 py-2.5 text-xs font-bold tracking-[0.15em] hover:bg-accent-navy hover:text-white transition-all duration-300 button-gold-accent"
             >
               TALK TO AN EXPERT
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-accent-gold" />
             </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 text-accent-navy hover:text-accent-red transition-colors focus:outline-none"
+            className="lg:hidden p-2 text-accent-navy hover:text-accent-gold transition-colors focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -111,7 +109,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-30 bg-surface-ivory flex flex-col justify-between pt-28 pb-12 px-8 lg:hidden border-b border-border-thin"
+            className="fixed inset-0 z-30 bg-white flex flex-col justify-between pt-28 pb-12 px-8 lg:hidden border-b border-border-thin"
           >
             {/* Grid Pattern Background for Drawer */}
             <div className="absolute inset-0 grid-lines opacity-40 pointer-events-none" />
@@ -131,7 +129,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={toggleMenu}
-                      className="text-3xl font-serif tracking-tight text-accent-navy hover:text-accent-red block transition-colors"
+                      className="text-3xl font-serif tracking-tight text-accent-navy hover:text-accent-gold block transition-colors"
                     >
                       {link.name}
                     </a>
@@ -149,7 +147,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={toggleMenu}
-                className="w-full text-center border border-accent-navy bg-accent-navy text-white py-3.5 text-xs font-bold tracking-[0.2em] hover:bg-accent-red hover:border-accent-red transition-all duration-300"
+                className="w-full text-center border border-accent-navy bg-accent-navy text-white py-3.5 text-xs font-bold tracking-[0.2em] hover:bg-accent-gold hover:border-accent-gold transition-all duration-300"
               >
                 REQUEST A CONSULTATION
               </a>

@@ -20,6 +20,10 @@ export default function SurrealEcosystem() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0, active: false });
 
+  // Brand colors from Portfolio
+  const goldColor = "#c5a059";
+  const navyColor = "#0e1b30";
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -57,7 +61,7 @@ export default function SurrealEcosystem() {
       });
     }
 
-    // Fortress 3D Vertices (abstract representation of a floating floating fort)
+    // Fortress 3D Vertices (abstract representation of a floating fort)
     const points3D = [
       { x: -80, y: -80, z: -80 },
       { x: 80, y: -80, z: -80 },
@@ -104,8 +108,8 @@ export default function SurrealEcosystem() {
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Draw subtle background coordinate grid
-      ctx.strokeStyle = "rgba(14, 27, 48, 0.02)";
+      // 1. Draw subtle background coordinate grid (white lines on navy backdrop)
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.02)";
       ctx.lineWidth = 1;
       const spacing = 40;
       for (let x = 0; x < width; x += spacing) {
@@ -121,25 +125,25 @@ export default function SurrealEcosystem() {
         ctx.stroke();
       }
 
-      // 2. Draw expanding radar lines
+      // 2. Draw expanding radar lines (gold sweep)
       radarRadius += 0.8;
       if (radarRadius > Math.min(width, height) / 2) {
         radarRadius = 0;
       }
-      ctx.strokeStyle = `rgba(14, 27, 48, ${Math.max(0, 0.15 - radarRadius / (Math.min(width, height) / 2))})`;
+      ctx.strokeStyle = `rgba(197, 160, 89, ${Math.max(0, 0.15 - radarRadius / (Math.min(width, height) / 2))})`;
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.arc(width / 2, height / 2, radarRadius, 0, Math.PI * 2);
       ctx.stroke();
 
       // Static target overlays
-      ctx.strokeStyle = "rgba(14, 27, 48, 0.05)";
+      ctx.strokeStyle = "rgba(197, 160, 89, 0.05)";
       ctx.beginPath();
       ctx.arc(width / 2, height / 2, 80, 0, Math.PI * 2);
       ctx.arc(width / 2, height / 2, 160, 0, Math.PI * 2);
       ctx.stroke();
 
-      // 3. Update & Draw floating digital nodes
+      // 3. Update & Draw floating digital nodes (gold nodes)
       nodes.forEach((node) => {
         // Drifts
         node.x += node.vx;
@@ -163,17 +167,17 @@ export default function SurrealEcosystem() {
         node.pulsePhase += node.pulseSpeed;
         const currentRadius = Math.max(0.2, node.radius + Math.sin(node.pulsePhase) * 1.5);
 
-        // Node Glow
-        ctx.shadowColor = "rgba(14, 27, 48, 0.1)";
+        // Node Glow (gold)
+        ctx.shadowColor = "rgba(197, 160, 89, 0.2)";
         ctx.shadowBlur = 8;
-        ctx.fillStyle = "rgba(14, 27, 48, 0.5)";
+        ctx.fillStyle = "rgba(197, 160, 89, 0.6)";
         ctx.beginPath();
         ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
         ctx.shadowBlur = 0; // reset
       });
 
-      // 4. Draw interactive 3D fortress mesh
+      // 4. Draw interactive 3D fortress mesh (gold wireframe)
       // Rotate points based on mouse
       let dynamicAngleX = angleX;
       let dynamicAngleY = angleY;
@@ -197,8 +201,8 @@ export default function SurrealEcosystem() {
 
       const projected = rotatedPoints.map((p) => project(p, width, height));
 
-      // Draw cube lines
-      ctx.strokeStyle = "rgba(14, 27, 48, 0.12)";
+      // Draw cube lines (gold-tinted white)
+      ctx.strokeStyle = "rgba(197, 160, 89, 0.25)";
       ctx.lineWidth = 1;
 
       const drawLine = (i: number, j: number) => {
@@ -216,18 +220,18 @@ export default function SurrealEcosystem() {
       // Connect Peak (Spire representation of secure fortress)
       drawLine(0, 8); drawLine(1, 8); drawLine(2, 8); drawLine(3, 8);
 
-      // Red core node in center of fortress
+      // Red core node in center of fortress (retained as brand alert node, styled gold-red)
       const centerPoint = project({ x: 0, y: 0, z: 0 }, width, height);
-      ctx.fillStyle = "#d9383a"; // controlled red accent
-      ctx.shadowColor = "rgba(217, 56, 58, 0.5)";
+      ctx.fillStyle = "#c5a059"; // brand gold core
+      ctx.shadowColor = "rgba(197, 160, 89, 0.6)";
       ctx.shadowBlur = 12;
       ctx.beginPath();
       ctx.arc(centerPoint.x, centerPoint.y, 6, 0, Math.PI * 2);
       ctx.fill();
       ctx.shadowBlur = 0; // reset
 
-      // Label coordinate next to central red node
-      ctx.fillStyle = "rgba(14, 27, 48, 0.4)";
+      // Label coordinate next to central gold node
+      ctx.fillStyle = "rgba(197, 160, 89, 0.5)";
       ctx.font = "8px monospace";
       ctx.fillText("SYS_SEC_ACTIVE", centerPoint.x + 12, centerPoint.y - 4);
       ctx.fillText(`C_X: ${centerPoint.x.toFixed(0)} C_Y: ${centerPoint.y.toFixed(0)}`, centerPoint.x + 12, centerPoint.y + 6);
@@ -239,7 +243,7 @@ export default function SurrealEcosystem() {
           const dy = node.y - pt.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 90) {
-            ctx.strokeStyle = `rgba(14, 27, 48, ${0.05 * (1 - dist / 90)})`;
+            ctx.strokeStyle = `rgba(197, 160, 89, ${0.1 * (1 - dist / 90)})`;
             ctx.beginPath();
             ctx.moveTo(pt.x, pt.y);
             ctx.lineTo(node.x, node.y);
@@ -248,38 +252,38 @@ export default function SurrealEcosystem() {
         });
       });
 
-      // 5. Draw abstract surveillance lens (top left floating circle)
+      // 5. Draw abstract surveillance lens (top left floating circle, styled gold)
       const lensX = width / 2 - 140 + Math.sin(Date.now() * 0.001) * 15;
       const lensY = height / 2 - 120 + Math.cos(Date.now() * 0.0007) * 15;
 
-      ctx.strokeStyle = "rgba(14, 27, 48, 0.2)";
+      ctx.strokeStyle = "rgba(197, 160, 89, 0.35)";
       ctx.beginPath();
       ctx.arc(lensX, lensY, 28, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = "rgba(14, 27, 48, 0.05)";
+      ctx.strokeStyle = "rgba(197, 160, 89, 0.1)";
       ctx.beginPath();
       ctx.arc(lensX, lensY, 34, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Reflex highlight
+      // Reflex highlight (gold and white)
       const gradient = ctx.createLinearGradient(lensX - 10, lensY - 10, lensX + 15, lensY + 15);
-      gradient.addColorStop(0, "rgba(255, 255, 255, 0.5)");
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0.4)");
       gradient.addColorStop(0.5, "rgba(255, 255, 255, 0)");
-      gradient.addColorStop(1, "rgba(14, 27, 48, 0.02)");
+      gradient.addColorStop(1, "rgba(197, 160, 89, 0.05)");
       ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(lensX, lensY, 27, 0, Math.PI * 2);
       ctx.fill();
 
-      // Small blinking indicator
+      // Blinking indicator (gold-red toggle)
       const blink = Math.floor(Date.now() / 600) % 2 === 0;
-      ctx.fillStyle = blink ? "#d9383a" : "rgba(217, 56, 58, 0.2)";
+      ctx.fillStyle = blink ? "#c5a059" : "rgba(197, 160, 89, 0.25)";
       ctx.beginPath();
-      ctx.arc(lensX + 8, lensY - 8, 2, 0, Math.PI * 2);
+      ctx.arc(lensX + 8, lensY - 8, 2.5, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = "rgba(14, 27, 48, 0.4)";
+      ctx.fillStyle = "rgba(197, 160, 89, 0.5)";
       ctx.font = "7px monospace";
       ctx.fillText("CAM_LENS_01", lensX - 25, lensY + 45);
 
@@ -320,16 +324,16 @@ export default function SurrealEcosystem() {
         className="absolute inset-0 block w-full h-full"
       />
       {/* Editorial overlays / frames */}
-      <div className="absolute top-4 left-4 border-l border-t border-accent-navy/20 w-8 h-8 pointer-events-none" />
-      <div className="absolute top-4 right-4 border-r border-t border-accent-navy/20 w-8 h-8 pointer-events-none" />
-      <div className="absolute bottom-4 left-4 border-l border-b border-accent-navy/20 w-8 h-8 pointer-events-none" />
-      <div className="absolute bottom-4 right-4 border-r border-b border-accent-navy/20 w-8 h-8 pointer-events-none" />
+      <div className="absolute top-4 left-4 border-l border-t border-accent-gold/20 w-8 h-8 pointer-events-none" />
+      <div className="absolute top-4 right-4 border-r border-t border-accent-gold/20 w-8 h-8 pointer-events-none" />
+      <div className="absolute bottom-4 left-4 border-l border-b border-accent-gold/20 w-8 h-8 pointer-events-none" />
+      <div className="absolute bottom-4 right-4 border-r border-b border-accent-gold/20 w-8 h-8 pointer-events-none" />
 
       {/* Subtle UI markings */}
-      <div className="absolute top-6 left-6 font-mono text-[8px] text-accent-navy/30 tracking-widest pointer-events-none">
+      <div className="absolute top-6 left-6 font-mono text-[8px] text-accent-gold/40 tracking-widest pointer-events-none">
         STRONGHOLD INTEL SYSTEMS
       </div>
-      <div className="absolute bottom-6 right-6 font-mono text-[8px] text-accent-navy/30 tracking-widest pointer-events-none">
+      <div className="absolute bottom-6 right-6 font-mono text-[8px] text-accent-gold/40 tracking-widest pointer-events-none">
         SEC_GRID_2026 // v1.0.8
       </div>
     </div>

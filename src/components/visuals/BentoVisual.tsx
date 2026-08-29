@@ -51,7 +51,7 @@ export default function BentoVisual({ type }: BentoVisualProps) {
           <line x1="40" y1="100" x2="160" y2="100" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
           
           <motion.circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="0.75" />
-          <motion.circle cx="100" cy="100" r="5" fill="currentColor" variants={nodeVariants} className="text-accent-red" />
+          <motion.circle cx="100" cy="100" r="5" fill="currentColor" variants={nodeVariants} className="text-accent-gold" />
           
           <circle cx="40" cy="40" r="3" fill="currentColor" />
           <circle cx="160" cy="40" r="3" fill="currentColor" />
@@ -85,7 +85,7 @@ export default function BentoVisual({ type }: BentoVisualProps) {
           
           <line x1="100" y1="30" x2="100" y2="150" stroke="currentColor" strokeWidth="0.5" />
           <circle cx="100" cy="90" r="8" fill="none" stroke="currentColor" strokeWidth="0.75" />
-          <motion.circle cx="100" cy="90" r="2.5" fill="currentColor" variants={nodeVariants} className="text-accent-red" />
+          <motion.circle cx="100" cy="90" r="2.5" fill="currentColor" variants={nodeVariants} className="text-accent-gold" />
         </motion.svg>
       );
 
@@ -115,7 +115,7 @@ export default function BentoVisual({ type }: BentoVisualProps) {
             strokeDasharray="4 2"
             variants={lineVariants}
           />
-          <circle cx="100" cy="110" r="3" fill="currentColor" className="text-accent-red" />
+          <circle cx="100" cy="110" r="3" fill="currentColor" className="text-accent-gold" />
         </motion.svg>
       );
 
@@ -144,7 +144,7 @@ export default function BentoVisual({ type }: BentoVisualProps) {
               variants={rotateVariants}
             />
             {/* Core nodes */}
-            <circle cx="0" cy="0" r="4" fill="currentColor" className="text-accent-red" />
+            <circle cx="0" cy="0" r="4" fill="currentColor" className="text-accent-gold" />
             <line x1="-60" y1="0" x2="60" y2="0" stroke="currentColor" strokeWidth="0.5" />
             <line x1="0" y1="-70" x2="0" y2="70" stroke="currentColor" strokeWidth="0.5" />
           </g>
@@ -198,9 +198,9 @@ export default function BentoVisual({ type }: BentoVisualProps) {
           <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" strokeWidth="0.5" />
           <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" strokeWidth="0.5" />
           
-          {/* Red coordinate dots */}
-          <motion.circle cx="140" cy="100" r="2.5" fill="currentColor" className="text-accent-red" variants={nodeVariants} />
-          <motion.circle cx="100" cy="60" r="2.5" fill="currentColor" className="text-accent-red" variants={nodeVariants} />
+          {/* Gold coordinate dots */}
+          <motion.circle cx="140" cy="100" r="2.5" fill="currentColor" className="text-accent-gold" variants={nodeVariants} />
+          <motion.circle cx="100" cy="60" r="2.5" fill="currentColor" className="text-accent-gold" variants={nodeVariants} />
         </motion.svg>
       );
 
@@ -232,7 +232,7 @@ export default function BentoVisual({ type }: BentoVisualProps) {
               strokeDasharray="3 3"
             />
             
-            <circle cx="0" cy="-40" r="3" fill="currentColor" className="text-accent-red" />
+            <circle cx="0" cy="-40" r="3" fill="currentColor" className="text-accent-gold" />
           </g>
         </motion.svg>
       );

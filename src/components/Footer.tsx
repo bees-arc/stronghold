@@ -1,4 +1,5 @@
 import { ArrowUpRight, Mail, Phone, MapPin, Shield } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,11 +38,8 @@ export default function Footer() {
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <a href="#" className="flex items-center gap-2 group w-fit">
-              <div className="relative w-8 h-8 flex items-center justify-center border border-accent-navy/20 rounded-sm overflow-hidden bg-white/40">
-                <span className="text-xs font-bold text-accent-navy tracking-tighter">SH</span>
-                <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-accent-red" />
-              </div>
+            <a href="#" className="flex items-center gap-3 group w-fit">
+              <Logo className="w-8 h-10" />
               <div className="flex flex-col">
                 <span className="text-base font-bold tracking-[0.25em] text-accent-navy leading-none font-sans">
                   STRONGHOLD
@@ -63,14 +61,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-xs text-accent-navy/70">
                 <Phone className="w-4 h-4 text-accent-navy/40 shrink-0" />
-                <a href="tel:+94117654321" className="hover:text-accent-red transition-colors">
+                <a href="tel:+94117654321" className="hover:text-accent-gold transition-colors">
                   +94 11 765 4321
                 </a>
               </div>
               <div className="flex items-center gap-3 text-xs text-accent-navy/70">
                 <Mail className="w-4 h-4 text-accent-navy/40 shrink-0" />
-                <a href="mailto:intelligence@stronghold.lk" className="hover:text-accent-red transition-colors">
-                  intelligence@stronghold.lk
+                <a href="mailto:intelligence@strongholds.lk" className="hover:text-accent-gold transition-colors">
+                  intelligence@strongholds.lk
                 </a>
               </div>
             </div>
@@ -89,7 +87,7 @@ export default function Footer() {
                     className="text-xs text-accent-navy/70 hover:text-accent-navy transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-accent-gold" />
                   </a>
                 </li>
               ))}
@@ -109,7 +107,7 @@ export default function Footer() {
                     className="text-xs text-accent-navy/70 hover:text-accent-navy transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-accent-gold" />
                   </a>
                 </li>
               ))}
@@ -129,7 +127,7 @@ export default function Footer() {
                     className="text-xs text-accent-navy/70 hover:text-accent-navy transition-colors flex items-center gap-1 group"
                   >
                     {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-accent-gold" />
                   </a>
                 </li>
               ))}
@@ -141,7 +139,7 @@ export default function Footer() {
         {/* Bottom Metadata & Licensing */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 text-[10px] font-sans text-accent-navy/40 tracking-wider">
           <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-accent-navy/30" />
+            <Shield className="w-4 h-4 text-accent-gold/45" />
             <span>STRONGHOLD SECURITY & INVESTIGATION (PVT) LTD © {currentYear}. ALL RIGHTS RESERVED.</span>
           </div>
           <div className="flex gap-4">
