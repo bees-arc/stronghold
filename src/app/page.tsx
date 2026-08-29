@@ -299,14 +299,14 @@ export default function Home() {
       </section>
 
       {/* 2. INTRO EDITORIAL SECTION */}
-      <section className="bg-surface-ivory border-b border-border-thin relative overflow-hidden">
+      <section className="min-h-screen py-24 md:py-32 bg-surface-ivory border-b border-border-thin relative overflow-hidden flex flex-col">
         {/* Radar sweep ambient background */}
         <div className="radar-sweep opacity-[0.02]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-0 items-stretch relative z-10">
+        <div className="flex-1 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
           {/* Text content column */}
-          <div className="lg:col-span-6 flex flex-col items-start py-24 md:py-32 lg:pr-16">
+          <div className="lg:col-span-6 flex flex-col items-start justify-center">
 
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy leading-tight mt-4 font-light">
               SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
@@ -328,8 +328,8 @@ export default function Home() {
             </blockquote>
           </div>
 
-          {/* Image column — stretches to full section height */}
-          <div className="lg:col-span-6 w-full self-stretch relative overflow-hidden group min-h-[400px]">
+          {/* Image column */}
+          <div className="lg:col-span-6 w-full self-center relative overflow-hidden group min-h-[320px] max-h-[560px]">
               {/* Gold accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent-gold z-10" />
               <Image
