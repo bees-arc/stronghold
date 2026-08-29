@@ -22,7 +22,8 @@
   --color-border-thin-light: var(--border-thin-light);
 
   --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-poppins);
+  --font-jakarta: var(--font-jakarta);
 }
 
 /* Base resets & setups */

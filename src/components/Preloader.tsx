@@ -91,7 +91,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       variants={slideUpVariants}
       initial="initial"
       exit="exit"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white font-jakarta"
       style={{ height: "100vh" }}
     >
       {/* Multilingual / Strategic Word Transitions */}

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, Variants, AnimatePresence } from "framer-motion";
+import { motion, Variants, AnimatePresence, useScroll } from "framer-motion";
 import { 
   ArrowRight, 
   ArrowUpRight, 
@@ -152,7 +152,12 @@ const SERVICES = [
 export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [activeValue, setActiveValue] = useState(CORE_VALUES[0]);
-  const [activeTimeline, setActiveTimeline] = useState(0);
+  
+  const timelineContainerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineContainerRef,
+    offset: ["start center", "end center"]
+  });
 
   // Form submission status
   const [formData, setFormData] = useState({ name: "", email: "", org: "", type: "Full Audit", msg: "" });
@@ -205,7 +210,7 @@ export default function Home() {
       <Navbar />
 
       {/* 1. HERO SECTION (Sentinel Bodyguard Editorial Layout) */}
-      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-accent-navy text-white border-b border-border-thin">
+      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-accent-navy text-white border-b border-border-thin font-jakarta">
         
         {/* Full-bleed Bodyguard Background Image */}
         <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none">
@@ -673,9 +678,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. HOW WE WORK (Operations Timeline) */}
-      <section id="timeline" className="py-24 md:py-32 bg-background border-b border-border-thin">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      {/* 7. HOW WE WORK (Operations Timeline - Vertical Scroll Progress Flow) */}
+      <section 
+        id="timeline" 
+        ref={timelineContainerRef} 
+        className="py-24 md:py-32 bg-background border-b border-border-thin"
+      >
+        <div className="max-w-4xl mx-auto px-6 relative">
           
           <div className="mb-20 text-center max-w-xl mx-auto">
             <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
@@ -689,89 +698,69 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Operational Timeline Dashboard */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          {/* Vertical Timeline container */}
+          <div className="relative pl-12 md:pl-16 mt-16 flex flex-col gap-12 font-sans">
+            {/* Vertical Track Line */}
+            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-border-thin pointer-events-none" />
             
-            {/* Step triggers (Left Column) */}
-            <div className="lg:col-span-5 flex flex-col gap-4 font-sans">
-              {TIMELINE_STEPS.map((t, idx) => (
-                <div
-                  key={t.step}
-                  onMouseEnter={() => setActiveTimeline(idx)}
-                  onClick={() => setActiveTimeline(idx)}
-                  className={`border p-6 flex items-center gap-6 transition-all duration-300 rounded-sm cursor-pointer ${
-                    activeTimeline === idx
-                      ? "bg-surface-ivory border-accent-navy"
-                      : "bg-surface-ivory/30 border-border-thin/60 opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <span className={`text-2xl font-serif italic ${
-                    activeTimeline === idx ? "text-accent-gold font-semibold" : "text-accent-navy/30"
-                  }`}>
-                    {t.step}
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-bold tracking-widest text-accent-navy mb-1">{t.phase}</h3>
-                    <p className="text-[11px] font-sans text-accent-navy/55 leading-normal max-w-xs">{t.short}</p>
+            {/* Vertical Progress Line */}
+            <motion.div 
+              className="absolute left-4 md:left-6 top-0 w-0.5 bg-accent-gold origin-top pointer-events-none"
+              style={{ 
+                scaleY: scrollYProgress,
+                height: "100%" 
+              }}
+            />
+
+            {TIMELINE_STEPS.map((t, idx) => {
+              return (
+                <div key={t.step} className="relative w-full">
+                  {/* Timeline node circle */}
+                  <div className="absolute -left-12 md:-left-16 top-6 -translate-x-1/2 z-20">
+                    <motion.div
+                      initial={{ scale: 0.85, backgroundColor: "#f8f6f0", borderColor: "rgba(14, 27, 48, 0.2)", color: "rgba(14, 27, 48, 0.4)" }}
+                      whileInView={{ 
+                        scale: 1.1, 
+                        backgroundColor: "#0e1b30", 
+                        borderColor: "#c5a059",
+                        color: "#ffffff",
+                        transition: { duration: 0.4 }
+                      }}
+                      viewport={{ once: false, margin: "-120px 0px -120px 0px" }}
+                      className="w-7 h-7 rounded-full border flex items-center justify-center font-mono text-[9px] font-bold shadow-sm"
+                    >
+                      {t.step}
+                    </motion.div>
                   </div>
+
+                  {/* Card content */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 40, scale: 0.98 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="bg-surface-ivory border border-border-thin p-8 md:p-10 relative overflow-hidden transition-all duration-500 hover:border-accent-gold/40 hover:shadow-lg flex flex-col justify-between min-h-[200px] text-left group"
+                  >
+                    {/* Watermark symbol behind text */}
+                    <div className="absolute right-8 bottom-4 text-9xl text-accent-navy/[0.015] font-serif italic select-none pointer-events-none font-bold transition-transform duration-700 group-hover:scale-105">
+                      {t.step}
+                    </div>
+
+                    <div className="relative z-10">
+                      <h3 className="text-xl md:text-2xl font-serif text-accent-navy font-light mb-3">
+                        {t.phase}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-sans text-accent-navy/80 leading-relaxed mb-3 max-w-2xl">
+                        {t.short}
+                      </p>
+                      <p className="text-[11px] sm:text-xs font-sans text-accent-navy/55 leading-relaxed max-w-3xl">
+                        {t.detailed}
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
-              ))}
-            </div>
-
-            {/* Simulated Radar Command Terminal (Right Column) */}
-            <div className="lg:col-span-7 bg-surface-grey border border-border-thin p-8 md:p-12 rounded-sm flex flex-col justify-between min-h-[420px] relative overflow-hidden">
-              <div className="absolute inset-0 grid-lines opacity-10 pointer-events-none" />
-              
-              <div className="relative z-10 flex items-center justify-between border-b border-accent-navy/10 pb-4 font-mono text-[9px] text-accent-navy/50">
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-gold animate-ping" />
-                  COMMAND_READOUT: ACTIVE
-                </span>
-                <span>PHASE // {TIMELINE_STEPS[activeTimeline].step}</span>
-              </div>
-
-              {/* Big active visualization block */}
-              <div className="relative z-10 my-8">
-                <span className="text-[9px] font-mono text-accent-navy/40 uppercase block mb-1">
-                  // {TIMELINE_STEPS[activeTimeline].status}
-                </span>
-                <h3 className="text-3xl font-serif italic text-accent-navy leading-tight mb-6">
-                  {TIMELINE_STEPS[activeTimeline].phase}
-                </h3>
-                <p className="text-xs font-sans text-accent-navy/70 leading-relaxed max-w-xl">
-                  {TIMELINE_STEPS[activeTimeline].detailed}
-                </p>
-              </div>
-
-              {/* Simulated status gauges */}
-              <div className="relative z-10 grid grid-cols-3 gap-4 border-t border-accent-navy/10 pt-6 mt-4 font-mono text-[8px] text-accent-navy/55">
-                <div className="flex flex-col gap-1 border-r border-accent-navy/10 pr-2">
-                  <span>THREAT_INDEX</span>
-                  <div className="flex gap-0.5 mt-1">
-                    {[1, 2, 3, 4, 5].map((idx) => (
-                      <div 
-                        key={idx} 
-                        className={`w-2.5 h-1.5 ${
-                          idx <= activeTimeline + 1 
-                            ? "bg-accent-navy" 
-                            : "bg-accent-navy/10"
-                        }`} 
-                      />
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-1 border-r border-accent-navy/10 pr-2">
-                  <span>DEPLOY_VECTOR</span>
-                  <span className="font-semibold text-accent-navy">SH-MATRIX_{TIMELINE_STEPS[activeTimeline].step}</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span>SYSTEM_HEALTH</span>
-                  <span className="font-semibold text-green-700">99.86% ONLINE</span>
-                </div>
-              </div>
-
-            </div>
-
+              );
+            })}
           </div>
 
         </div>
