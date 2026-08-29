@@ -23,7 +23,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
-import SurrealEcosystem from "@/components/visuals/SurrealEcosystem";
+
 import BentoVisual from "@/components/visuals/BentoVisual";
 
 // Core Values definitions
@@ -33,7 +33,6 @@ const CORE_VALUES = [
     title: "INTEGRITY",
     definition: "Acting with honesty, transparency and accountability.",
     details: "Our foundation is built on absolute transparency. In an industry where trust is paramount, Stronghold maintains uncompromised ethical standards in all field deployments and intelligence operations.",
-    code: "VAL_01 // INTG",
     color: "#c5a059"
   },
   {
@@ -41,7 +40,6 @@ const CORE_VALUES = [
     title: "VIGILANCE",
     definition: "Remaining alert and proactive in every environment.",
     details: "Constant surveillance, intelligence gathering, and operational readiness. We do not rest. Threats never sleep, and neither does our multi-tiered monitoring apparatus.",
-    code: "VAL_02 // VIGL",
     color: "#0e1b30"
   },
   {
@@ -49,7 +47,6 @@ const CORE_VALUES = [
     title: "INNOVATION",
     definition: "Using technology to create smarter and more effective protection.",
     details: "Integrating state-of-the-art predictive software, sensor matrices, and cybersecurity defenses into physical environments to create next-generation barriers.",
-    code: "VAL_03 // INOV",
     color: "#c5a059"
   },
   {
@@ -57,7 +54,6 @@ const CORE_VALUES = [
     title: "TRUST",
     definition: "Building long-term relationships through reliability and confidence.",
     details: "Our relationships are partnerships. We act as an extension of our clients' leadership teams, protecting assets and reputations with complete discretion.",
-    code: "VAL_04 // TRST",
     color: "#0e1b30"
   },
   {
@@ -65,7 +61,6 @@ const CORE_VALUES = [
     title: "EXCELLENCE",
     definition: "Maintaining professional discipline, precision and high standards.",
     details: "Rooted in military precision, our training regimens and performance evaluations demand nothing less than flawless execution across all divisions.",
-    code: "VAL_05 // EXCL",
     color: "#c5a059"
   }
 ];
@@ -304,17 +299,15 @@ export default function Home() {
       </section>
 
       {/* 2. INTRO EDITORIAL SECTION */}
-      <section className="py-24 md:py-32 bg-surface-ivory border-b border-border-thin relative overflow-hidden">
+      <section className="bg-surface-ivory border-b border-border-thin relative overflow-hidden">
         {/* Radar sweep ambient background */}
         <div className="radar-sweep opacity-[0.02]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-0 items-stretch relative z-10">
           
           {/* Text content column */}
-          <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
-              // STRATEGIC OUTLOOK
-            </span>
+          <div className="lg:col-span-6 flex flex-col items-start py-24 md:py-32 lg:pr-16">
+
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy leading-tight mt-4 font-light">
               SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
             </h2>
@@ -335,11 +328,20 @@ export default function Home() {
             </blockquote>
           </div>
 
-          {/* Canvas visual column */}
-          <div className="lg:col-span-6 w-full flex items-center justify-center">
-            <div className="w-full max-w-[500px] border border-border-thin bg-background rounded-sm p-4 relative shadow-sm">
-              <SurrealEcosystem />
-            </div>
+          {/* Image column — stretches to full section height */}
+          <div className="lg:col-span-6 w-full self-stretch relative overflow-hidden group min-h-[400px]">
+              {/* Gold accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent-gold z-10" />
+              <Image
+                src="/bodyguard.jpg"
+                alt="Stronghold Security — Professional Protection"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+              {/* Subtle bottom fade */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
           </div>
 
         </div>
@@ -351,9 +353,7 @@ export default function Home() {
           
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
-                // TARGET PORTFOLIOS
-              </span>
+
               <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
                 WHAT WE PROTECT
               </h2>
@@ -370,8 +370,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-4 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col md:flex-row justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <div className="flex flex-col justify-between h-full relative z-10 md:w-1/2">
                 <div>
-                  <span className="text-xs font-mono text-accent-navy/30">C_PORT // 01</span>
-                  <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                  <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                     BUSINESSES & CORPORATIONS
                   </h3>
                 </div>
@@ -400,8 +399,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="institutions" />
               <div className="relative z-10">
-                <span className="text-xs font-mono text-accent-navy/30">C_PORT // 02</span>
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                   INSTITUTIONS
                 </h3>
               </div>
@@ -414,8 +412,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="residential" />
               <div className="relative z-10">
-                <span className="text-xs font-mono text-accent-navy/30">C_PORT // 03</span>
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                   PRIVATE & RESIDENTIAL
                 </h3>
               </div>
@@ -428,8 +425,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-4 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="digital" />
               <div className="relative z-10">
-                <span className="text-xs font-mono text-accent-navy/30">C_PORT // 04</span>
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                   DIGITAL INFRASTRUCTURE
                 </h3>
               </div>
@@ -442,8 +438,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="events" />
               <div className="relative z-10">
-                <span className="text-xs font-mono text-accent-navy/30">C_PORT // 05</span>
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                   EVENTS
                 </h3>
               </div>
@@ -456,8 +451,7 @@ export default function Home() {
             <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="people" />
               <div className="relative z-10">
-                <span className="text-xs font-mono text-accent-navy/30">C_PORT // 06</span>
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight mt-6">
+                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
                   PEOPLE
                 </h3>
               </div>
@@ -476,9 +470,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
-              // CORE CAPABILITIES
-            </span>
+
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
               ONE INTELLIGENT SECURITY ECOSYSTEM.
             </h2>
@@ -492,8 +484,7 @@ export default function Home() {
                 className="group flex flex-col justify-between border-t border-border-thin pt-6 min-h-[220px] transition-all duration-500 hover:border-accent-navy"
               >
                 <div>
-                  <div className="flex items-center justify-between font-mono text-[10px] text-accent-navy/40 mb-4">
-                    <span>CAP_SYS // {service.num}</span>
+                  <div className="flex items-center justify-end mb-4">
                     <span className="w-1.5 h-1.5 rounded-full bg-border-thin group-hover:bg-accent-gold transition-colors" />
                   </div>
                   <h3 className="text-lg font-serif tracking-tight text-accent-navy font-semibold">
@@ -519,9 +510,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="mb-20 text-center max-w-xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
-              // DESIGNED FOR EXCELLENCE
-            </span>
+
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
               BUILT ON EXPERIENCE. DESIGNED FOR TOMORROW.
             </h2>
@@ -536,7 +525,6 @@ export default function Home() {
                 <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
                   <ShieldCheck className="w-4 h-4 text-accent-navy" />
                 </div>
-                <span className="font-mono text-[9px] text-accent-navy/30">PIL_01 // DISCIPLINE</span>
               </div>
               <div>
                 <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">MILITARY DISCIPLINE</h3>
@@ -552,7 +540,6 @@ export default function Home() {
                 <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
                   <Cpu className="w-4 h-4 text-accent-navy" />
                 </div>
-                <span className="font-mono text-[9px] text-accent-navy/30">PIL_02 // SYSTEMS</span>
               </div>
               <div>
                 <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">INTELLIGENT TECH</h3>
@@ -568,7 +555,6 @@ export default function Home() {
                 <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
                   <Users className="w-4 h-4 text-accent-navy" />
                 </div>
-                <span className="font-mono text-[9px] text-accent-navy/30">PIL_03 // TRAINED</span>
               </div>
               <div>
                 <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">EX-MILITARY LEADERS</h3>
@@ -584,7 +570,6 @@ export default function Home() {
                 <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
                   <Compass className="w-4 h-4 text-accent-navy" />
                 </div>
-                <span className="font-mono text-[9px] text-accent-navy/30">PIL_04 // VIGILANCE</span>
               </div>
               <div>
                 <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">PROACTIVE PATROLS</h3>
@@ -610,9 +595,7 @@ export default function Home() {
             {/* Value Selectors (Left Panel) */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
-                  // OPERATIONAL VALUES
-                </span>
+
                 <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4 mb-12">
                   OUR CORE ETHOS
                 </h2>
@@ -629,33 +612,23 @@ export default function Home() {
                       }`}
                     >
                       <span className="text-xs font-bold tracking-widest text-accent-navy">{val.title}</span>
-                      <span className="font-mono text-[8px] text-accent-navy/40 group-hover:text-accent-navy transition-colors">
-                        {val.code}
-                      </span>
                     </button>
                   ))}
                 </div>
               </div>
 
-              <div className="border-t border-border-thin pt-6 mt-8 hidden lg:block font-mono text-[9px] text-accent-navy/40">
-                STRONGHOLD // AUTHENTICATED_VALUES
-              </div>
+
             </div>
 
             {/* Readout Terminal (Right Panel) */}
             <div className="lg:col-span-7 bg-background border border-border-thin p-8 md:p-12 rounded-sm flex flex-col justify-between min-h-[380px]">
-              <div className="flex items-center justify-between border-b border-border-thin pb-4 font-mono text-[9px] text-accent-navy/45">
-                <span>TERMINAL_ID: CORE_VAL_READ</span>
+              <div className="flex items-center justify-end border-b border-border-thin pb-4">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-accent-gold rounded-full" />
-                  SECURED
                 </span>
               </div>
 
               <div className="my-8">
-                <span className="font-mono text-[8px] text-accent-gold block mb-1">
-                  {activeValue.code}
-                </span>
                 <h3 className="text-2xl md:text-3xl font-serif italic text-accent-navy leading-tight mb-4">
                   {activeValue.title}
                 </h3>
@@ -667,10 +640,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex items-center justify-between border-t border-border-thin pt-6 font-mono text-[8px] text-accent-navy/40">
-                <span>HASH_SHA256: VALID</span>
-                <span>LEVEL_01_ACCESS</span>
-              </div>
+
             </div>
 
           </div>
@@ -687,9 +657,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 relative">
           
           <div className="mb-20 text-center max-w-xl mx-auto">
-            <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
-              // TACTICAL METHODOLOGY
-            </span>
+
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
               HOW WE WORK
             </h2>
@@ -775,9 +743,7 @@ export default function Home() {
             {/* Vision Column */}
             <div className="flex flex-col justify-between border-t border-border-thin pt-10 min-h-[300px]">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
-                  // GLOBAL ASPIRATION
-                </span>
+
                 <h2 className="text-3xl font-serif text-accent-navy leading-tight mt-6 font-light">
                   OUR VISION
                 </h2>
@@ -785,17 +751,13 @@ export default function Home() {
               <p className="text-lg md:text-xl font-serif font-light italic text-accent-navy/80 leading-relaxed mt-10">
                 To be the most trusted and innovative security partner, setting the industry standard for excellence and proactive protection in a constantly evolving world.
               </p>
-              <div className="border-t border-border-thin/50 pt-4 mt-8 font-mono text-[9px] text-accent-navy/40">
-                VIS_2026 // GLOBAL_STANDARD
-              </div>
+
             </div>
 
             {/* Mission Column */}
             <div className="flex flex-col justify-between border-t border-border-thin pt-10 min-h-[300px]">
               <div>
-                <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
-                  // CORE OBLIGATION
-                </span>
+
                 <h2 className="text-3xl font-serif text-accent-navy leading-tight mt-6 font-light">
                   OUR MISSION
                 </h2>
@@ -805,9 +767,7 @@ export default function Home() {
                 <br /><br />
                 By combining expertly trained professionals with modern technology, we protect clients while anticipating threats, adapting to challenges and maintaining the highest standards of integrity and trust.
               </p>
-              <div className="border-t border-border-thin/50 pt-4 mt-8 font-mono text-[9px] text-accent-navy/40">
-                MIS_2026 // ADAPT_OVERCOME
-              </div>
+
             </div>
 
           </div>
@@ -820,9 +780,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="mb-20">
-            <span className="text-[10px] font-bold tracking-[0.3em] text-accent-navy/40 font-sans uppercase">
-              // EXECUTIVE COMMAND
-            </span>
+
             <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
               EXPERIENCE BEHIND THE STRONGHOLD.
             </h2>
@@ -843,9 +801,7 @@ export default function Home() {
                     sizes="(max-w-768px) 100vw, 20vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-2 left-2 bg-background border border-border-thin px-2 py-0.5 font-mono text-[8px] text-accent-navy/60 z-10">
-                    O_CMD // BRIG
-                  </div>
+
                 </div>
                 
                 <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
@@ -871,9 +827,7 @@ export default function Home() {
                     sizes="(max-w-768px) 100vw, 20vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-2 left-2 bg-background border border-border-thin px-2 py-0.5 font-mono text-[8px] text-accent-navy/60 z-10">
-                    T_ADV // MAJ
-                  </div>
+
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
@@ -896,9 +850,7 @@ export default function Home() {
                   <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
                     <Compass className="w-8 h-8 text-accent-navy/30" />
                   </div>
-                  <div className="absolute bottom-2 left-2 bg-background border border-border-thin px-2 py-0.5 font-mono text-[8px] text-accent-navy/60">
-                    EXEC // DIR
-                  </div>
+
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
@@ -921,9 +873,7 @@ export default function Home() {
                   <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
                     <Activity className="w-8 h-8 text-accent-navy/30" />
                   </div>
-                  <div className="absolute bottom-2 left-2 bg-background border border-border-thin px-2 py-0.5 font-mono text-[8px] text-accent-navy/60">
-                    INTEL // CYB
-                  </div>
+
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
@@ -946,9 +896,7 @@ export default function Home() {
                   <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
                     <Layers className="w-8 h-8 text-accent-navy/30" />
                   </div>
-                  <div className="absolute bottom-2 left-2 bg-background border border-border-thin px-2 py-0.5 font-mono text-[8px] text-accent-navy/60">
-                    SAFE // SQN
-                  </div>
+
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
@@ -978,9 +926,7 @@ export default function Home() {
           {/* Left Column: CTA */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
-                // SECURE YOUR WORLD
-              </span>
+
               <h2 className="text-4xl md:text-5xl font-serif text-accent-navy font-light leading-tight mt-6">
                 YOUR SECURITY SHOULD NEVER BE AN AFTERTHOUGHT.
               </h2>
@@ -990,9 +936,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 lg:mt-24 border-t border-border-thin pt-8 font-sans">
-              <span className="text-[9px] font-mono text-accent-navy/40 uppercase block mb-4">
-                // IMMEDIATE RESPONSE HOTLINE
-              </span>
+
               <div className="flex flex-col gap-2">
                 <a href="tel:+94117654321" className="text-2xl font-serif text-accent-navy font-semibold hover:text-accent-gold transition-colors">
                   +94 11 765 4321
@@ -1124,22 +1068,7 @@ export default function Home() {
                   Your request has been routed to our Operations Command Division. A security expert will review your profile and contact you securely within 4 hours.
                 </p>
 
-                {/* Digital certificate */}
-                <div className="bg-surface-grey border border-border-thin p-5 mt-8 w-full max-w-md text-left font-mono text-[9px] text-accent-navy/65 space-y-2 rounded-sm relative">
-                  <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                  <div>
-                    <span className="text-accent-navy/35 block mb-1">TRANSMISSION_ID:</span>
-                    <span>{accessCode}</span>
-                  </div>
-                  <div>
-                    <span className="text-accent-navy/35 block mb-1">ROUTING_KEY:</span>
-                    <span>SEC_INTEL_COLOMBO_03</span>
-                  </div>
-                  <div>
-                    <span className="text-accent-navy/35 block mb-1">ENCRYPTION:</span>
-                    <span>RSA-4096 / TLS 1.3 // STANDBY FOR CALL</span>
-                  </div>
-                </div>
+
 
                 <button
                   onClick={() => {

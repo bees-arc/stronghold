@@ -21,7 +21,7 @@
   --color-border-thin: var(--border-thin);
   --color-border-thin-light: var(--border-thin-light);
 
-  --font-serif: var(--font-serif);
+  --font-serif: var(--font-poppins);
   --font-sans: var(--font-poppins);
   --font-jakarta: var(--font-jakarta);
 }
@@ -99,7 +99,7 @@ html {
 
 /* Custom utilities for editorial formatting */
 .editorial-quote {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: -0.02em;
