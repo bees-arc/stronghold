@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
+import Logo from "@/components/Logo";
 
 const words = [
   "REDEFINING",
@@ -9,7 +10,8 @@ const words = [
   "THROUGH",
   "INTELLIGENCE,",
   "DISCIPLINE,",
-  "TECHNOLOGY"
+  "TECHNOLOGY",
+  "LOGO" // Special step to display the Stronghold Logo
 ];
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
@@ -29,10 +31,10 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
 
   useEffect(() => {
     if (index === words.length - 1) {
-      // Hold on the final word "TECHNOLOGY" for 800ms before completion
+      // Hold on the final LOGO step for 900ms before completion
       const timeout = setTimeout(() => {
         onComplete();
-      }, 800);
+      }, 900);
       return () => clearTimeout(timeout);
     }
 
@@ -40,7 +42,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       () => {
         setIndex(index + 1);
       },
-      index === 0 ? 400 : 220 // 400ms for first word, 220ms for subsequent words -> total transition takes ~1.3 seconds
+      index === 0 ? 400 : (index === words.length - 2 ? 350 : 220) // Show TECHNOLOGY slightly longer, others 220ms
     );
 
     return () => clearTimeout(timeout);
@@ -94,21 +96,41 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     >
       {/* Multilingual / Strategic Word Transitions */}
       <div className="relative z-10 flex flex-col items-center gap-4">
-        <motion.p
-          key={index}
-          variants={textVariants}
-          initial="initial"
-          animate="animate"
-          className="text-4xl md:text-5xl lg:text-6xl font-serif text-accent-navy tracking-tight flex items-center gap-4"
-        >
-          {/* Subtle index tracker */}
-          <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2">
-            0{index + 1}
-          </span>
-          <span className={index === words.length - 1 ? "text-accent-gold font-bold font-sans tracking-[0.12em] text-3xl md:text-4xl" : "italic font-light font-serif text-accent-navy/90"}>
-            {words[index]}
-          </span>
-        </motion.p>
+        {words[index] === "LOGO" ? (
+          <motion.div
+            key="logo-step"
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            className="flex flex-col items-center gap-4"
+          >
+            <Logo className="w-16 h-20 text-accent-navy" />
+            <div className="flex flex-col items-center">
+              <span className="text-2xl font-bold tracking-[0.25em] text-accent-navy leading-none font-sans mt-3">
+                STRONGHOLD
+              </span>
+              <span className="text-[10px] tracking-[0.22em] text-accent-navy/60 font-semibold leading-none mt-2 font-sans">
+                SECURITY & INVESTIGATION
+              </span>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.p
+            key={index}
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif text-accent-navy tracking-tight flex items-center gap-4"
+          >
+            {/* Subtle index tracker */}
+            <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2">
+              0{index + 1}
+            </span>
+            <span className="italic font-light font-serif text-accent-navy/90">
+              {words[index]}
+            </span>
+          </motion.p>
+        )}
       </div>
 
       {/* Curved bottom curtain SVG - filled with white */}
