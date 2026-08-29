@@ -273,7 +273,7 @@ export default function Home() {
                 href="#contact"
                 className="group flex items-center justify-center gap-2 border border-white/20 bg-black/40 px-8 py-4 text-[10px] font-bold tracking-[0.2em] text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 rounded-sm"
               >
-                GET IN TOUCH
+                TALK TO AN EXPERT
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </a>
 

@@ -45,10 +45,10 @@ export default function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 border-b ${
+        className={`fixed z-40 left-1/2 -translate-x-1/2 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-none ${
           scrolled
-            ? "bg-[rgba(255,255,255,0.92)] backdrop-blur-md py-3.5 border-border-thin"
-            : "bg-transparent py-5 border-transparent"
+            ? "top-0 w-full max-w-none border-b border-t-0 border-l-0 border-r-0 border-border-thin py-3.5 bg-white/95 backdrop-blur-md shadow-sm"
+            : "top-6 w-[92vw] max-w-7xl border border-border-thin py-4.5 bg-white shadow-lg shadow-black/5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
