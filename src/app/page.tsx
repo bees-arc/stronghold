@@ -205,7 +205,7 @@ export default function Home() {
       <Navbar />
 
       {/* 1. HERO SECTION (Sentinel Bodyguard Editorial Layout) */}
-      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-accent-navy text-white border-b border-border-thin font-jakarta">
+      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-navy-dark text-white border-b border-border-thin font-jakarta">
         
         {/* Full-bleed Bodyguard Background Image */}
         <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none">
@@ -354,8 +354,8 @@ export default function Home() {
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
 
-              <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
-                WHAT WE PROTECT
+              <h2 className="text-3xl md:text-4xl font-sans font-bold text-accent-navy mt-4">
+                WHAT WE <span className="text-accent-gold">PROTECT</span>
               </h2>
             </div>
             <p className="text-xs font-sans text-accent-navy/50 max-w-xs leading-relaxed">
@@ -366,32 +366,18 @@ export default function Home() {
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             
-            {/* Businesses & Corporations (Split design with Guards Image) */}
-            <div className="bento-card-interactive md:col-span-4 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col md:flex-row justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
-              <div className="flex flex-col justify-between h-full relative z-10 md:w-1/2">
+            {/* Businesses & Corporations — NAVY featured card */}
+            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden">
+              <div className="flex flex-col justify-between h-full relative z-10">
                 <div>
-                  <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                  <div className="w-8 h-[2px] bg-accent-gold mb-6" />
+                  <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
                     BUSINESSES & CORPORATIONS
                   </h3>
                 </div>
-                <p className="text-xs font-sans text-accent-navy/60 max-w-[280px] mt-8 relative z-10 leading-relaxed">
+                <p className="text-xs font-sans text-white/60 max-w-md mt-8 relative z-10 leading-relaxed">
                   Integrated protection for offices, corporate headquarters, properties, facilities and operations.
                 </p>
-              </div>
-              
-              <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 h-full opacity-10 group-hover:opacity-20 md:opacity-100 transition-opacity duration-500 pointer-events-none md:border-l md:border-border-thin">
-                <div className="relative w-full h-full bg-[#0e1b30]">
-                  <Image
-                    src="/guards.jpg"
-                    alt="Corporate Guard Protection"
-                    fill
-                    sizes="(max-w-768px) 100vw, 30vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {/* Subtle fade overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-surface-ivory via-surface-ivory/80 to-transparent md:block hidden" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory to-transparent md:hidden" />
-                </div>
               </div>
             </div>
 
@@ -421,15 +407,16 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Digital Infrastructure */}
-            <div className="bento-card-interactive md:col-span-4 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
+            {/* Digital Infrastructure — NAVY featured card */}
+            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="digital" />
               <div className="relative z-10">
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                <div className="w-8 h-[2px] bg-accent-gold mb-4" />
+                <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
                   DIGITAL INFRASTRUCTURE
                 </h3>
               </div>
-              <p className="text-xs font-sans text-accent-navy/60 max-w-sm mt-8 relative z-10 leading-relaxed">
+              <p className="text-xs font-sans text-white/60 max-w-sm mt-8 relative z-10 leading-relaxed">
                 Cybersecurity diagnostics and resilience parameters for modern digital networks.
               </p>
             </div>
@@ -447,15 +434,15 @@ export default function Home() {
               </p>
             </div>
 
-            {/* People */}
-            <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
+            {/* People — GOLD accent card */}
+            <div className="bento-card-interactive md:col-span-3 bg-accent-gold border border-accent-gold p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:bg-accent-gold/90 transition-all duration-500 relative group overflow-hidden">
               <BentoVisual type="people" />
               <div className="relative z-10">
-                <h3 className="text-xl font-serif font-light text-accent-navy tracking-tight">
+                <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
                   PEOPLE
                 </h3>
               </div>
-              <p className="text-xs font-sans text-accent-navy/60 mt-8 relative z-10 leading-relaxed">
+              <p className="text-xs font-sans text-white/75 mt-8 relative z-10 leading-relaxed">
                 Protection designed around safety, confidentiality, and armored VIP transport support.
               </p>
             </div>
@@ -466,13 +453,13 @@ export default function Home() {
       </section>
 
       {/* 4. SERVICES SECTION */}
-      <section id="services" className="py-24 md:py-32 bg-surface-ivory border-b border-border-thin">
+      <section id="services" className="py-24 md:py-32 bg-navy-dark border-b border-navy-dark/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="mb-20">
 
-            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy font-light mt-4">
-              ONE INTELLIGENT SECURITY ECOSYSTEM.
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-white mt-4">
+              ONE INTELLIGENT <span className="text-accent-gold">SECURITY ECOSYSTEM.</span>
             </h2>
           </div>
 
@@ -481,21 +468,21 @@ export default function Home() {
             {SERVICES.map((service) => (
               <div 
                 key={service.num} 
-                className="group flex flex-col justify-between border-t border-border-thin pt-6 min-h-[220px] transition-all duration-500 hover:border-accent-navy"
+                className="group flex flex-col justify-between border-t border-white/10 pt-6 min-h-[220px] transition-all duration-500 hover:border-accent-gold"
               >
                 <div>
                   <div className="flex items-center justify-end mb-4">
-                    <span className="w-1.5 h-1.5 rounded-full bg-border-thin group-hover:bg-accent-gold transition-colors" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-accent-gold transition-colors" />
                   </div>
-                  <h3 className="text-lg font-serif tracking-tight text-accent-navy font-semibold">
+                  <h3 className="text-lg font-sans tracking-tight text-white font-semibold">
                     {service.title}
                   </h3>
-                  <p className="text-xs font-sans text-accent-navy/70 mt-3 leading-relaxed">
+                  <p className="text-xs font-sans text-white/50 mt-3 leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
                 
-                <p className="text-[11px] font-sans text-accent-navy/55 mt-4 leading-normal opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-6 transition-all duration-500 overflow-hidden">
+                <p className="text-[11px] font-sans text-white/40 mt-4 leading-normal opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-6 transition-all duration-500 overflow-hidden">
                   {service.details}
                 </p>
               </div>
@@ -519,15 +506,15 @@ export default function Home() {
           {/* Advantage Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            {/* Pillar 1 */}
-            <div className="bg-surface-ivory border border-border-thin p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative">
+            {/* Pillar 1 — Navy */}
+            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/30 transition-all duration-500">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
-                  <ShieldCheck className="w-4 h-4 text-accent-navy" />
+                <div className="w-10 h-10 border border-accent-gold/30 flex items-center justify-center">
+                  <ShieldCheck className="w-4 h-4 text-accent-gold" />
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">MILITARY DISCIPLINE</h3>
+                <h3 className="text-sm font-bold tracking-wider text-white mt-8">MILITARY DISCIPLINE</h3>
                 <p className="text-xs font-sans text-accent-navy/60 leading-relaxed mt-4">
                   Operations structured on rigorous army protocols, ensuring immediate accountability and zero margin of error.
                 </p>
@@ -1039,7 +1026,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={formStatus === "submitting"}
-                  className="w-full flex items-center justify-center gap-3 bg-accent-navy text-white px-8 py-4.5 text-xs font-bold tracking-[0.2em] hover:bg-accent-gold hover:border-accent-gold transition-all duration-300 button-gold-accent shadow-sm disabled:bg-accent-navy/40 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-3 bg-navy-dark text-white px-8 py-4.5 text-xs font-bold tracking-[0.2em] hover:bg-accent-gold hover:border-accent-gold transition-all duration-300 button-gold-accent shadow-sm disabled:bg-navy-dark/40 disabled:cursor-not-allowed"
                 >
                   {formStatus === "submitting" ? (
                     <>
@@ -1091,3 +1078,4 @@ export default function Home() {
     </>
   );
 }
+

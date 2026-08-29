@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff; /* Portfolio pure white */
-  --foreground: #0e1b30; /* Portfolio deep navy blue */
-  --surface-ivory: #faf9f6; /* Clean soft warm off-white surface */
-  --surface-grey: #f3f4f6; /* Portfolio light grey surface */
-  --accent-navy: #0e1b30; /* Deep security navy */
-  --accent-gold: #c5a059; /* Brand golden-bronze accent */
-  --border-thin: rgba(14, 27, 48, 0.08); /* Minimal thin dark border */
-  --border-thin-light: rgba(255, 255, 255, 0.15); /* Light thin border */
+  --background: #0d1520;
+  --foreground: #e8e2d9;
+  --surface-ivory: #131e2e;
+  --surface-grey: #0f1929;
+  --accent-navy: #e8e2d9;       /* Text / headings — warm off-white on dark bg */
+  --navy-dark: #0e1b30;         /* Dark navy for bg-navy-dark card/section backgrounds */
+  --accent-gold: #c5a059;
+  --border-thin: rgba(232, 226, 217, 0.08);
+  --border-thin-light: rgba(255, 255, 255, 0.10);
 }
 
 @theme inline {
@@ -17,6 +18,7 @@
   --color-surface-ivory: var(--surface-ivory);
   --color-surface-grey: var(--surface-grey);
   --color-accent-navy: var(--accent-navy);
+  --color-navy-dark: var(--navy-dark);
   --color-accent-gold: var(--accent-gold);
   --color-border-thin: var(--border-thin);
   --color-border-thin-light: var(--border-thin-light);
