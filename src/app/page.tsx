@@ -204,116 +204,96 @@ export default function Home() {
 
       <Navbar />
 
-      {/* 1. HERO SECTION */}
-      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-accent-navy border-b border-border-thin">
-        {/* Background video loop (tech HUD / networking wireframe) */}
+      {/* 1. HERO SECTION (Sentinel Bodyguard Editorial Layout) */}
+      <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-accent-navy text-white border-b border-border-thin">
+        
+        {/* Full-bleed Bodyguard Background Image */}
+        <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none">
+          <Image
+            src="/bodyguard.jpg"
+            alt="Sentinel Security Agent"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out]"
+          />
+          {/* Left-to-right gradient overlay to darken the text side and fade the image on the right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050c18] via-transparent to-black/40" />
+        </div>
+
+        {/* Live overlay video loop - screen blended for futuristic data plexus overlay */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-15 filter grayscale contrast-125 pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.03] mix-blend-screen pointer-events-none"
         >
           <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c040d73f1d8f1e29cf46c766e409ec8e&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
         </video>
 
-        {/* Subtle grid layout lines */}
+        {/* Subtle grid lines */}
         <div className="absolute inset-0 grid-lines opacity-10 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
           
-          {/* Hero Left Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          {/* Left Content Column */}
+          <div className="lg:col-span-8 flex flex-col items-start justify-center">
             
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              className="inline-flex items-center gap-2 mb-6 border border-accent-gold/20 px-3.5 py-1.5 bg-white/5 backdrop-blur-sm"
-            >
-              <div className="w-1.5 h-1.5 bg-accent-gold animate-pulse rounded-full" />
-              <span className="text-[10px] font-bold tracking-[0.25em] text-white/85 font-sans">
-                STRONGHOLD SECURITY & INVESTIGATION
-              </span>
-            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-serif font-light text-white leading-[1.1] tracking-tight mb-8">
-              <span className="title-reveal-mask">
-                <motion.span
-                  initial="hidden"
-                  animate="visible"
-                  variants={textRevealVariants}
-                  className="block font-serif"
-                >
-                  REDEFINING PROTECTION
-                </motion.span>
-              </span>
-              <br />
-              <span className="title-reveal-mask">
-                <motion.span
-                  initial="hidden"
-                  animate="visible"
-                  variants={textRevealVariants}
-                  className="block font-serif italic font-normal text-accent-gold"
-                >
-                  THROUGH INTELLIGENCE,
-                </motion.span>
-              </span>
-              <br />
-              <span className="title-reveal-mask">
-                <motion.span
-                  initial="hidden"
-                  animate="visible"
-                  variants={textRevealVariants}
-                  className="block font-serif"
-                >
-                  DISCIPLINE & TECHNOLOGY.
-                </motion.span>
-              </span>
+
+            {/* Bold Sentinel-style Title with Vertical Gold Bar */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[4.75rem] font-sans font-black leading-[1.05] tracking-tight max-w-2xl uppercase flex text-left">
+              <span className="w-1.5 bg-accent-gold mr-6 self-stretch shrink-0" />
+              <div>
+                DISCIPLINE. <br />
+                <span className="text-white/80">INTELLIGENCE.</span> <br />
+                <span className="text-accent-gold">TECHNOLOGY.</span>
+              </div>
             </h1>
 
             <motion.p
               initial="hidden"
               animate="visible"
               variants={fadeInUpVariants}
-              className="text-sm font-sans text-white/70 leading-relaxed max-w-lg mb-10"
+              className="text-xs sm:text-sm font-sans text-white/70 leading-relaxed max-w-lg mt-8 text-left"
             >
-              Stronghold Security & Investigation is a next-generation security firm combining military-grade discipline with intelligence analysis and electronic safeguards to protect people, property, and information.
+              Stronghold Security combines military-grade discipline, strategic intelligence, and advanced technology to protect people, property, and information across physical and digital environments.
             </motion.p>
 
+            {/* CTA row (Button + round play button) */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeInUpVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+              className="flex items-center gap-4 mt-10 w-full sm:w-auto"
             >
               <a
-                href="#portfolio"
-                className="group flex items-center justify-center gap-3 bg-accent-gold text-accent-navy px-8 py-4 text-xs font-bold tracking-[0.2em] hover:bg-white hover:text-accent-navy transition-all duration-300 button-gold-accent shadow-sm"
-              >
-                EXPLORE OUR PROTECTION
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
                 href="#contact"
-                className="group flex items-center justify-center gap-2 border border-white/20 bg-transparent px-8 py-4 text-xs font-bold tracking-[0.2em] text-white hover:border-white hover:bg-white/10 transition-all duration-300"
+                className="group flex items-center justify-center gap-2 border border-white/20 bg-black/40 px-8 py-4 text-[10px] font-bold tracking-[0.2em] text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 rounded-sm"
               >
-                TALK TO A SECURITY EXPERT
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                GET IN TOUCH
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+
+              {/* Pulsing play-anchor button (scrolls down to operations timeline) */}
+              <a
+                href="#timeline"
+                aria-label="View operational methodology video"
+                className="group w-12 h-12 rounded-full bg-accent-gold text-accent-navy flex items-center justify-center hover:scale-105 transition-all duration-300 relative shadow-lg shadow-accent-gold/10"
+              >
+                <div className="absolute inset-0 rounded-full border border-accent-gold animate-ping opacity-25" />
+                <svg
+                  className="w-4.5 h-4.5 fill-current ml-0.5 text-accent-navy"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </a>
             </motion.div>
-          </div>
 
-          {/* Hero Right Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 w-full flex items-center justify-center"
-          >
-            <div className="w-full max-w-[480px] lg:max-w-none border border-accent-gold/20 bg-[#0c182a]/80 backdrop-blur-md rounded-sm p-4 relative">
-              <SurrealEcosystem />
-            </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>
@@ -321,35 +301,40 @@ export default function Home() {
       {/* 2. INTRO EDITORIAL SECTION */}
       <section className="py-24 md:py-32 bg-surface-ivory border-b border-border-thin relative overflow-hidden">
         {/* Radar sweep ambient background */}
-        <div className="radar-sweep opacity-[0.03]" />
+        <div className="radar-sweep opacity-[0.02]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
-          <div className="lg:col-span-4 lg:sticky lg:top-32">
+          {/* Text content column */}
+          <div className="lg:col-span-6 flex flex-col items-start">
             <span className="text-[10px] font-bold tracking-[0.3em] text-accent-gold font-sans uppercase">
               // STRATEGIC OUTLOOK
             </span>
-            <h2 className="text-3xl font-serif text-accent-navy leading-tight mt-4 max-w-xs font-light">
+            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy leading-tight mt-4 font-light">
               SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
             </h2>
-          </div>
-
-          <div className="lg:col-span-8 flex flex-col items-start">
-            <p className="text-lg md:text-xl font-serif font-light text-accent-navy/80 leading-relaxed mb-8">
+            <p className="text-base md:text-lg font-serif font-light text-accent-navy/80 leading-relaxed mt-8 mb-6">
               Today’s risks move faster, become more complex and exist across both physical and digital environments.
             </p>
-            <p className="text-sm font-sans text-accent-navy/60 leading-relaxed max-w-2xl mb-12">
+            <p className="text-sm font-sans text-accent-navy/60 leading-relaxed max-w-xl mb-8">
               At Stronghold, we combine strategic foresight, disciplined professionals and advanced technology to build protection systems designed to anticipate risks before they become incidents.
             </p>
 
-            <blockquote className="border-l-2 border-accent-gold pl-8 py-2 relative mt-4">
-              <p className="editorial-quote text-2xl md:text-3xl text-accent-navy italic">
+            <blockquote className="border-l-2 border-accent-gold pl-6 py-1 relative">
+              <p className="text-xl md:text-2xl text-accent-navy italic leading-snug">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
-              <cite className="block mt-4 font-mono text-[9px] text-accent-navy/40 tracking-[0.25em] not-italic">
+              <cite className="block mt-3 font-mono text-[9px] text-accent-navy/40 tracking-[0.25em] not-italic">
                 STRONGHOLD OPERATIONAL COMMAND
               </cite>
             </blockquote>
+          </div>
+
+          {/* Canvas visual column */}
+          <div className="lg:col-span-6 w-full flex items-center justify-center">
+            <div className="w-full max-w-[500px] border border-border-thin bg-background rounded-sm p-4 relative shadow-sm">
+              <SurrealEcosystem />
+            </div>
           </div>
 
         </div>
