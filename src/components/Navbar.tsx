@@ -47,14 +47,14 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed z-40 left-1/2 -translate-x-1/2 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-none ${
           scrolled
-            ? "top-0 w-full max-w-none border-b border-border-thin py-3.5 bg-white/95 backdrop-blur-md shadow-sm"
-            : "top-6 w-[92vw] max-w-7xl border border-border-thin py-4.5 bg-white shadow-lg shadow-black/5"
+            ? "top-0 w-full max-w-none border-b border-border-thin py-0.5 bg-white/95 backdrop-blur-md shadow-sm"
+            : "top-6 w-[92vw] max-w-7xl border border-border-thin py-1.5 bg-white shadow-lg shadow-black/5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Brand Logo & Name */}
           <a href="#" className="flex items-center gap-3 group">
-            <Logo className="w-8 h-10 transition-transform group-hover:scale-102 duration-300" />
+            <Logo className="w-16 h-16 transition-transform group-hover:scale-102 duration-300" />
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans">
                 STRONGHOLD

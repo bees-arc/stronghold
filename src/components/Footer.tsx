@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Brand & Address Column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
             <a href="#" className="flex items-center gap-3 group w-fit">
-              <Logo className="w-8 h-10" />
+              <Logo className="w-12 h-14" />
               <div className="flex flex-col">
                 <span className="text-base font-bold tracking-[0.25em] text-accent-navy leading-none font-sans">
                   STRONGHOLD

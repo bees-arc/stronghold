@@ -104,7 +104,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             animate="animate"
             className="flex flex-col items-center gap-4"
           >
-            <Logo className="w-16 h-20 text-[#0e1b30]" />
+            <Logo className="w-28 h-32 text-[#0e1b30]" />
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans mt-3">
                 STRONGHOLD
