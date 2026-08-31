@@ -7,68 +7,68 @@ import Footer from "@/components/Footer";
 const PROCESS_STEPS = [
   {
     step: "01",
-    phase: "ASSESS",
-    tagline: "Comprehensive Vulnerability and Threat Landscape Diagnostic",
-    summary: "Every client environment is distinct. We commence each operational engagement with an exhaustive on-site physical evaluation and digital infrastructure assessment.",
+    phase: "UNDERSTANDING YOUR NEEDS",
+    tagline: "Comprehensive Risk Assessment and Security Appraisal",
+    summary: "Every client is unique. We begin by conducting a detailed risk assessment to understand your environment, challenges, and security priorities.",
     activities: [
-      "Physical perimeter walkthrough to identify blind spots, weak entryways and line-of-sight gaps",
-      "Digital network reconnaissance and external threat exposure scanning",
-      "Evaluation of existing staff safety protocols, visitor logs and emergency exit compliance",
-      "Analysis of historical incident data and geographic neighborhood threat indices"
+      "On-site physical inspection to identify vulnerabilities, blind spots, and entry risks",
+      "Assessment of current security staffing, access points, and visitor management",
+      "Analysis of premises layout, neighborhood risk factors, and asset protection requirements",
+      "Consultation with your leadership team to establish customized protection objectives"
     ],
-    deliverable: "Executive Threat Assessment Report with prioritized risk mitigation points."
+    deliverable: "Detailed Risk Assessment Report with clear recommendations."
   },
   {
     step: "02",
-    phase: "PLAN",
-    tagline: "Tailored Multi-Layered Defense Architecture",
-    summary: "We design a customized protection matrix that integrates vetted manpower, surveillance hardware, access control automation, and rapid response triggers.",
+    phase: "DESIGNING TAILORED SOLUTIONS",
+    tagline: "Integrated Strategy Combining Personnel and Technology",
+    summary: "We craft security strategies that integrate expertly trained personnel with modern technology, whether it is manned guarding, electronic surveillance, or digital protection.",
     activities: [
-      "Drafting Standard Operating Procedures tailored strictly to client premises",
-      "Optical mapping for camera placement, infrared tripwires and motion detection sectors",
-      "Establishing clear incident escalation pathways and armed intervention criteria",
-      "Emergency evacuation routing, muster point assignment and crisis communication protocols"
+      "Developing Standard Operating Procedures tailored strictly to your premises",
+      "Strategic placement planning for security guards, CCTV cameras, and alarm systems",
+      "Establishing clear incident response, emergency protocols, and contact escalation chains",
+      "Designing visitor screening and access control procedures"
     ],
-    deliverable: "Master Defense Operations Blueprint signed off by our technical advisers."
+    deliverable: "Comprehensive Security Proposal and Operational Plan."
   },
   {
     step: "03",
-    phase: "DEPLOY",
-    tagline: "Mobilization of Trained Operatives and Electronic Hardware",
-    summary: "Our command team activates vetted security personnel, installs state-of-the-art surveillance equipment, and conducts on-site operational dry runs.",
+    phase: "DEPLOYING SKILLED PROFESSIONALS",
+    tagline: "Rigorous Training, Discipline, and Decisive Action",
+    summary: "Our security personnel are rigorously trained, disciplined, and equipped with the tools and knowledge to act decisively in any situation.",
     activities: [
-      "Screened and background-verified security guards assigned to designated shift rotations",
-      "Installation and testing of CCTV optical streams, biometrics and alarm transmitters",
-      "Tactical briefing on client-specific rules of engagement and executive customer service",
-      "Integration of telemetry feeds into our Central Operations Control Center"
+      "Deployment of background-checked, vetted security officers suited to your environment",
+      "On-site briefing and orientation on your specific property rules and customer care standards",
+      "Installation and testing of electronic security hardware, CCTV feeds, and alarm relays",
+      "Dedicated field supervisors conducting regular checks and shift management"
     ],
-    deliverable: "Active Defense Deployment with full operational readiness validation."
+    deliverable: "Smooth on-site deployment with complete operational readiness."
   },
   {
     step: "04",
-    phase: "MONITOR",
-    tagline: "24/7 Operations Control Center Surveillance and Tactical Response",
-    summary: "Unbroken situational awareness is maintained around the clock. Watch officers monitor telemetry streams while mobile response units patrol active zones.",
+    phase: "LEVERAGING TECHNOLOGY",
+    tagline: "24/7 Monitoring, Rapid Response, and Advanced Surveillance",
+    summary: "From CCTV and intrusion detection to real-time monitoring and cyber defense, we ensure that innovation strengthens every layer of your security.",
     activities: [
-      "Live 24 hour command room oversight verifying guard patrol check-ins via digital logs",
-      "Real-time sensor anomaly detection and instant video verification of alarms",
-      "Immediate mobile tactical patrol unit dispatch in the event of unauthorized breaches",
-      "Continuous direct coordination with national emergency dispatchers and police stations"
+      "Continuous 24/7 surveillance through our Central Operations Control Center",
+      "Instant alarm verification and coordination with rapid mobile response units",
+      "Close coordination with local emergency services and police stations when needed",
+      "Regular electronic system health checks to prevent downtime"
     ],
-    deliverable: "Daily incident logs, timestamped patrol verifications, and instant breach alerts."
+    deliverable: "Unbroken 24/7 protection with rapid response capability."
   },
   {
     step: "05",
-    phase: "EVOLVE",
-    tagline: "Continuous Quality Audits, Intelligence Updates and System Upgrades",
-    summary: "Threat vectors change constantly, so our protective frameworks evolve alongside them through scheduled reviews and technology enhancements.",
+    phase: "ONGOING IMPROVEMENT",
+    tagline: "Regular Evaluations, Updated Training, and Technology Upgrades",
+    summary: "Security threats evolve and so do we. Through regular evaluations, updated training, and technology upgrades, we keep your protection future-ready.",
     activities: [
-      "Monthly command reviews analyzing telemetry trends and incident frequency",
-      "Refresher tactical training and physical readiness re-testing for stationed guards",
-      "Preventative maintenance and firmware updates across all installed electronic sensors",
-      "Quarterly executive security briefings delivered directly to client leadership"
+      "Periodic security audits and client feedback sessions to maintain high standards",
+      "Continuous refresher training and performance assessments for stationed guards",
+      "Routine maintenance and upgrades of surveillance and alarm hardware",
+      "Proactive adaptation of security measures to new or emerging neighborhood risks"
     ],
-    deliverable: "Ongoing quarterly optimization reports ensuring future-ready defense."
+    deliverable: "Long-term peace of mind with continuously optimized security."
   }
 ];
 
@@ -89,11 +89,11 @@ export default function ProcessPage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white max-w-3xl leading-tight">
-            THE STRONGHOLD <span className="text-accent-gold">OPERATIONAL</span> LIFECYCLE
+            HOW WE <span className="text-accent-gold">WORK</span>
           </h1>
 
           <p className="mt-6 text-sm md:text-base text-white/80 max-w-2xl leading-relaxed font-sans">
-            A battle-tested five-phase deployment framework that transforms vulnerability analysis into seamless, proactive protection.
+            At Stronghold Security, we work with precision, preparedness, and partnership, anticipating threats before they arise.
           </p>
         </div>
       </section>
@@ -113,11 +113,11 @@ export default function ProcessPage() {
                 <div className="lg:col-span-4">
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm font-mono font-bold bg-accent-gold text-[#070c14] px-3.5 py-1">
-                      PHASE {step.step}
+                      PROCESS {step.step}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl font-sans font-bold text-white tracking-tight mb-3">
+                  <h2 className="text-2xl md:text-3xl font-sans font-bold text-white tracking-tight mb-3">
                     {step.phase}
                   </h2>
 
@@ -127,7 +127,7 @@ export default function ProcessPage() {
 
                   <div className="bg-[#070c14] text-white p-5 border-l-2 border-accent-gold">
                     <span className="text-[10px] font-mono text-accent-gold uppercase tracking-widest block mb-1 font-bold">
-                      KEY DELIVERABLE
+                      KEY OUTCOME
                     </span>
                     <p className="text-xs font-sans text-white/90 leading-relaxed font-normal">
                       {step.deliverable}
@@ -143,7 +143,7 @@ export default function ProcessPage() {
 
                   <div>
                     <h3 className="text-xs font-mono font-bold text-accent-gold uppercase tracking-wider mb-4">
-                      OPERATIONAL ACTIVITIES &amp; VERIFICATIONS
+                      ACTION STEPS &amp; OVERSIGHT
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -157,8 +157,8 @@ export default function ProcessPage() {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center text-[10px] font-mono text-white/60 uppercase tracking-widest font-bold">
-                    <span>MILITARY PRECISION IN EXECUTION</span>
-                    <span>QUALITY AUDITED</span>
+                    <span>MILITARY PRECISION AND DISCIPLINE</span>
+                    <span>QUALITY ASSURED</span>
                   </div>
                 </div>
 
@@ -173,16 +173,16 @@ export default function ProcessPage() {
       <section className="py-20 bg-[#0b121c] text-center border-t border-white/10">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-sans font-bold text-white mb-4">
-            INITIATE PHASE 01 VULNERABILITY AUDIT
+            READY FOR A COMPREHENSIVE SECURITY ASSESSMENT?
           </h2>
           <p className="text-xs text-white/80 mb-8 max-w-xl mx-auto leading-relaxed font-normal">
-            Connect with our operations command team to schedule your initial risk diagnostic and security appraisal.
+            Contact our leadership team today to schedule an initial consultation and premises appraisal.
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-3 bg-accent-gold text-[#070c14] px-8 py-3.5 text-xs font-bold font-mono tracking-widest hover:bg-white transition-all duration-300 shadow-md"
           >
-            START ASSESSMENT
+            REQUEST ASSESSMENT
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

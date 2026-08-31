@@ -31,37 +31,37 @@ const CORE_VALUES = [
   {
     id: "INTEGRITY",
     title: "INTEGRITY",
-    definition: "Acting with honesty, transparency and accountability.",
-    details: "Our foundation is built on absolute transparency. In an industry where trust is paramount, Stronghold maintains uncompromised ethical standards in all field deployments and intelligence operations.",
+    definition: "Acting with honesty, transparency, and accountability.",
+    details: "Our foundation is built on absolute transparency. In an industry where trust is paramount, Stronghold maintains uncompromised ethical standards in all field deployments and protective operations.",
     color: "#c5a059"
   },
   {
     id: "VIGILANCE",
     title: "VIGILANCE",
-    definition: "Remaining alert and proactive in every environment.",
-    details: "Constant surveillance, intelligence gathering, and operational readiness. We do not rest. Threats never sleep, and neither does our multi-tiered monitoring apparatus.",
+    definition: "Staying alert and proactive in every environment.",
+    details: "Constant vigilance, disciplined patrols, and operational readiness ensure that potential threats are identified and mitigated before they arise.",
     color: "#0e1b30"
   },
   {
     id: "INNOVATION",
     title: "INNOVATION",
-    definition: "Using technology to create smarter and more effective protection.",
-    details: "Integrating state-of-the-art predictive software, sensor matrices, and cybersecurity defenses into physical environments to create next-generation barriers.",
+    definition: "Adapting technology to create smarter protection.",
+    details: "Integrating modern CCTV surveillance, intrusion detection systems, and cybersecurity defenses into physical environments for complete protection.",
+    color: "#c5a059"
+  },
+  {
+    id: "EXCELLENCE",
+    title: "EXCELLENCE",
+    definition: "Maintaining military precision and professional discipline.",
+    details: "Rooted in battlefield discipline, our training regimens and operational oversight demand high standards of conduct across all guarding divisions.",
     color: "#c5a059"
   },
   {
     id: "TRUST",
     title: "TRUST",
-    definition: "Building long-term relationships through reliability and confidence.",
-    details: "Our relationships are partnerships. We act as an extension of our clients' leadership teams, protecting assets and reputations with complete discretion.",
+    definition: "Building long-term relationships grounded in reliability.",
+    details: "Our client relationships are partnerships built on confidentiality, reliability, and an unbreakable promise to keep your people and property safe.",
     color: "#0e1b30"
-  },
-  {
-    id: "EXCELLENCE",
-    title: "EXCELLENCE",
-    definition: "Maintaining professional discipline, precision and high standards.",
-    details: "Rooted in military precision, our training regimens and performance evaluations demand nothing less than flawless execution across all divisions.",
-    color: "#c5a059"
   }
 ];
 
@@ -69,38 +69,38 @@ const CORE_VALUES = [
 const TIMELINE_STEPS = [
   {
     step: "01",
-    phase: "ASSESS",
-    short: "Understand risks, vulnerabilities and client priorities.",
-    detailed: "We deploy field officers and digital security engineers to perform an exhaustive vulnerability analysis of physical sites, infrastructure, and electronic perimeters.",
-    status: "SYSTEM_SCANNING"
+    phase: "UNDERSTANDING YOUR NEEDS",
+    short: "Conduct a detailed risk assessment to understand your environment.",
+    detailed: "Every client is unique. We begin by conducting a detailed risk assessment to understand your environment, challenges, and security priorities.",
+    status: "RISK ASSESSMENT"
   },
   {
     step: "02",
-    phase: "PLAN",
-    short: "Develop a tailored security strategy.",
-    detailed: "Our command team structures an integrated defense matrix mapping personnel schedules, surveillance sensor overlays, digital firewalls, and incident escalation paths.",
-    status: "STRATEGY_MAPPED"
+    phase: "DESIGNING TAILORED SOLUTIONS",
+    short: "Craft a comprehensive security strategy tailored to your premises.",
+    detailed: "We craft security strategies that integrate expertly trained personnel with modern technology, whether it is manned guarding, electronic surveillance, or digital security.",
+    status: "STRATEGY PLANNING"
   },
   {
     step: "03",
-    phase: "DEPLOY",
-    short: "Assign the right professionals, technology and resources.",
-    detailed: "We mobilize professionally trained security agents, activate CCTV networks, set up distance sensors, and initiate secure network tunneling protocols.",
-    status: "ACTIVE_DEPLOY"
+    phase: "DEPLOYING SKILLED PROFESSIONALS",
+    short: "Assign rigorously trained, disciplined security personnel.",
+    detailed: "Our security personnel are rigorously trained, disciplined, and equipped with the tools and knowledge to act decisively in any situation.",
+    status: "GUARD DEPLOYMENT"
   },
   {
     step: "04",
-    phase: "MONITOR",
-    short: "Maintain continuous surveillance and rapid response capability.",
-    detailed: "Our 24/7 Operations Control Center supervises real-time telemetry from all active projects, dispatching armed tactical mobile units at the first trigger.",
-    status: "MONITORING_LIVE"
+    phase: "LEVERAGING TECHNOLOGY",
+    short: "24/7 CCTV surveillance, alarm monitoring, and quick response.",
+    detailed: "From CCTV systems and intrusion detection to real-time monitoring and rapid response teams, we ensure that modern technology strengthens every layer of your security.",
+    status: "24/7 SURVEILLANCE"
   },
   {
     step: "05",
-    phase: "EVOLVE",
-    short: "Regularly evaluate, update and improve security readiness.",
-    detailed: "We review threat patterns, refine standard operational procedures, and update physical and digital system assets to match the emerging threat environment.",
-    status: "READY_UPGRADE"
+    phase: "ONGOING IMPROVEMENT",
+    short: "Regular evaluations, updated training, and future-ready readiness.",
+    detailed: "Security threats evolve and so do we. Through regular evaluations, updated training, and system upgrades, we keep your protection reliable and future-ready.",
+    status: "CONTINUOUS REVIEW"
   }
 ];
 

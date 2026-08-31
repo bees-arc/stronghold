@@ -84,8 +84,8 @@ const SERVICES_DETAILED = [
     id: "monitoring-response",
     num: "06",
     title: "24/7 MONITORING & RAPID RESPONSE",
-    tagline: "Unbroken tactical surveillance and rapid intervention strike units.",
-    description: "Our Central Operations Control Center functions around the clock, continuously analyzing incoming telemetry from client cameras, alarm relays, and GPS tracking units. When an anomaly triggers, tactical intervention teams dispatch immediately to secure the scene.",
+    tagline: "Unbroken surveillance and rapid response teams for immediate protection.",
+    description: "Our Central Operations Control Center functions around the clock, continuously monitoring live camera feeds, alarm triggers, and patrol updates. When an incident occurs, trained response teams dispatch immediately to secure the premises.",
     capabilities: [
       "Live 24 hour command center watch teams monitoring real-time video and alarm feeds",
       "Immediate dispatch of armed tactical response units upon verified alarm activation",

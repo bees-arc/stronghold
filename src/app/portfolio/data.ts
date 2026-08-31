@@ -82,18 +82,18 @@ export const portfolioItems: PortfolioSector[] = [
   {
     name: "Digital Infrastructure",
     slug: "digital",
-    headline: "Cybersecurity Diagnostics and Resilience for Modern Enterprise Networks",
-    description: "Cybersecurity diagnostics and resilience parameters for modern digital networks.",
-    detailedOverview: "Physical defense and digital security are two sides of the same shield. Our cybersecurity division protects server farms, telecommunication nodes, and corporate cloud environments from malware, unauthorized data exfiltration, and ransomware disruption.",
+    headline: "Digital Security and Information Protection for Modern Enterprise Networks",
+    description: "Digital security and cyber defense protection for modern business networks.",
+    detailedOverview: "Physical defense and digital security work together. Our cybersecurity division protects server facilities, sensitive corporate data, and office networks from unauthorized intrusions, data breaches, and ransomware threats.",
     bgColor: "bg-navy-dark",
     textColor: "text-white",
     accentColor: "text-accent-gold",
     image: "/card-digital.jpg",
     protectiveMeasures: [
-      "Continuous network vulnerability scanning and penetration audits",
-      "Security Operations Center monitoring for abnormal telemetry spikes",
-      "Server room biometric multi-factor authentication locks",
-      "Encrypted data backup validation and incident recovery plans"
+      "Regular vulnerability assessments and network security reviews",
+      "24/7 Security Operations Center monitoring for unauthorized access attempts",
+      "Server room access control with biometric authorization",
+      "Secure data backup protocols and incident response plans"
     ],
     operationalBenefits: [
       "Protection of proprietary intellectual property and customer databases",
