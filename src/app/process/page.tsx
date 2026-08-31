@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, ShieldCheck, Compass, Users, Clock, ArrowRight, CheckCircle2, RefreshCw } from "lucide-react";
+import { Activity, ShieldCheck, Compass, Users, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -74,62 +74,61 @@ const PROCESS_STEPS = [
 
 export default function ProcessPage() {
   return (
-    <div className="bg-[#070c14] text-[#ddd8cf] min-h-screen flex flex-col font-jakarta">
+    <div className="bg-[#f8f6f0] text-[#0e1b30] min-h-screen flex flex-col font-sans">
       <Navbar />
 
       {/* Header Banner */}
-      <section className="relative pt-36 pb-20 bg-[#0b121c] text-white border-b border-white/10 overflow-hidden">
+      <section className="relative pt-36 pb-20 bg-[#0e1b30] text-white border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-gold/15 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute inset-0 grid-lines opacity-15 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="inline-flex items-center gap-3 border border-accent-gold/40 bg-accent-gold/10 px-4 py-1.5 rounded-none text-accent-gold font-mono text-[10px] tracking-[0.25em] uppercase mb-6">
-            <Activity className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-3 border border-accent-gold/40 bg-accent-gold/10 px-4 py-1.5 rounded-none text-accent-gold text-[11px] font-bold tracking-[0.2em] uppercase mb-6">
+            <Activity className="w-4 h-4" />
             <span>HOW WE WORK</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white max-w-3xl leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             HOW WE <span className="text-accent-gold">WORK</span>
           </h1>
 
-          <p className="mt-6 text-sm md:text-base text-white/80 max-w-2xl leading-relaxed font-sans">
+          <p className="mt-6 text-sm md:text-base text-white/90 max-w-2xl leading-relaxed font-normal">
             At Stronghold Security, we work with precision, preparedness, and partnership, anticipating threats before they arise.
           </p>
         </div>
       </section>
 
       {/* 5-Phase Process Detailed */}
-      <section className="py-24 bg-[#070c14]">
+      <section className="py-24 bg-[#f8f6f0]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
           
           {PROCESS_STEPS.map((step) => (
             <div
               key={step.step}
-              className="border border-white/10 bg-[#0e1724] p-8 md:p-12 hover:border-accent-gold/50 transition-colors shadow-xl"
+              className="border border-[#e5e0d8] bg-white p-8 md:p-12 hover:border-accent-gold transition-colors shadow-sm"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 {/* Left: Step & Title */}
                 <div className="lg:col-span-4">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-sm font-mono font-bold bg-accent-gold text-[#070c14] px-3.5 py-1">
+                    <span className="text-sm font-bold bg-[#0e1b30] text-accent-gold px-3.5 py-1">
                       PROCESS {step.step}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl md:text-3xl font-sans font-bold text-white tracking-tight mb-3">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#0e1b30] tracking-tight mb-3">
                     {step.phase}
                   </h2>
 
-                  <p className="text-xs font-bold text-accent-gold font-sans leading-relaxed mb-6">
+                  <p className="text-xs font-bold text-accent-gold leading-relaxed mb-6">
                     {step.tagline}
                   </p>
 
-                  <div className="bg-[#070c14] text-white p-5 border-l-2 border-accent-gold">
-                    <span className="text-[10px] font-mono text-accent-gold uppercase tracking-widest block mb-1 font-bold">
+                  <div className="bg-[#f8f6f0] text-[#0e1b30] p-5 border-l-2 border-accent-gold">
+                    <span className="text-[10px] text-accent-gold uppercase tracking-widest block mb-1 font-bold">
                       KEY OUTCOME
                     </span>
-                    <p className="text-xs font-sans text-white/90 leading-relaxed font-normal">
+                    <p className="text-xs text-[#0e1b30] leading-relaxed font-semibold">
                       {step.deliverable}
                     </p>
                   </div>
@@ -137,18 +136,18 @@ export default function ProcessPage() {
 
                 {/* Right: Summary & Key Activities */}
                 <div className="lg:col-span-8 flex flex-col justify-between">
-                  <p className="text-xs md:text-sm text-white/90 font-normal leading-relaxed mb-8">
+                  <p className="text-xs md:text-sm text-[#0e1b30] font-normal leading-relaxed mb-8">
                     {step.summary}
                   </p>
 
                   <div>
-                    <h3 className="text-xs font-mono font-bold text-accent-gold uppercase tracking-wider mb-4">
+                    <h3 className="text-xs font-bold text-[#0e1b30] uppercase tracking-wider mb-4">
                       ACTION STEPS &amp; OVERSIGHT
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {step.activities.map((act) => (
-                        <div key={act} className="flex items-start gap-2.5 text-xs text-white/90 font-normal leading-relaxed bg-[#070c14] border border-white/10 p-3.5 shadow-sm">
+                        <div key={act} className="flex items-start gap-2.5 text-xs text-[#0e1b30] font-medium leading-relaxed bg-[#f8f6f0] border border-[#e5e0d8] p-3.5 shadow-xs">
                           <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0 mt-0.5" />
                           <span>{act}</span>
                         </div>
@@ -156,7 +155,7 @@ export default function ProcessPage() {
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center text-[10px] font-mono text-white/60 uppercase tracking-widest font-bold">
+                  <div className="mt-8 pt-6 border-t border-[#e5e0d8] flex justify-between items-center text-[10px] text-[#0e1b30]/70 uppercase tracking-widest font-bold">
                     <span>MILITARY PRECISION AND DISCIPLINE</span>
                     <span>QUALITY ASSURED</span>
                   </div>
@@ -170,17 +169,17 @@ export default function ProcessPage() {
       </section>
 
       {/* CTA Footer */}
-      <section className="py-20 bg-[#0b121c] text-center border-t border-white/10">
+      <section className="py-20 bg-[#0e1b30] text-white text-center border-t border-white/10">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             READY FOR A COMPREHENSIVE SECURITY ASSESSMENT?
           </h2>
-          <p className="text-xs text-white/80 mb-8 max-w-xl mx-auto leading-relaxed font-normal">
+          <p className="text-xs md:text-sm text-white/85 mb-8 max-w-xl mx-auto leading-relaxed font-normal">
             Contact our leadership team today to schedule an initial consultation and premises appraisal.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 bg-accent-gold text-[#070c14] px-8 py-3.5 text-xs font-bold font-mono tracking-widest hover:bg-white transition-all duration-300 shadow-md"
+            className="inline-flex items-center gap-3 bg-accent-gold text-[#0e1b30] px-8 py-3.5 text-xs font-bold tracking-widest hover:bg-white transition-all duration-300 shadow-md"
           >
             REQUEST ASSESSMENT
             <ArrowRight className="w-4 h-4" />

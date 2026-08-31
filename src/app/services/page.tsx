@@ -40,15 +40,15 @@ const SERVICES_DETAILED = [
     num: "03",
     title: "CYBERSECURITY SERVICES",
     tagline: "Proactive threat detection, vulnerability diagnostics, and network hardening.",
-    description: "Led by certified ethical hackers and security analytics architects, our cyber division defends organizational data assets against ransomware, phishing vectors, unauthorized intrusions, and digital corporate espionage.",
+    description: "Led by certified security specialists, our cyber division defends organizational data assets against ransomware, unauthorized intrusions, and digital corporate risks.",
     capabilities: [
-      "Comprehensive penetration testing and infrastructure vulnerability audits",
-      "Real-time Security Operations Center threat hunting and SIEM log monitoring",
-      "Cloud perimeter hardening across AWS, Microsoft Azure, and hybrid environments",
-      "Endpoint detection and response deployment using enterprise security suites",
-      "Staff cybersecurity awareness workshops and simulated phishing campaigns"
+      "Comprehensive vulnerability audits and network security reviews",
+      "24/7 Security Operations Center monitoring for unauthorized access attempts",
+      "Cloud network security reviews and infrastructure hardening",
+      "Endpoint threat detection deployment across office devices",
+      "Staff cybersecurity awareness training and threat prevention"
     ],
-    highlight: "Certified practitioners holding CEH v11, AWS Security, Splunk, and (ISC)² accreditations."
+    highlight: "Dedicated information security professionals leading proactive corporate cyber defense."
   },
   {
     id: "electronic-security",
@@ -69,14 +69,14 @@ const SERVICES_DETAILED = [
     id: "cctv-sensors",
     num: "05",
     title: "CCTV & DISTANCE SENSOR SYSTEMS",
-    tagline: "High resolution optical networks, thermal imaging, and radar perimeter tripwires.",
-    description: "Modern video surveillance requires more than passive cameras. We install intelligent visual networks equipped with artificial intelligence analytics, license plate recognition, and long range thermal sensors capable of spotting anomalies in complete darkness.",
+    tagline: "High resolution optical networks, thermal imaging, and perimeter detection.",
+    description: "Modern video surveillance requires more than passive cameras. We install intelligent visual networks equipped with smart video analytics, vehicle license logging, and night vision sensors capable of spotting unauthorized movement.",
     capabilities: [
       "Ultra high definition 4K optical cameras with motorized pan tilt zoom capabilities",
       "Thermal boundary cameras for zero-light and adverse weather security",
       "Automated License Plate Recognition and vehicle checkpoint logging",
-      "AI video analytics for abandoned baggage, loitering, and perimeter breach alerts",
-      "Encrypted cloud recording archives with tamper evident digital watermarking"
+      "Video analytics for boundary crossing, loitering, and perimeter breach alerts",
+      "Encrypted digital recording archives with tamper evident storage"
     ],
     highlight: "Strategic camera positioning ensuring total elimination of blind spots across wide facilities."
   },
@@ -99,122 +99,190 @@ const SERVICES_DETAILED = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#070c14] text-[#ddd8cf] min-h-screen flex flex-col font-jakarta">
+    <div className="bg-[#f8f6f0] text-[#0e1b30] min-h-screen flex flex-col font-sans">
       <Navbar />
 
       {/* Header Banner */}
-      <section className="relative pt-36 pb-20 bg-[#0b121c] text-white border-b border-white/10 overflow-hidden">
+      <section className="relative pt-36 pb-20 bg-[#0e1b30] text-white border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-gold/15 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute inset-0 grid-lines opacity-15 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="inline-flex items-center gap-3 border border-accent-gold/40 bg-accent-gold/10 px-4 py-1.5 rounded-none text-accent-gold font-mono text-[10px] tracking-[0.25em] uppercase mb-6">
-            <Cpu className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-3 border border-accent-gold/40 bg-accent-gold/10 px-4 py-1.5 rounded-none text-accent-gold text-[11px] font-bold tracking-[0.2em] uppercase mb-6">
+            <Cpu className="w-4 h-4" />
             <span>OPERATIONAL CAPABILITIES</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white max-w-3xl leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             COMPREHENSIVE <span className="text-accent-gold">SECURITY</span> DIVISIONS
           </h1>
 
-          <p className="mt-6 text-sm md:text-base text-white/80 max-w-2xl leading-relaxed font-sans">
+          <p className="mt-6 text-sm md:text-base text-white/90 max-w-2xl leading-relaxed font-normal">
             A full spectrum of physical, electronic, and digital protective services engineered to eliminate vulnerabilities and safeguard modern enterprises.
           </p>
         </div>
       </section>
 
       {/* Services Detailed List */}
-      <section className="py-24 bg-[#070c14]">
+      <section className="py-24 bg-[#f8f6f0]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
           
-          {SERVICES_DETAILED.map((service) => {
-            return (
-              <div
-                key={service.id}
-                id={service.id}
-                className="border border-white/10 bg-[#0e1724] p-8 md:p-12 transition-all hover:border-accent-gold/40 shadow-xl"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  
-                  {/* Left Column: Number & Title */}
-                  <div className="lg:col-span-4">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-sm font-mono font-bold bg-accent-gold text-[#070c14] px-3 py-1">
-                        {service.num}
-                      </span>
-                      <span className="text-[10px] font-mono tracking-widest text-accent-gold uppercase font-bold">
-                        CORE SERVICE
-                      </span>
-                    </div>
+          {SERVICES_DETAILED.map((service, index) => {
+            const isDark = index % 2 === 0;
 
-                    <h2 className="text-2xl md:text-3xl font-sans font-bold text-white tracking-tight mb-3">
-                      {service.title}
-                    </h2>
+            if (isDark) {
+              // DARK CARD (Navy Blue background with White & Gold text)
+              return (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className="border border-[#0e1b30] bg-[#0e1b30] text-white p-8 md:p-12 transition-all hover:border-accent-gold/50 shadow-xl"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="lg:col-span-4">
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className="text-sm font-bold bg-accent-gold text-[#0e1b30] px-3.5 py-1">
+                          {service.num}
+                        </span>
+                        <span className="text-[10px] font-bold tracking-widest text-accent-gold uppercase">
+                          CORE SERVICE
+                        </span>
+                      </div>
 
-                    <p className="text-xs font-bold text-accent-gold font-sans leading-relaxed mb-6">
-                      {service.tagline}
-                    </p>
+                      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-3">
+                        {service.title}
+                      </h2>
 
-                    <div className="bg-[#070c14] p-4 border-l-2 border-accent-gold text-[12px] text-white/85 font-medium font-sans leading-relaxed">
-                      {service.highlight}
-                    </div>
-                  </div>
+                      <p className="text-xs font-bold text-accent-gold leading-relaxed mb-6">
+                        {service.tagline}
+                      </p>
 
-                  {/* Right Column: Deep Description & Capabilities */}
-                  <div className="lg:col-span-8 flex flex-col justify-between h-full">
-                    <p className="text-xs md:text-sm text-white/90 font-normal leading-relaxed mb-8">
-                      {service.description}
-                    </p>
-
-                    <div>
-                      <h3 className="text-xs font-mono font-bold text-accent-gold uppercase tracking-wider mb-4">
-                        KEY CAPABILITIES AND DEPLOYMENT PARAMETERS
-                      </h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {service.capabilities.map((cap) => (
-                          <div key={cap} className="flex items-start gap-2.5 text-xs text-white/90 font-normal leading-relaxed bg-[#070c14] border border-white/10 p-3.5 shadow-sm">
-                            <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0 mt-0.5" />
-                            <span>{cap}</span>
-                          </div>
-                        ))}
+                      <div className="bg-[#091322] p-4 border-l-2 border-accent-gold text-[12px] text-white/90 font-medium leading-relaxed">
+                        {service.highlight}
                       </div>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-                      <span className="text-[10px] font-mono text-white/60 uppercase tracking-widest font-bold">
-                        AVAILABLE NATIONWIDE IN SRI LANKA
-                      </span>
-                      <a
-                        href="/contact"
-                        className="inline-flex items-center gap-2 text-xs font-bold font-mono text-accent-gold hover:text-white transition-colors"
-                      >
-                        DEPLOY SERVICE
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
+                    <div className="lg:col-span-8 flex flex-col justify-between h-full">
+                      <p className="text-xs md:text-sm text-white/90 font-normal leading-relaxed mb-8">
+                        {service.description}
+                      </p>
+
+                      <div>
+                        <h3 className="text-xs font-bold text-accent-gold uppercase tracking-wider mb-4">
+                          KEY CAPABILITIES AND DEPLOYMENT PARAMETERS
+                        </h3>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {service.capabilities.map((cap) => (
+                            <div key={cap} className="flex items-start gap-2.5 text-xs text-white/90 font-normal leading-relaxed bg-[#091322] border border-white/10 p-3.5 shadow-sm">
+                              <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0 mt-0.5" />
+                              <span>{cap}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span className="text-[10px] text-white/70 uppercase tracking-widest font-bold">
+                          AVAILABLE NATIONWIDE IN SRI LANKA
+                        </span>
+                        <a
+                          href="/contact"
+                          className="inline-flex items-center gap-2 text-xs font-bold text-accent-gold hover:text-white transition-colors"
+                        >
+                          DEPLOY SERVICE
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
                     </div>
                   </div>
-
                 </div>
-              </div>
-            );
+              );
+            } else {
+              // LIGHT CARD (White background with solid Dark Navy Blue #0e1b30 text)
+              return (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className="border border-[#e5e0d8] bg-white text-[#0e1b30] p-8 md:p-12 transition-all hover:border-accent-gold shadow-md"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="lg:col-span-4">
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className="text-sm font-bold bg-[#0e1b30] text-accent-gold px-3.5 py-1">
+                          {service.num}
+                        </span>
+                        <span className="text-[10px] font-bold tracking-widest text-accent-gold uppercase">
+                          CORE SERVICE
+                        </span>
+                      </div>
+
+                      <h2 className="text-2xl md:text-3xl font-bold text-[#0e1b30] tracking-tight mb-3">
+                        {service.title}
+                      </h2>
+
+                      <p className="text-xs font-bold text-accent-gold leading-relaxed mb-6">
+                        {service.tagline}
+                      </p>
+
+                      <div className="bg-[#f8f6f0] p-4 border-l-2 border-accent-gold text-[12px] text-[#0e1b30] font-semibold leading-relaxed">
+                        {service.highlight}
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-8 flex flex-col justify-between h-full">
+                      <p className="text-xs md:text-sm text-[#0e1b30] font-normal leading-relaxed mb-8">
+                        {service.description}
+                      </p>
+
+                      <div>
+                        <h3 className="text-xs font-bold text-[#0e1b30] uppercase tracking-wider mb-4">
+                          KEY CAPABILITIES AND DEPLOYMENT PARAMETERS
+                        </h3>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {service.capabilities.map((cap) => (
+                            <div key={cap} className="flex items-start gap-2.5 text-xs text-[#0e1b30] font-medium leading-relaxed bg-[#f8f6f0] border border-[#e5e0d8] p-3.5 shadow-sm">
+                              <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0 mt-0.5" />
+                              <span>{cap}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="mt-8 pt-6 border-t border-[#e5e0d8] flex items-center justify-between">
+                        <span className="text-[10px] text-[#0e1b30]/70 uppercase tracking-widest font-bold">
+                          AVAILABLE NATIONWIDE IN SRI LANKA
+                        </span>
+                        <a
+                          href="/contact"
+                          className="inline-flex items-center gap-2 text-xs font-bold text-[#0e1b30] hover:text-accent-gold transition-colors"
+                        >
+                          DEPLOY SERVICE
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
           })}
 
         </div>
       </section>
 
       {/* CTA Footer */}
-      <section className="py-20 bg-[#0b121c] text-white text-center border-t border-white/10">
+      <section className="py-20 bg-[#0e1b30] text-white text-center border-t border-white/10">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-sans font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             NEED A CUSTOM SECURITY BLUEPRINT FOR YOUR FACILITY?
           </h2>
-          <p className="text-xs text-white/80 mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs md:text-sm text-white/85 mb-8 max-w-xl mx-auto leading-relaxed font-normal">
             Our technical advisers will perform an exhaustive risk evaluation and structure an integrated protective package.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 bg-accent-gold text-[#070c14] px-8 py-3.5 text-xs font-bold font-mono tracking-widest hover:bg-white transition-all duration-300 shadow-md"
+            className="inline-flex items-center gap-3 bg-accent-gold text-[#0e1b30] px-8 py-3.5 text-xs font-bold tracking-widest hover:bg-white transition-all duration-300 shadow-md"
           >
             REQUEST PROPOSAL
             <ArrowRight className="w-4 h-4" />
