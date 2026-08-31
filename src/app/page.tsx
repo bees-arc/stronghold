@@ -311,11 +311,8 @@ export default function Home() {
         {/* Content Layout Grid (places text over the split background) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full relative z-10">
           {/* Left Content - Gold side */}
-          <div className="p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-between text-[#0e1b30] h-full">
+          <div className="p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-between text-[#0e1b30] h-full relative z-10">
             <div>
-              <span className="font-sans text-[10px] font-bold tracking-[0.25em] text-[#0e1b30]/65 uppercase block">
-                01 / COMPANY
-              </span>
               <h2 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-8 mb-6 max-w-sm xl:max-w-md">
                 SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
               </h2>
@@ -332,14 +329,14 @@ export default function Home() {
           </div>
 
           {/* Right Content - Navy side */}
-          <div className="p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white h-full relative">
+          <div className="p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white h-full relative z-30">
             {/* Top Tagline */}
-            <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-end text-right">
+            <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-end text-right mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
             </span>
 
             {/* Bottom Quote block */}
-            <div className="mt-auto max-w-sm xl:max-w-md">
+            <div className="mt-auto max-w-sm xl:max-w-md relative z-30 self-end text-right">
               <p className="text-base md:text-lg lg:text-lg xl:text-xl font-sans font-extrabold leading-tight uppercase tracking-wide text-white">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
@@ -348,17 +345,17 @@ export default function Home() {
               </cite>
             </div>
           </div>
-        </div>
 
-        {/* 3D Overlapping Lady Cutout Overlay */}
-        <div className="absolute inset-x-0 bottom-0 top-20 w-[88%] mx-auto pointer-events-none z-20 hidden lg:block">
-          <Image
-            src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
-            alt="Overlapping Design Element"
-            fill
-            className="object-contain object-center transition-transform duration-700 hover:scale-101"
-            priority
-          />
+          {/* 3D Overlapping Lady Cutout Overlay (rendered inside the grid to control stacking sibling context) */}
+          <div className="absolute inset-x-0 bottom-0 top-24 w-[88%] mx-auto translate-x-12 pointer-events-none z-20 hidden lg:block h-[calc(100%-6rem)]">
+            <Image
+              src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
+              alt="Overlapping Design Element"
+              fill
+              className="object-contain object-center transition-transform duration-700 hover:scale-101"
+              priority
+            />
+          </div>
         </div>
 
         {/* Mobile View Image */}
