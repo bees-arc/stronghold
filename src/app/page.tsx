@@ -391,14 +391,15 @@ export default function Home() {
             
             {/* Businesses & Corporations — NAVY featured card */}
             <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden">
+              <img src="/card-businesses.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="flex flex-col justify-between h-full relative z-10">
                 <div>
                   <div className="w-8 h-[2px] bg-accent-gold mb-6" />
                   <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
-                    BUSINESSES & CORPORATIONS
+                    BUSINESSES &amp; CORPORATIONS
                   </h3>
                 </div>
-                <p className="text-xs font-sans text-white/60 max-w-md mt-8 relative z-10 leading-relaxed">
+                <p className="text-xs font-sans text-white/60 max-w-md mt-8 leading-relaxed">
                   Integrated protection for offices, corporate headquarters, properties, facilities and operations.
                 </p>
               </div>
@@ -406,7 +407,7 @@ export default function Home() {
 
             {/* Institutions */}
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
-              <BentoVisual type="institutions" />
+              <img src="/card-institutions.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
                   INSTITUTIONS
@@ -419,10 +420,10 @@ export default function Home() {
 
             {/* Private & Residential */}
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
-              <BentoVisual type="residential" />
+              <img src="/card-residential.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
-                  PRIVATE & RESIDENTIAL
+                  PRIVATE &amp; RESIDENTIAL
                 </h3>
               </div>
               <p className="text-xs font-sans text-accent-navy/60 mt-8 relative z-10 leading-relaxed">
@@ -432,7 +433,7 @@ export default function Home() {
 
             {/* Digital Infrastructure — NAVY featured card */}
             <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden">
-              <BentoVisual type="digital" />
+              <img src="/card-digital.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="relative z-10">
                 <div className="w-8 h-[2px] bg-accent-gold mb-4" />
                 <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
@@ -446,7 +447,7 @@ export default function Home() {
 
             {/* Events */}
             <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-navy/20 transition-all duration-500 relative group overflow-hidden">
-              <BentoVisual type="events" />
+              <img src="/card-events.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-sans font-bold text-accent-navy tracking-tight">
                   EVENTS
@@ -459,7 +460,7 @@ export default function Home() {
 
             {/* People — GOLD accent card */}
             <div className="bento-card-interactive md:col-span-3 bg-accent-gold border border-accent-gold p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:bg-accent-gold/90 transition-all duration-500 relative group overflow-hidden">
-              <BentoVisual type="people" />
+              <img src="/card-people.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-sans font-semibold text-white tracking-tight">
                   PEOPLE

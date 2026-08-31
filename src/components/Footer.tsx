@@ -6,25 +6,25 @@ export default function Footer() {
 
   const links = {
     services: [
-      { name: "Man Guard Security", href: "#services" },
-      { name: "Special Event Security", href: "#services" },
-      { name: "Cybersecurity Services", href: "#services" },
-      { name: "Electronic Security Solutions", href: "#services" },
-      { name: "CCTV & Sensor Systems", href: "#services" },
-      { name: "24/7 Monitoring & Response", href: "#services" },
+      { name: "Man Guard Security", href: "/services#man-guard" },
+      { name: "Special Event Security", href: "/services#special-events" },
+      { name: "Cybersecurity Services", href: "/services#cybersecurity" },
+      { name: "Electronic Security Solutions", href: "/services#electronic-security" },
+      { name: "CCTV & Sensor Systems", href: "/services#cctv-sensors" },
+      { name: "24/7 Monitoring & Response", href: "/services#monitoring-response" },
     ],
     company: [
-      { name: "Overview", href: "#overview" },
-      { name: "Services Portfolio", href: "#services" },
-      { name: "Our Core Advantage", href: "#advantage" },
-      { name: "Operations Timeline", href: "#timeline" },
-      { name: "Executive Leadership", href: "#leadership" },
+      { name: "Overview & Hero", href: "/" },
+      { name: "About & Leadership", href: "/about" },
+      { name: "What We Protect", href: "/portfolio" },
+      { name: "Operational Process", href: "/process" },
+      { name: "Contact & Headquarters", href: "/contact" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
-      { name: "Operational Licenses", href: "#" },
-      { name: "Certifications", href: "#" },
+      { name: "Privacy Policy", href: "/contact" },
+      { name: "Terms of Service", href: "/contact" },
+      { name: "Operational Licenses", href: "/about" },
+      { name: "Defence Ministry Approval", href: "/about" },
     ],
   };
 
@@ -38,7 +38,7 @@ export default function Footer() {
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <a href="#" className="flex items-center gap-3 group w-fit">
+            <a href="/" className="flex items-center gap-3 group w-fit">
               <Logo className="w-12 h-14" />
               <div className="flex flex-col">
                 <span className="text-base font-bold tracking-[0.25em] text-accent-navy leading-none font-sans">
@@ -57,18 +57,18 @@ export default function Footer() {
             <div className="flex flex-col gap-3 font-sans mt-4">
               <div className="flex items-center gap-3 text-xs text-accent-navy/70">
                 <MapPin className="w-4 h-4 text-accent-navy/40 shrink-0" />
-                <span>No. 45, Galle Road, Colombo 03, Sri Lanka</span>
+                <span>No 49, New Jayaweera Mawatha, Athulkotte, Sri Jayawardenepura, Sri Lanka</span>
               </div>
               <div className="flex items-center gap-3 text-xs text-accent-navy/70">
                 <Phone className="w-4 h-4 text-accent-navy/40 shrink-0" />
-                <a href="tel:+94117654321" className="hover:text-accent-gold transition-colors">
-                  +94 11 765 4321
+                <a href="tel:+94773358619" className="hover:text-accent-gold transition-colors">
+                  +94 77 335 8619
                 </a>
               </div>
               <div className="flex items-center gap-3 text-xs text-accent-navy/70">
                 <Mail className="w-4 h-4 text-accent-navy/40 shrink-0" />
-                <a href="mailto:intelligence@strongholds.lk" className="hover:text-accent-gold transition-colors">
-                  intelligence@strongholds.lk
+                <a href="mailto:strongholds696@gmail.com" className="hover:text-accent-gold transition-colors">
+                  strongholds696@gmail.com
                 </a>
               </div>
             </div>
