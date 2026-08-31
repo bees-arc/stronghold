@@ -299,51 +299,77 @@ export default function Home() {
       </section>
 
       {/* 2. INTRO EDITORIAL SECTION */}
-      <section className="min-h-screen py-24 md:py-32 bg-surface-ivory border-b border-border-thin relative overflow-hidden flex flex-col">
-        {/* Radar sweep ambient background */}
-        <div className="radar-sweep opacity-[0.02]" />
+      <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full lg:h-screen lg:max-h-screen">
+        {/* Split Background Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full absolute inset-0 z-0">
+          {/* Left Column - Gold Panel */}
+          <div className="bg-accent-gold h-full w-full" />
+          {/* Right Column - Navy Panel */}
+          <div className="bg-[#0e1b30] h-full w-full" />
+        </div>
 
-        <div className="flex-1 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
-          
-          {/* Text content column */}
-          <div className="lg:col-span-6 flex flex-col items-start justify-center">
+        {/* Content Layout Grid (places text over the split background) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full relative z-10">
+          {/* Left Content - Gold side */}
+          <div className="p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-between text-[#0e1b30] h-full">
+            <div>
+              <span className="font-sans text-[10px] font-bold tracking-[0.25em] text-[#0e1b30]/65 uppercase block">
+                01 / COMPANY
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-8 mb-6 max-w-sm xl:max-w-md">
+                SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
+              </h2>
+            </div>
+            
+            <div className="flex flex-col gap-5 max-w-sm xl:max-w-md text-[#0e1b30]/85 text-xs md:text-sm xl:text-base font-sans leading-relaxed mt-6 lg:mt-auto">
+              <p>
+                Today’s risks move faster, become more complex and exist across both physical and digital environments.
+              </p>
+              <p>
+                At Stronghold, we combine strategic foresight, disciplined professionals and advanced technology to build protection systems designed to anticipate risks before they become incidents.
+              </p>
+            </div>
+          </div>
 
-            <h2 className="text-3xl md:text-4xl font-serif text-accent-navy leading-tight mt-4 font-light">
-              SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
-            </h2>
-            <p className="text-base md:text-lg font-serif font-light text-accent-navy/80 leading-relaxed mt-8 mb-6">
-              Today’s risks move faster, become more complex and exist across both physical and digital environments.
-            </p>
-            <p className="text-sm font-sans text-accent-navy/60 leading-relaxed max-w-xl mb-8">
-              At Stronghold, we combine strategic foresight, disciplined professionals and advanced technology to build protection systems designed to anticipate risks before they become incidents.
-            </p>
+          {/* Right Content - Navy side */}
+          <div className="p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white h-full relative">
+            {/* Top Tagline */}
+            <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-end text-right">
+              RELIABLE / PROFESSIONAL / ACCOUNTABLE
+            </span>
 
-            <blockquote className="border-l-2 border-accent-gold pl-6 py-1 relative">
-              <p className="text-xl md:text-2xl text-accent-navy italic leading-snug">
+            {/* Bottom Quote block */}
+            <div className="mt-auto max-w-sm xl:max-w-md">
+              <p className="text-base md:text-lg lg:text-lg xl:text-xl font-sans font-extrabold leading-tight uppercase tracking-wide text-white">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
-              <cite className="block mt-3 font-mono text-[9px] text-accent-navy/40 tracking-[0.25em] not-italic">
+              <cite className="block mt-3 font-mono text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
                 STRONGHOLD OPERATIONAL COMMAND
               </cite>
-            </blockquote>
+            </div>
           </div>
+        </div>
 
-          {/* Image column */}
-          <div className="lg:col-span-6 w-full self-center relative overflow-hidden group min-h-[320px] max-h-[560px]">
-              {/* Gold accent bar */}
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent-gold z-10" />
-              <Image
-                src="/bodyguard.jpg"
-                alt="Stronghold Security — Professional Protection"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
-              {/* Subtle bottom fade */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
-          </div>
+        {/* 3D Overlapping Lady Cutout Overlay */}
+        <div className="absolute inset-x-0 bottom-0 top-20 w-[88%] mx-auto pointer-events-none z-20 hidden lg:block">
+          <Image
+            src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
+            alt="Overlapping Design Element"
+            fill
+            className="object-contain object-center transition-transform duration-700 hover:scale-101"
+            priority
+          />
+        </div>
 
+        {/* Mobile View Image */}
+        <div className="lg:hidden w-[90%] mx-auto aspect-[3/2] relative overflow-hidden bg-[#0e1b30] my-8">
+          <Image
+            src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
+            alt="Overlapping Design Element"
+            fill
+            className="object-contain object-center"
+            priority
+          />
         </div>
       </section>
 
