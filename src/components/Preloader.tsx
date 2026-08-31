@@ -102,11 +102,11 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             variants={textVariants}
             initial="initial"
             animate="animate"
-            className="flex flex-col items-center gap-4"
+            className="flex flex-col items-center gap-1"
           >
-            <Logo className="w-28 h-32 text-[#0e1b30]" />
+            <Logo className="w-64 h-64 text-[#0e1b30]" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans mt-3">
+              <span className="text-2xl font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans">
                 STRONGHOLD
               </span>
               <span className="text-[10px] tracking-[0.22em] text-[#0e1b30]/60 font-semibold leading-none mt-2 font-sans">
