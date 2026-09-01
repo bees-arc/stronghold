@@ -207,16 +207,18 @@ export default function Home() {
       {/* 1. HERO SECTION (Sentinel Bodyguard Editorial Layout) */}
       <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-navy-dark text-white border-b border-border-thin font-jakarta">
         
-        {/* Full-bleed Hero Video Background */}
+        {/* Full-bleed Hero Video Background (Continuous Seamless Loop) */}
         <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none overflow-hidden">
           <video
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             poster="/bodyguard.jpg"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out] pointer-events-none"
           >
+            <source src="/hero-video.mp4" type="video/mp4" />
             <source src="/drive-images/0830.mp4" type="video/mp4" />
           </video>
           {/* Left-to-right gradient overlay to darken the text side and fade the video on the right */}
@@ -616,63 +618,127 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. SECURE CODE MATRICES (Core Values Layout) */}
-      <section className="py-24 md:py-32 bg-surface-grey border-b border-border-thin relative">
+      {/* 6. SECURE CODE MATRICES (Core Values Layout - Sleek Dark Tactical Luxury) */}
+      <section className="py-24 md:py-32 bg-[#080e1a] border-b border-white/10 relative overflow-hidden text-white">
         <div className="absolute inset-0 grid-lines opacity-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-gold/10 via-transparent to-transparent pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-stretch">
             
             {/* Value Selectors (Left Panel) */}
             <div className="lg:col-span-5 flex flex-col justify-between">
               <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-[10px] font-mono font-bold tracking-[0.25em] uppercase mb-4">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>OPERATIONAL CODE &amp; PRINCIPLES</span>
+                </div>
 
-                <h2 className="text-3xl md:text-4xl font-sans font-black text-accent-navy tracking-tight mt-4 mb-12">
-                  OUR CORE ETHOS
+                <h2 className="text-3xl md:text-5xl font-sans font-black text-white tracking-tight mt-2 mb-8 uppercase">
+                  OUR CORE <span className="text-accent-gold">VALUES</span>
                 </h2>
                 
                 <div className="flex flex-col gap-3 font-sans">
-                  {CORE_VALUES.map((val) => (
-                    <button
-                      key={val.id}
-                      onClick={() => setActiveValue(val)}
-                      className={`text-left p-5 border transition-all duration-300 rounded-sm flex items-center justify-between group ${
-                        activeValue.id === val.id
-                          ? "bg-background border-accent-navy shadow-sm"
-                          : "bg-background/40 border-border-thin/40 opacity-75 hover:opacity-100"
-                      }`}
-                    >
-                      <span className="text-xs font-bold tracking-widest text-accent-navy">{val.title}</span>
-                    </button>
-                  ))}
+                  {CORE_VALUES.map((val, idx) => {
+                    const isActive = activeValue.id === val.id;
+                    return (
+                      <button
+                        key={val.id}
+                        onClick={() => setActiveValue(val)}
+                        className={`text-left p-4 sm:p-5 border transition-all duration-300 rounded-sm flex items-center justify-between group relative overflow-hidden cursor-pointer ${
+                          isActive
+                            ? "bg-[#0f1d33] border-accent-gold text-white shadow-2xl translate-x-2"
+                            : "bg-[#0b1424]/80 border-white/10 text-white/70 hover:bg-[#0f1d33] hover:border-accent-gold/40 hover:text-white hover:translate-x-1 shadow-sm"
+                        }`}
+                      >
+                        {isActive && (
+                          <div className="w-1.5 h-full bg-accent-gold absolute left-0 top-0" />
+                        )}
+                        <div className="flex items-center gap-4 pl-2">
+                          <span className={`font-mono text-xs font-bold ${isActive ? "text-accent-gold" : "text-white/40 group-hover:text-accent-gold transition-colors"}`}>
+                            0{idx + 1}
+                          </span>
+                          <span className={`text-xs font-bold tracking-widest uppercase ${isActive ? "text-white" : "text-white/80"}`}>
+                            {val.title}
+                          </span>
+                        </div>
+                        <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${isActive ? "text-accent-gold translate-x-0.5" : "text-white/30 group-hover:text-white group-hover:translate-x-0.5"}`} />
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-
-            </div>
-
-            {/* Readout Terminal (Right Panel) */}
-            <div className="lg:col-span-7 bg-background border border-border-thin p-8 md:p-12 rounded-sm flex flex-col justify-between min-h-[380px]">
-              <div className="flex items-center justify-end border-b border-border-thin pb-4">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 bg-accent-gold rounded-full" />
+              <div className="hidden lg:flex items-center gap-3 pt-8 mt-8 border-t border-white/10">
+                <span className="w-2 h-2 rounded-full bg-accent-gold animate-pulse" />
+                <span className="text-[11px] font-mono text-white/60 uppercase tracking-widest">
+                  SELECT ANY CORE VALUE TO REVIEW PRINCIPLE
                 </span>
               </div>
+            </div>
 
-              <div className="my-8">
-                <h3 className="text-2xl md:text-3xl font-serif italic text-accent-navy leading-tight mb-4">
-                  {activeValue.title}
-                </h3>
-                <p className="text-sm font-sans font-semibold text-accent-navy/80 mb-6">
-                  {activeValue.definition}
-                </p>
-                <p className="text-xs font-sans text-accent-navy/60 leading-relaxed">
-                  {activeValue.details}
-                </p>
+            {/* Readout Terminal (Right Panel with Stronghold Watermark Logo) */}
+            <div className="lg:col-span-7 bg-[#0d182b] border border-white/15 p-8 md:p-12 rounded-sm flex flex-col justify-between min-h-[440px] shadow-2xl relative overflow-hidden group hover:border-accent-gold/40 transition-all duration-500">
+              {/* Large Stronghold Shield Watermark */}
+              <div className="absolute -right-8 bottom-0 md:-right-4 md:bottom-2 w-80 h-80 md:w-[400px] md:h-[400px] pointer-events-none select-none opacity-[0.07] group-hover:opacity-[0.10] transition-all duration-700">
+                <Image
+                  src="/logo.svg"
+                  alt="Stronghold Emblem Watermark"
+                  fill
+                  className="object-contain object-bottom-right"
+                />
               </div>
 
+              {/* Card Top Directive Bar */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
+                <div className="flex items-center gap-2.5 text-[10px] font-mono font-bold tracking-[0.25em] text-accent-gold uppercase">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-gold opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-gold"></span>
+                  </span>
+                  VALUE DIRECTIVE // {activeValue.id}
+                </div>
+                <div className="text-[10px] font-mono tracking-widest text-white/40 uppercase font-semibold">
+                  STRONGHOLD DOCTRINE
+                </div>
+              </div>
 
+              {/* Dynamic Content with AnimatePresence */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeValue.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="my-8 relative z-10"
+                >
+                  <div className="w-10 h-1 bg-accent-gold mb-6 rounded-full" />
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white uppercase tracking-tight mb-4">
+                    {activeValue.title}
+                  </h3>
+                  <p className="text-base sm:text-lg font-sans font-bold text-accent-gold leading-relaxed mb-6 max-w-xl">
+                    {activeValue.definition}
+                  </p>
+                  <p className="text-xs sm:text-sm font-sans text-white/80 leading-relaxed max-w-2xl font-normal">
+                    {activeValue.details}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Card Footer Status */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-6 border-t border-white/10 relative z-10">
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck className="w-4 h-4 text-accent-gold shrink-0" />
+                  <span className="text-[10px] font-mono tracking-[0.18em] uppercase text-white/70 font-bold">
+                    ENFORCED IN ALL FIELD OPERATIONS
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono tracking-widest text-accent-gold font-bold uppercase">
+                  ZERO TOLERANCE
+                </span>
+              </div>
             </div>
 
           </div>
