@@ -22,7 +22,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-navy-dark",
     textColor: "text-white",
     accentColor: "text-accent-gold",
-    image: "/card-businesses.jpg",
+    image: "/images/sectors/businesses.png",
     protectiveMeasures: [
       "Access control gating with biometric turnstiles and visitor logging",
       "Executive suite safeguarding and confidential meeting room sweeps",
@@ -44,7 +44,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-surface-ivory",
     textColor: "text-accent-navy",
     accentColor: "text-accent-gold",
-    image: "/card-institutions.jpg",
+    image: "/images/sectors/institutions.png",
     protectiveMeasures: [
       "Dedicated checkpoint management and bag screening stations",
       "Campus perimeter roving patrols on scheduled and randomized shifts",
@@ -66,7 +66,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-surface-ivory",
     textColor: "text-accent-navy",
     accentColor: "text-accent-gold",
-    image: "/card-residential.jpg",
+    image: "/images/sectors/residential.png",
     protectiveMeasures: [
       "Gatehouse sentry guards screening all visiting vehicles and contractors",
       "Infrared tripwire barriers and boundary motion detectors along property walls",
@@ -88,7 +88,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-navy-dark",
     textColor: "text-white",
     accentColor: "text-accent-gold",
-    image: "/card-digital.jpg",
+    image: "/images/sectors/digital.png",
     protectiveMeasures: [
       "Regular vulnerability assessments and network security reviews",
       "24/7 Security Operations Center monitoring for unauthorized access attempts",
@@ -110,7 +110,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-surface-ivory",
     textColor: "text-accent-navy",
     accentColor: "text-accent-gold",
-    image: "/card-events.jpg",
+    image: "/images/sectors/events.png",
     protectiveMeasures: [
       "Turnstile metal detection arches and manual security sweeps",
       "VIP green room security and stage perimeter barricade defense",
@@ -132,7 +132,7 @@ export const portfolioItems: PortfolioSector[] = [
     bgColor: "bg-accent-gold",
     textColor: "text-white",
     accentColor: "text-white",
-    image: "/card-people.jpg",
+    image: "/images/sectors/people.png",
     protectiveMeasures: [
       "Dedicated Bodyguard Close Protection Officers accompanying principals",
       "Advance route reconnaissance and alternative emergency path planning",

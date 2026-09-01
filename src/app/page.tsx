@@ -207,31 +207,22 @@ export default function Home() {
       {/* 1. HERO SECTION (Sentinel Bodyguard Editorial Layout) */}
       <section id="overview" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-navy-dark text-white border-b border-border-thin font-jakarta">
         
-        {/* Full-bleed Bodyguard Background Image */}
-        <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none">
-          <Image
-            src="/bodyguard.jpg"
-            alt="Sentinel Security Agent"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out]"
-          />
-          {/* Left-to-right gradient overlay to darken the text side and fade the image on the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050c18] via-transparent to-black/40" />
+        {/* Full-bleed Hero Video Background */}
+        <div className="absolute inset-0 w-full h-full bg-[#050a12] pointer-events-none overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/bodyguard.jpg"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out] pointer-events-none"
+          >
+            <source src="/drive-images/0830.mp4" type="video/mp4" />
+          </video>
+          {/* Left-to-right gradient overlay to darken the text side and fade the video on the right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050c18] via-transparent to-black/40 pointer-events-none" />
         </div>
-
-        {/* Live overlay video loop - screen blended for futuristic data plexus overlay */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-[0.03] mix-blend-screen pointer-events-none"
-        >
-          <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c040d73f1d8f1e29cf46c766e409ec8e&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
 
         {/* Subtle grid lines */}
         <div className="absolute inset-0 grid-lines opacity-10 pointer-events-none" />
@@ -390,13 +381,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
             
             {/* Businesses & Corporations — NAVY featured card */}
-            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
+            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
               <img 
-                src="/card-businesses.jpg" 
+                src="/images/sectors/businesses.png" 
                 alt="Corporate Guarding" 
                 aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
+                className="absolute inset-0 w-full h-full object-cover object-[80%_20%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/70 to-transparent pointer-events-none" />
               <div className="flex flex-col justify-between h-full relative z-10">
                 <div>
                   <div className="w-8 h-[2px] bg-accent-gold mb-6" />
@@ -404,94 +396,93 @@ export default function Home() {
                     BUSINESSES &amp; CORPORATIONS
                   </h3>
                 </div>
-                <p className="text-xs text-white/80 max-w-md mt-8 leading-relaxed font-normal">
+                <p className="text-xs text-white/90 max-w-md mt-8 leading-relaxed font-normal">
                   Integrated protection for offices, corporate headquarters, properties, facilities and operations.
                 </p>
               </div>
             </div>
 
             {/* Institutions */}
-            <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
+            <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
               <img 
-                src="/card-institutions.jpg" 
+                src="/images/sectors/institutions.png" 
                 alt="Institutional Security" 
                 aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
+                className="absolute inset-0 w-full h-full object-cover object-[75%_15%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-bold text-accent-navy tracking-tight">
                   INSTITUTIONS
                 </h3>
               </div>
-              <p className="text-xs text-accent-navy/80 mt-8 relative z-10 leading-relaxed font-normal">
+              <p className="text-xs text-accent-navy/85 mt-8 relative z-10 leading-relaxed font-normal">
                 Professional security strategies for complex, high-traffic institutional environments.
               </p>
             </div>
 
             {/* Private & Residential */}
-            <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
+            <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
               <img 
-                src="/card-residential.jpg" 
+                src="/images/sectors/residential.png" 
                 alt="Residential Security" 
                 aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
+                className="absolute inset-0 w-full h-full object-cover object-[60%_35%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-bold text-accent-navy tracking-tight">
                   PRIVATE &amp; RESIDENTIAL
                 </h3>
               </div>
-              <p className="text-xs text-accent-navy/80 mt-8 relative z-10 leading-relaxed font-normal">
+              <p className="text-xs text-accent-navy/85 mt-8 relative z-10 leading-relaxed font-normal">
                 Reliable protection for residential properties, communities and personal estates.
               </p>
             </div>
 
             {/* Digital Infrastructure — NAVY featured card */}
-            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
+            <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
               <img 
-                src="/card-digital.jpg" 
+                src="/images/sectors/digital.png" 
                 alt="Digital Infrastructure" 
                 aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
+                className="absolute inset-0 w-full h-full object-cover object-[75%_25%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/70 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <div className="w-8 h-[2px] bg-accent-gold mb-4" />
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   DIGITAL INFRASTRUCTURE
                 </h3>
               </div>
-              <p className="text-xs text-white/80 max-w-sm mt-8 relative z-10 leading-relaxed font-normal">
+              <p className="text-xs text-white/90 max-w-sm mt-8 relative z-10 leading-relaxed font-normal">
                 Cybersecurity diagnostics and resilience parameters for modern digital networks.
               </p>
             </div>
 
             {/* Events */}
-            <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
+            <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
               <img 
-                src="/card-events.jpg" 
+                src="/images/sectors/events.png" 
                 alt="Event Security" 
                 aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
+                className="absolute inset-0 w-full h-full object-cover object-[50%_25%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
                 <h3 className="text-xl font-bold text-accent-navy tracking-tight">
                   EVENTS
                 </h3>
               </div>
-              <p className="text-xs text-accent-navy/80 mt-8 relative z-10 leading-relaxed font-normal">
+              <p className="text-xs text-accent-navy/85 mt-8 relative z-10 leading-relaxed font-normal">
                 Strategic crowd containment, check-point design, and protocol supervision for events.
               </p>
             </div>
 
-            {/* People — GOLD accent card */}
-            <div className="bento-card-interactive md:col-span-3 bg-accent-gold border border-accent-gold p-8 md:p-10 flex flex-col justify-between min-h-[300px] hover:bg-accent-gold/90 transition-all duration-500 relative group overflow-hidden shadow-lg">
-              <img 
-                src="/card-people.jpg" 
-                alt="VIP Close Protection" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700" 
-              />
+            {/* People — GOLD accent card (No image) */}
+            <div className="bento-card-interactive md:col-span-3 bg-accent-gold border border-accent-gold p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:bg-accent-gold/90 transition-all duration-500 relative group overflow-hidden shadow-lg">
               <div className="relative z-10">
+                <div className="w-8 h-[2px] bg-white mb-6" />
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   PEOPLE
                 </h3>
@@ -560,61 +551,61 @@ export default function Home() {
           {/* Advantage Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            {/* Pillar 1 — Navy */}
-            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/30 transition-all duration-500">
+            {/* Pillar 1 — MILITARY DISCIPLINE */}
+            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/40 transition-all duration-500 shadow-md">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 border border-accent-gold/30 flex items-center justify-center">
+                <div className="w-10 h-10 border border-accent-gold/30 bg-accent-gold/10 flex items-center justify-center">
                   <ShieldCheck className="w-4 h-4 text-accent-gold" />
                 </div>
               </div>
               <div>
                 <h3 className="text-sm font-bold tracking-wider text-white mt-8">MILITARY DISCIPLINE</h3>
-                <p className="text-xs font-sans text-accent-navy/60 leading-relaxed mt-4">
+                <p className="text-xs font-sans text-white/75 leading-relaxed mt-4">
                   Operations structured on rigorous army protocols, ensuring immediate accountability and zero margin of error.
                 </p>
               </div>
             </div>
 
-            {/* Pillar 2 */}
-            <div className="bg-surface-ivory border border-border-thin p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative">
+            {/* Pillar 2 — INTELLIGENT TECH */}
+            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/40 transition-all duration-500 shadow-md">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
-                  <Cpu className="w-4 h-4 text-accent-navy" />
+                <div className="w-10 h-10 border border-accent-gold/30 bg-accent-gold/10 flex items-center justify-center">
+                  <Cpu className="w-4 h-4 text-accent-gold" />
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">INTELLIGENT TECH</h3>
-                <p className="text-xs font-sans text-accent-navy/60 leading-relaxed mt-4">
+                <h3 className="text-sm font-bold tracking-wider text-white mt-8">INTELLIGENT TECH</h3>
+                <p className="text-xs font-sans text-white/75 leading-relaxed mt-4">
                   Surveillance streams backed by distance detectors, motion grids, and cybersecurity perimeter defense nodes.
                 </p>
               </div>
             </div>
 
-            {/* Pillar 3 */}
-            <div className="bg-surface-ivory border border-border-thin p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative">
+            {/* Pillar 3 — EX-MILITARY LEADERS */}
+            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/40 transition-all duration-500 shadow-md">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
-                  <Users className="w-4 h-4 text-accent-navy" />
+                <div className="w-10 h-10 border border-accent-gold/30 bg-accent-gold/10 flex items-center justify-center">
+                  <Users className="w-4 h-4 text-accent-gold" />
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">EX-MILITARY LEADERS</h3>
-                <p className="text-xs font-sans text-accent-navy/60 leading-relaxed mt-4">
+                <h3 className="text-sm font-bold tracking-wider text-white mt-8">EX-MILITARY LEADERS</h3>
+                <p className="text-xs font-sans text-white/75 leading-relaxed mt-4">
                   Tactical teams supervised and vetted by former officers from the Sri Lankan Armed Forces.
                 </p>
               </div>
             </div>
 
-            {/* Pillar 4 */}
-            <div className="bg-surface-ivory border border-border-thin p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative">
+            {/* Pillar 4 — PROACTIVE PATROLS */}
+            <div className="bg-navy-dark border border-navy-dark p-8 flex flex-col justify-between min-h-[280px] rounded-sm relative group hover:border-accent-gold/40 transition-all duration-500 shadow-md">
               <div className="flex justify-between items-start">
-                <div className="w-10 h-10 border border-accent-navy/15 flex items-center justify-center bg-white/40">
-                  <Compass className="w-4 h-4 text-accent-navy" />
+                <div className="w-10 h-10 border border-accent-gold/30 bg-accent-gold/10 flex items-center justify-center">
+                  <Compass className="w-4 h-4 text-accent-gold" />
                 </div>
               </div>
               <div>
-                <h3 className="text-sm font-bold tracking-wider text-accent-navy mt-8">PROACTIVE PATROLS</h3>
-                <p className="text-xs font-sans text-accent-navy/60 leading-relaxed mt-4">
+                <h3 className="text-sm font-bold tracking-wider text-white mt-8">PROACTIVE PATROLS</h3>
+                <p className="text-xs font-sans text-white/75 leading-relaxed mt-4">
                   24/7 Operations Command Center coordinating rapid physical response vehicle deployments.
                 </p>
               </div>
