@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* 2. INTRO EDITORIAL SECTION */}
-      <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full lg:h-screen lg:max-h-screen">
+      <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full min-h-[100dvh] lg:h-screen lg:max-h-screen flex flex-col">
         {/* Split Background Grid (Desktop) */}
         <div className="hidden lg:grid lg:grid-cols-2 w-full h-full absolute inset-0 z-0 pointer-events-none">
           {/* Left Column - Gold Panel */}
@@ -301,16 +301,16 @@ export default function Home() {
         </div>
 
         {/* Content Layout */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-full relative z-10">
-          {/* Left / Top Content - Gold side */}
-          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-center lg:justify-between text-[#0e1b30] lg:h-full relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-full min-h-[100dvh] lg:min-h-0 relative z-10 grow">
+          {/* Left / Top Content - Gold side (3/4 height on mobile, 50% width on desktop) */}
+          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-start lg:justify-between text-[#0e1b30] basis-[75%] lg:basis-auto lg:h-full relative z-10">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight lg:mt-8 mb-4 lg:mb-6 max-w-sm xl:max-w-md">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-2 sm:mt-6 lg:mt-8 mb-4 lg:mb-6 max-w-sm xl:max-w-md">
                 SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
               </h2>
             </div>
             
-            <div className="flex flex-col gap-3.5 sm:gap-5 max-w-sm xl:max-w-md text-[#0e1b30]/85 text-xs sm:text-sm xl:text-base font-sans leading-relaxed lg:mt-auto">
+            <div className="flex flex-col gap-3.5 sm:gap-5 max-w-sm xl:max-w-md text-[#0e1b30]/85 text-xs sm:text-sm xl:text-base font-sans leading-relaxed mt-2 lg:mt-auto">
               <p>
                 Today’s risks move faster, become more complex and exist across both physical and digital environments.
               </p>
@@ -320,19 +320,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right / Bottom Content - Navy side */}
-          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-center lg:justify-between text-white lg:h-full relative z-30">
+          {/* Right / Bottom Content - Navy side (1/4 height on mobile, 50% width on desktop) */}
+          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-center lg:justify-between text-white basis-[25%] lg:basis-auto lg:h-full relative z-30">
             {/* Top Tagline */}
-            <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-4 lg:mb-0 lg:mt-8">
+            <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-3 lg:mb-0 lg:mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
             </span>
 
             {/* Bottom Quote block */}
             <div className="lg:mt-auto max-w-sm xl:max-w-md relative z-30 self-start lg:self-end text-left lg:text-right">
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-sans font-extrabold leading-snug lg:leading-tight uppercase tracking-wide text-white">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-sans font-extrabold leading-tight uppercase tracking-wide text-white">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
-              <cite className="block mt-2 sm:mt-3 font-mono text-[8px] sm:text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
+              <cite className="block mt-1.5 sm:mt-3 font-mono text-[8px] sm:text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
                 STRONGHOLD OPERATIONAL COMMAND
               </cite>
             </div>
