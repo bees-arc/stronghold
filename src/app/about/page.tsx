@@ -35,39 +35,39 @@ const CORE_VALUES = [
 
 const LEADERSHIP_TEAM = [
   {
-    name: "Brigadier (Retd.) Nandana Weeratunga",
+    name: "Brigadier (Retd.) H. J. P. Weerathunga",
     role: "Chairman",
-    creds: "Former Senior Military Commander",
-    image: "/chairman.jpg",
-    bio: "With over three decades of distinguished military service, Brigadier Weeratunga leads Stronghold with strategic discipline, integrity, and operational foresight. He holds advanced postgraduate credentials in governance, information security, and occupational safety."
+    creds: "MSc (Information Security), MPA, Dip. (Occupational Health & Safety)",
+    image: "/team/chairman-circle.png",
+    bio: "Brigadier (Retired) Nandana Weeratunga, with over 30 years of distinguished military service, combines expertise in governance, cybersecurity, occupational safety, and networking. Holding an MPA, an MSc in Information Security, and diplomas in OHS and Networking, he excels in driving innovation, ensuring compliance, and delivering robust, integrated security solutions."
   },
   {
     name: "Major (Retd.) Muditha Kaluarachchi",
     role: "Technical Adviser",
-    creds: "Electronic Surveillance & Security Specialist",
-    image: "/guards.jpg",
-    bio: "An engineering specialist with extensive experience in CCTV planning, automated intrusion detection, and electronic access systems, ensuring all security installations are dependable and robust."
+    creds: "Engineering Specialist (Telecommunication & IT)",
+    image: "/team/technical-adviser-circle.png",
+    bio: "An engineering specialist in telecommunication and IT, with extensive experience in CCTV, intrusion detection, and advanced security automation. His analytical precision ensures Stronghold's systems remain innovative, reliable, and technologically superior."
   },
   {
     name: "Diduli Lihansika Weeratunga",
     role: "Director",
     creds: "Strategic Development & Human Resources",
-    image: "/chairman.jpg",
-    bio: "Directs organizational growth, talent development, and quality standards, ensuring our security guard corps maintains exceptional discipline and client satisfaction."
+    image: "/team/director-circle.png",
+    bio: "Leads strategic development, human resources, and administration. Her vision drives organisational agility, operational efficiency, and client satisfaction — ensuring Stronghold's services evolve in line with global trends."
   },
   {
     name: "K. M. N. P. Kulathunga",
     role: "Head of Cybersecurity",
-    creds: "Information Security & Threat Defense Specialist",
-    image: "/guards.jpg",
-    bio: "An experienced information security professional leading digital risk defense, network audits, and data protection for corporate and institutional clients."
+    creds: "BSc Applied Science, CEH v11, (ISC)² CC, AWS, Splunk, SentinelOne",
+    image: "/team/cybersecurity-circle.png",
+    bio: "A highly skilled cybersecurity professional with a BSc in Applied Science (Computer Science & Physics) and multiple global certifications, including CEH v11, (ISC)² Certified in Cybersecurity (CC), AWS Security Operations, Splunk Security Analytics, and SentinelOne Administration. Demonstrates advanced expertise in ethical hacking, threat detection, incident response, and cloud security management."
   },
   {
     name: "Squadron Leader (Retd.) KMM Iroshan",
-    role: "Fire Officer & Safety Specialist",
-    creds: "SLAF Veteran & Emergency Response Specialist",
-    image: "/bodyguard.jpg",
-    bio: "A retired Sri Lanka Air Force Fire Officer bringing extensive expertise in emergency preparedness, fire safety compliance, and crisis risk mitigation across public and private properties."
+    role: "Fire Officer",
+    creds: "SLAF Veteran, CBRN Squadron Leader (Retd.), MBA, PGD Strategic Mgmt (UK)",
+    image: "/team/fire-officer-circle.png",
+    bio: "Squadron Leader Niroshan (Ret.) offers an unparalleled foundation of strategic expertise and operational discipline forged during his service as a Fire Officer in the Sri Lanka Air Force (SLAF). His specialized credentials—including an MBA, PGD in Strategic Management (UK), and PGD in Defence Management (UOK)—ensure a robust, disciplined approach to security strategy and risk mitigation."
   }
 ];
 
@@ -138,17 +138,20 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-4">
-            <div className="relative aspect-[3/4] bg-[#0e1b30] border border-[#0e1b30] overflow-hidden shadow-xl">
-              <Image
-                src="/chairman.jpg"
-                alt="Brigadier (Retd.) Nandana Weeratunga"
-                fill
-                className="object-cover object-top"
-              />
+            <div className="relative aspect-[3/4] bg-[#0e1b30] border border-[#0e1b30] overflow-hidden shadow-xl flex items-center justify-center p-6">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/team/chairman.png"
+                  alt="Brigadier (Retd.) H. J. P. Weerathunga"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e1b30] via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[10px] font-bold tracking-widest text-accent-gold uppercase block mb-1">CHAIRMAN</span>
-                <p className="text-base font-bold">Brigadier (Retd.) Nandana Weeratunga</p>
+                <p className="text-base font-bold">Brigadier (Retd.) H. J. P. Weerathunga</p>
+                <p className="text-[11px] text-accent-gold/90 font-medium">MSc, MPA, Dip. (OHS)</p>
               </div>
             </div>
           </div>
@@ -174,7 +177,7 @@ export default function AboutPage() {
 
             <div className="mt-8 pt-6 border-t border-[#e5e0d8] flex items-center justify-between">
               <div>
-                <p className="font-bold text-[#0e1b30] text-base">Brigadier (Retd.) Nandana Weeratunga</p>
+                <p className="font-bold text-[#0e1b30] text-base">Brigadier (Retd.) H. J. P. Weerathunga</p>
                 <p className="text-xs text-[#0e1b30]/70 font-semibold mt-0.5">Chairman, Stronghold Security &amp; Investigation (Pvt) Ltd</p>
               </div>
               <div className="w-10 h-10 rounded-full border-2 border-accent-gold flex items-center justify-center text-accent-gold">
@@ -229,22 +232,38 @@ export default function AboutPage() {
               EXECUTIVE LEADERSHIP TEAM
             </h2>
             <p className="text-xs md:text-sm text-white/80 mt-4 leading-relaxed font-normal">
-              Led by decorated senior military officers bringing strategic discipline and operational excellence to private defense.
+              Led by decorated senior military officers and industry specialists bringing strategic discipline, cybersecurity, and operational excellence to private defense.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {LEADERSHIP_TEAM.map((member) => (
-              <div key={member.name} className="bg-[#0b1424] border border-white/10 p-8 flex flex-col justify-between group hover:border-accent-gold transition-colors shadow-lg">
+              <div key={member.name} className="bg-[#0b1424] border border-white/10 p-8 flex flex-col justify-between group hover:border-accent-gold transition-all duration-300 shadow-lg">
                 <div>
-                  <span className="text-[10px] font-bold text-accent-gold tracking-widest uppercase block mb-2">{member.role}</span>
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent-gold transition-colors">{member.name}</h3>
-                  <p className="text-xs text-accent-gold/90 mt-1 mb-6 pb-4 border-b border-white/10 font-semibold">{member.creds}</p>
-                  <p className="text-xs text-white/85 leading-relaxed font-normal">{member.bio}</p>
+                  {/* Member Avatar & Header */}
+                  <div className="flex items-center gap-4 mb-6 pb-5 border-b border-white/10">
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent-gold/40 bg-[#0e1b30] shrink-0 group-hover:border-accent-gold transition-colors shadow-md">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-accent-gold tracking-widest uppercase block mb-1">{member.role}</span>
+                      <h3 className="text-base font-bold text-white group-hover:text-accent-gold transition-colors leading-snug">{member.name}</h3>
+                      <p className="text-[11px] text-accent-gold/80 mt-1 font-medium leading-tight">{member.creds}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-xs text-white/80 leading-relaxed font-normal">{member.bio}</p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 text-accent-gold text-xs font-bold tracking-wider">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>COMMAND VERIFIED</span>
+                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-accent-gold text-xs font-bold tracking-wider">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>COMMAND VERIFIED</span>
+                  </div>
                 </div>
               </div>
             ))}
