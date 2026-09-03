@@ -10,8 +10,16 @@ const poppinsFont = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://strongholdsecurity.lk";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://strongholdsecurity.lk"),
+  metadataBase: new URL(siteUrl),
   title: "Stronghold Security & Investigation | Protection Through Discipline & Intelligence",
   description: "Redefining protection through intelligence, discipline, and technology. Providing military-grade physical security, executive protection, and comprehensive electronic security solutions.",
   keywords: "Stronghold Security, Security Services Sri Lanka, Manned Guarding, Special Event Security, CCTV Surveillance, Close Protection, Armed Security",
@@ -27,13 +35,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stronghold Security & Investigation",
     description: "Redefining protection through intelligence, discipline, and technology. Military-grade physical & digital security.",
-    url: "https://strongholdsecurity.lk",
+    url: siteUrl,
     siteName: "Stronghold Security & Investigation",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Stronghold Security & Investigation Logo",
       },
     ],

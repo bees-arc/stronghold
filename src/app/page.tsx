@@ -322,7 +322,7 @@ export default function Home() {
           </div>
 
           {/* Right / Bottom Content - Navy side (mobile height proportioned, 50% width on desktop) */}
-          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white basis-[40%] sm:basis-[35%] lg:basis-auto lg:h-full relative z-30">
+          <div className="bg-[#0e1b30] lg:bg-transparent p-6 pb-4 sm:p-8 sm:pb-4 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white basis-[45%] sm:basis-[40%] lg:basis-auto lg:h-full relative z-30">
             {/* Top Tagline */}
             <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-3 lg:mb-0 lg:mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
@@ -338,9 +338,9 @@ export default function Home() {
               </cite>
             </div>
 
-            {/* Mobile View Only Logo - Centered alignment and fills the remaining bottom area */}
-            <div className="lg:hidden grow flex items-center justify-center w-full py-3">
-              <Logo className="w-36 h-36 sm:w-44 sm:h-44 object-contain drop-shadow-lg" />
+            {/* Mobile View Only Logo - Enlarged and positioned with max 1rem bottom clearance */}
+            <div className="lg:hidden flex items-end justify-center w-full pt-4 pb-0">
+              <Logo className="w-52 h-52 xs:w-60 xs:h-60 sm:w-64 sm:h-64 object-contain drop-shadow-2xl" />
             </div>
           </div>
 
