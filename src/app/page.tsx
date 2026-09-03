@@ -23,6 +23,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
+import Logo from "@/components/Logo";
 
 import BentoVisual from "@/components/visuals/BentoVisual";
 
@@ -302,8 +303,8 @@ export default function Home() {
 
         {/* Content Layout */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-full min-h-[100dvh] lg:min-h-0 relative z-10 grow">
-          {/* Left / Top Content - Gold side (3/4 height on mobile, 50% width on desktop) */}
-          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-start lg:justify-between text-[#0e1b30] basis-[75%] lg:basis-auto lg:h-full relative z-10">
+          {/* Left / Top Content - Gold side (mobile height proportioned, 50% width on desktop) */}
+          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-start lg:justify-between text-[#0e1b30] basis-[60%] sm:basis-[65%] lg:basis-auto lg:h-full relative z-10">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-2 sm:mt-6 lg:mt-8 mb-4 lg:mb-6 max-w-sm xl:max-w-md">
                 SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
@@ -320,21 +321,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right / Bottom Content - Navy side (1/4 height on mobile, 50% width on desktop) */}
-          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-center lg:justify-between text-white basis-[25%] lg:basis-auto lg:h-full relative z-30">
+          {/* Right / Bottom Content - Navy side (mobile height proportioned, 50% width on desktop) */}
+          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white basis-[40%] sm:basis-[35%] lg:basis-auto lg:h-full relative z-30">
             {/* Top Tagline */}
             <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-3 lg:mb-0 lg:mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
             </span>
 
             {/* Bottom Quote block */}
-            <div className="lg:mt-auto max-w-sm xl:max-w-md relative z-30 self-start lg:self-end text-left lg:text-right">
+            <div className="lg:mt-auto max-w-sm xl:max-w-md relative z-30 self-start lg:self-end text-left lg:text-right w-full">
               <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-sans font-extrabold leading-tight uppercase tracking-wide text-white">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
               <cite className="block mt-1.5 sm:mt-3 font-mono text-[8px] sm:text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
                 STRONGHOLD OPERATIONAL COMMAND
               </cite>
+            </div>
+
+            {/* Mobile View Only Logo - Centered alignment and fills the remaining bottom area */}
+            <div className="lg:hidden grow flex items-center justify-center w-full py-3">
+              <Logo className="w-36 h-36 sm:w-44 sm:h-44 object-contain drop-shadow-lg" />
             </div>
           </div>
 
