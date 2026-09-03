@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Stronghold Security & Investigation (Pvt) Ltd" }],
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/logo.svg", type: "image/svg+xml" }
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.png", type: "image/png" }
     ],
-    shortcut: "/logo.png",
+    shortcut: "/favicon.svg",
     apple: "/logo.png",
   },
   openGraph: {
