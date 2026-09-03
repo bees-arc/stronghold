@@ -16,7 +16,10 @@ const words = [
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const [index, setIndex] = useState(0);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [dimension, setDimension] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 1920,
+    height: typeof window !== "undefined" ? window.innerHeight : 1080
+  });
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -42,14 +45,17 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       () => {
         setIndex(index + 1);
       },
-      index === 0 ? 400 : (index === words.length - 2 ? 350 : 220) // Show TECHNOLOGY slightly longer, others 220ms
+      index === 0 ? 400 : (index === words.length - 2 ? 350 : 220)
     );
 
     return () => clearTimeout(timeout);
   }, [index, onComplete]);
 
-  const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height} L0 0`;
-  const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height} L0 0`;
+  const w = dimension.width || 1920;
+  const h = dimension.height || 1080;
+
+  const initialPath = `M0 0 L${w} 0 L${w} ${h} Q${w / 2} ${h + 300} 0 ${h} L0 0`;
+  const targetPath = `M0 0 L${w} 0 L${w} ${h} Q${w / 2} ${h} 0 ${h} L0 0`;
 
   const curveVariants: Variants = {
     initial: {
@@ -83,8 +89,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       transition: { duration: 0.25, ease: "easeOut" }
     }
   };
-
-  if (dimension.width === 0) return null;
 
   return (
     <motion.div
@@ -122,7 +126,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             animate="animate"
             className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#0e1b30] tracking-tight flex items-center gap-4"
           >
-            {/* Subtle index tracker */}
+            {/* Index tracker */}
             <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2 font-normal">
               0{index + 1}
             </span>

@@ -215,7 +215,6 @@ export default function Home() {
             muted
             playsInline
             preload="auto"
-            poster="/bodyguard.jpg"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out] pointer-events-none"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
@@ -293,25 +292,25 @@ export default function Home() {
 
       {/* 2. INTRO EDITORIAL SECTION */}
       <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full lg:h-screen lg:max-h-screen">
-        {/* Split Background Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full absolute inset-0 z-0">
+        {/* Split Background Grid (Desktop) */}
+        <div className="hidden lg:grid lg:grid-cols-2 w-full h-full absolute inset-0 z-0 pointer-events-none">
           {/* Left Column - Gold Panel */}
           <div className="bg-accent-gold h-full w-full" />
           {/* Right Column - Navy Panel */}
           <div className="bg-[#0e1b30] h-full w-full" />
         </div>
 
-        {/* Content Layout Grid (places text over the split background) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full relative z-10">
-          {/* Left Content - Gold side */}
-          <div className="p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-between text-[#0e1b30] h-full relative z-10">
+        {/* Content Layout */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-full relative z-10">
+          {/* Left / Top Content - Gold side */}
+          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-center lg:justify-between text-[#0e1b30] lg:h-full relative z-10">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-8 mb-6 max-w-sm xl:max-w-md">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight lg:mt-8 mb-4 lg:mb-6 max-w-sm xl:max-w-md">
                 SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
               </h2>
             </div>
             
-            <div className="flex flex-col gap-5 max-w-sm xl:max-w-md text-[#0e1b30]/85 text-xs md:text-sm xl:text-base font-sans leading-relaxed mt-6 lg:mt-auto">
+            <div className="flex flex-col gap-3.5 sm:gap-5 max-w-sm xl:max-w-md text-[#0e1b30]/85 text-xs sm:text-sm xl:text-base font-sans leading-relaxed lg:mt-auto">
               <p>
                 Today’s risks move faster, become more complex and exist across both physical and digital environments.
               </p>
@@ -321,25 +320,25 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Content - Navy side */}
-          <div className="p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white h-full relative z-30">
+          {/* Right / Bottom Content - Navy side */}
+          <div className="bg-[#0e1b30] lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-center lg:justify-between text-white lg:h-full relative z-30">
             {/* Top Tagline */}
-            <span className="font-sans text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-end text-right mt-8">
+            <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-4 lg:mb-0 lg:mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
             </span>
 
             {/* Bottom Quote block */}
-            <div className="mt-auto max-w-sm xl:max-w-md relative z-30 self-end text-right">
-              <p className="text-base md:text-lg lg:text-lg xl:text-xl font-sans font-extrabold leading-tight uppercase tracking-wide text-white">
+            <div className="lg:mt-auto max-w-sm xl:max-w-md relative z-30 self-start lg:self-end text-left lg:text-right">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-sans font-extrabold leading-snug lg:leading-tight uppercase tracking-wide text-white">
                 “WE DON'T JUST PROVIDE SECURITY. WE CREATE INTELLIGENT DEFENCE ECOSYSTEMS.”
               </p>
-              <cite className="block mt-3 font-mono text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
+              <cite className="block mt-2 sm:mt-3 font-mono text-[8px] sm:text-[9px] text-white/50 tracking-[0.25em] not-italic uppercase">
                 STRONGHOLD OPERATIONAL COMMAND
               </cite>
             </div>
           </div>
 
-          {/* 3D Overlapping Lady Cutout Overlay (rendered inside the grid to control stacking sibling context) */}
+          {/* 3D Overlapping Lady Cutout Overlay (rendered inside the grid for desktop) */}
           <div className="absolute inset-x-0 bottom-0 top-24 w-[88%] mx-auto translate-x-12 pointer-events-none z-20 hidden lg:block h-[calc(100%-6rem)]">
             <Image
               src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
@@ -349,17 +348,6 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
-
-        {/* Mobile View Image */}
-        <div className="lg:hidden w-[90%] mx-auto aspect-[3/2] relative overflow-hidden bg-[#0e1b30] my-8">
-          <Image
-            src="/ChatGPT Image Aug 31, 2026, 07_32_26 PM.png"
-            alt="Overlapping Design Element"
-            fill
-            className="object-contain object-center"
-            priority
-          />
         </div>
       </section>
 

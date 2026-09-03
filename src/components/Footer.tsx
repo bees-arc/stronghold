@@ -18,6 +18,7 @@ export default function Footer() {
       { name: "About & Leadership", href: "/about" },
       { name: "What We Protect", href: "/portfolio" },
       { name: "Operational Process", href: "/process" },
+      { name: "Field Gallery", href: "/gallery" },
       { name: "Contact & Headquarters", href: "/contact" },
     ],
     legal: [
