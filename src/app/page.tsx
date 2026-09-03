@@ -292,7 +292,7 @@ export default function Home() {
       </section>
 
       {/* 2. INTRO EDITORIAL SECTION */}
-      <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full min-h-[100dvh] lg:h-screen lg:max-h-screen flex flex-col">
+      <section className="bg-[#0e1b30] border-b border-border-thin relative overflow-hidden z-10 w-full h-auto lg:h-screen lg:max-h-screen flex flex-col">
         {/* Split Background Grid (Desktop) */}
         <div className="hidden lg:grid lg:grid-cols-2 w-full h-full absolute inset-0 z-0 pointer-events-none">
           {/* Left Column - Gold Panel */}
@@ -302,9 +302,9 @@ export default function Home() {
         </div>
 
         {/* Content Layout */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-full min-h-[100dvh] lg:min-h-0 relative z-10 grow">
-          {/* Left / Top Content - Gold side (mobile height proportioned, 50% width on desktop) */}
-          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-start lg:justify-between text-[#0e1b30] basis-[60%] sm:basis-[65%] lg:basis-auto lg:h-full relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 w-full h-auto lg:h-full lg:min-h-0 relative z-10">
+          {/* Left / Top Content - Gold side */}
+          <div className="bg-accent-gold lg:bg-transparent p-6 sm:p-8 md:p-12 lg:py-12 lg:pl-16 lg:pr-32 xl:py-16 xl:pl-24 xl:pr-40 flex flex-col justify-start lg:justify-between text-[#0e1b30] lg:h-full relative z-10">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-sans font-extrabold tracking-tight uppercase leading-tight mt-2 sm:mt-6 lg:mt-8 mb-4 lg:mb-6 max-w-sm xl:max-w-md">
                 SECURITY IS NO LONGER ABOUT SIMPLY REACTING TO THREATS.
@@ -321,8 +321,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right / Bottom Content - Navy side (mobile height proportioned, 50% width on desktop) */}
-          <div className="bg-[#0e1b30] lg:bg-transparent p-6 pb-4 sm:p-8 sm:pb-4 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white basis-[45%] sm:basis-[40%] lg:basis-auto lg:h-full relative z-30">
+          {/* Right / Bottom Content - Navy side */}
+          <div className="bg-[#0e1b30] lg:bg-transparent p-6 pb-4 sm:p-8 sm:pb-4 md:p-12 lg:py-12 lg:pr-16 lg:pl-32 xl:py-16 xl:pr-24 xl:pl-40 flex flex-col justify-between text-white lg:h-full relative z-30">
             {/* Top Tagline */}
             <span className="font-sans text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-accent-gold uppercase self-start lg:self-end text-left lg:text-right mb-3 lg:mb-0 lg:mt-8">
               RELIABLE / PROFESSIONAL / ACCOUNTABLE
@@ -338,9 +338,9 @@ export default function Home() {
               </cite>
             </div>
 
-            {/* Mobile View Only Logo - Enlarged and positioned with max 1rem bottom clearance */}
-            <div className="lg:hidden flex items-end justify-center w-full pt-4 pb-0">
-              <Logo className="w-52 h-52 xs:w-60 xs:h-60 sm:w-64 sm:h-64 object-contain drop-shadow-2xl" />
+            {/* Mobile View Only Logo - Enlarged extra big and positioned with max 1rem bottom clearance */}
+            <div className="lg:hidden flex items-end justify-center w-full pt-6 pb-0">
+              <Logo className="w-64 h-64 xs:w-72 xs:h-72 sm:w-80 sm:h-80 max-w-[85vw] object-contain drop-shadow-2xl" />
             </div>
           </div>
 
