@@ -138,20 +138,18 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-4">
-            <div className="relative aspect-[3/4] bg-[#0e1b30] border border-[#0e1b30] overflow-hidden shadow-xl flex items-center justify-center p-6">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/team/chairman.png"
-                  alt="Brigadier (Retd.) H. J. P. Weerathunga"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0e1b30] via-transparent to-transparent opacity-80" />
+            <div className="relative aspect-[3/4] bg-[#0e1b30] border border-[#0e1b30] overflow-hidden shadow-xl">
+              <Image
+                src="/team/chairman-portrait.jpg"
+                alt="Brigadier (Retd.) H. J. P. Weerathunga"
+                fill
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0e1b30] via-transparent to-transparent opacity-85" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[10px] font-bold tracking-widest text-accent-gold uppercase block mb-1">CHAIRMAN</span>
                 <p className="text-base font-bold">Brigadier (Retd.) H. J. P. Weerathunga</p>
-                <p className="text-[11px] text-accent-gold/90 font-medium">MSc, MPA, Dip. (OHS)</p>
+                <p className="text-[11px] text-accent-gold/90 font-medium">MSc (InfoSec), MPA, Dip. (OHS)</p>
               </div>
             </div>
           </div>
