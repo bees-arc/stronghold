@@ -878,127 +878,130 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Magazine/Editorial leadership spreads */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Magazine/Editorial leadership spreads - Equal sized cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             
             {/* Leader 1 - Chairman Brigadier Nandana Weeratunga */}
-            <div className="group border-b border-border-thin pb-8 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-6 lg:border-border-thin flex flex-col justify-between min-h-[440px]">
+            <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
-                {/* Chairman Portrait */}
-                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden flex items-center justify-center bg-[#0e1b30]">
+                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
                   <Image
-                    src="/chairman.jpg"
+                    src="/team/chairman-portrait.jpg"
                     alt="Brigadier (Retd.) Nandana Weeratunga"
                     fill
-                    sizes="(max-w-768px) 100vw, 20vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-
                 </div>
                 
-                <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
+                <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
                   Brigadier (Retd.) <br />Nandana Weeratunga
                 </h3>
-                <span className="text-[9px] font-bold tracking-widest text-accent-navy/40 font-sans uppercase block mt-2">
+                <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   CHAIRMAN
                 </span>
               </div>
-              <p className="text-[11px] font-sans text-accent-navy/55 leading-relaxed mt-6">
+              <p className="text-[11px] font-sans text-accent-navy/60 leading-relaxed mt-5 pt-4 border-t border-border-thin/60">
                 Decades of high-level command experience in the Sri Lankan Armed Forces, dictating operational discipline and strategic oversight.
               </p>
             </div>
 
-            {/* Leader 2 - Major Muditha Kaluarachchi (with Guards image representation) */}
-            <div className="group border-b border-border-thin pb-8 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-6 lg:border-border-thin flex flex-col justify-between min-h-[440px]">
+            {/* Leader 2 - Major Muditha Kaluarachchi */}
+            <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
-                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden flex items-center justify-center bg-[#0e1b30]">
+                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
                   <Image
-                    src="/guards.jpg"
+                    src="/team/technical-adviser-portrait.jpg"
                     alt="Major (Retd.) Muditha Kaluarachchi"
                     fill
-                    sizes="(max-w-768px) 100vw, 20vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-
                 </div>
 
-                <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
+                <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
                   Major (Retd.) <br />Muditha Kaluarachchi
                 </h3>
-                <span className="text-[9px] font-bold tracking-widest text-accent-navy/40 font-sans uppercase block mt-2">
+                <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   TECHNICAL ADVISER
                 </span>
               </div>
-              <p className="text-[11px] font-sans text-accent-navy/55 leading-relaxed mt-6">
+              <p className="text-[11px] font-sans text-accent-navy/60 leading-relaxed mt-5 pt-4 border-t border-border-thin/60">
                 Oversees technical integration, operational logistics, electronic security protocols, and tactical defense training programs.
               </p>
             </div>
 
-            {/* Leader 3 */}
-            <div className="group border-b border-border-thin pb-8 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-6 lg:border-border-thin flex flex-col justify-between min-h-[440px]">
+            {/* Leader 3 - Diduli Lihansika Weeratunga */}
+            <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
-                <div className="w-full aspect-[3/4] bg-surface-grey border border-border-thin/80 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 grid-lines opacity-20" />
-                  <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
-                    <Compass className="w-8 h-8 text-accent-navy/30" />
-                  </div>
-
+                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
+                  <Image
+                    src="/team/director-portrait.jpg"
+                    alt="Diduli Lihansika Weeratunga"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
 
-                <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
+                <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
                   Diduli Lihansika <br />Weeratunga
                 </h3>
-                <span className="text-[9px] font-bold tracking-widest text-accent-navy/40 font-sans uppercase block mt-2">
+                <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   DIRECTOR
                 </span>
               </div>
-              <p className="text-[11px] font-sans text-accent-navy/55 leading-relaxed mt-6">
+              <p className="text-[11px] font-sans text-accent-navy/60 leading-relaxed mt-5 pt-4 border-t border-border-thin/60">
                 Leads corporate governance, international relations, business planning, and client engagement systems.
               </p>
             </div>
 
-            {/* Leader 4 */}
-            <div className="group border-b border-border-thin pb-8 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-6 lg:border-border-thin flex flex-col justify-between min-h-[440px]">
+            {/* Leader 4 - K. M. N. P. Kulathunga */}
+            <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
-                <div className="w-full aspect-[3/4] bg-surface-grey border border-border-thin/80 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 grid-lines opacity-20" />
-                  <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
-                    <Activity className="w-8 h-8 text-accent-navy/30" />
-                  </div>
-
+                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
+                  <Image
+                    src="/team/cybersecurity-portrait.jpg"
+                    alt="K. M. N. P. Kulathunga"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
 
-                <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
+                <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
                   K. M. N. P. <br />Kulathunga
                 </h3>
-                <span className="text-[9px] font-bold tracking-widest text-accent-navy/40 font-sans uppercase block mt-2">
+                <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   HEAD OF CYBERSECURITY
                 </span>
               </div>
-              <p className="text-[11px] font-sans text-accent-navy/55 leading-relaxed mt-6">
+              <p className="text-[11px] font-sans text-accent-navy/60 leading-relaxed mt-5 pt-4 border-t border-border-thin/60">
                 Manages digital protection assets, infrastructure defense systems, cloud security, and cybersecurity operations.
               </p>
             </div>
 
-            {/* Leader 5 */}
-            <div className="group pb-8 lg:pb-0 flex flex-col justify-between min-h-[440px]">
+            {/* Leader 5 - Squadron Leader Niroshan (Ret.) */}
+            <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
-                <div className="w-full aspect-[3/4] bg-surface-grey border border-border-thin/80 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 grid-lines opacity-20" />
-                  <div className="w-24 h-24 rounded-full border border-accent-navy/15 flex items-center justify-center">
-                    <Layers className="w-8 h-8 text-accent-navy/30" />
-                  </div>
-
+                <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
+                  <Image
+                    src="/team/fire-officer-portrait.jpg"
+                    alt="Squadron Leader Niroshan (Ret.)"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
 
-                <h3 className="text-base font-serif text-accent-navy mt-6 leading-tight">
+                <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
                   Squadron Leader <br />Niroshan (Ret.)
                 </h3>
-                <span className="text-[9px] font-bold tracking-widest text-accent-navy/40 font-sans uppercase block mt-2">
+                <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   FIRE OFFICER
                 </span>
               </div>
-              <p className="text-[11px] font-sans text-accent-navy/55 leading-relaxed mt-6">
+              <p className="text-[11px] font-sans text-accent-navy/60 leading-relaxed mt-5 pt-4 border-t border-border-thin/60">
                 Ex-air force officer in charge of industrial fire prevention programs, crisis containment, hazard control, and building audits.
               </p>
             </div>
