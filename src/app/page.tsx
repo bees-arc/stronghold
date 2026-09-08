@@ -216,11 +216,12 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+            poster="/hero-poster.avif"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out] pointer-events-none"
           >
+            <source src="/hero-video.webm" type="video/webm" />
             <source src="/hero-video.mp4" type="video/mp4" />
-            <source src="/drive-images/0830.mp4" type="video/mp4" />
           </video>
           {/* Left-to-right gradient overlay to darken the text side and fade the video on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 pointer-events-none" />
@@ -382,11 +383,12 @@ export default function Home() {
             
             {/* Businesses & Corporations — NAVY featured card */}
             <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
-              <img 
+              <Image 
                 src="/images/sectors/businesses.png" 
                 alt="Corporate Guarding" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover object-[80%_20%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
+                fill
+                sizes="(max-width: 768px) 100vw, 66vw"
+                className="object-cover object-[80%_20%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/70 to-transparent pointer-events-none" />
               <div className="flex flex-col justify-between h-full relative z-10">
@@ -404,11 +406,12 @@ export default function Home() {
 
             {/* Institutions */}
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
-              <img 
+              <Image 
                 src="/images/sectors/institutions.png" 
                 alt="Institutional Security" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover object-[75%_15%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-[75%_15%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
@@ -423,11 +426,12 @@ export default function Home() {
 
             {/* Private & Residential */}
             <div className="bento-card-interactive md:col-span-2 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
-              <img 
+              <Image 
                 src="/images/sectors/residential.png" 
                 alt="Residential Security" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover object-[60%_35%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-[60%_35%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">
@@ -442,11 +446,12 @@ export default function Home() {
 
             {/* Digital Infrastructure — NAVY featured card */}
             <div className="bento-card-interactive md:col-span-4 bg-navy-dark border border-navy-dark p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/50 transition-all duration-500 relative group overflow-hidden shadow-lg">
-              <img 
+              <Image 
                 src="/images/sectors/digital.png" 
                 alt="Digital Infrastructure" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover object-[75%_25%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
+                fill
+                sizes="(max-width: 768px) 100vw, 66vw"
+                className="object-cover object-[75%_25%] opacity-25 group-hover:opacity-35 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/70 to-transparent pointer-events-none" />
               <div className="relative z-10">
@@ -462,11 +467,12 @@ export default function Home() {
 
             {/* Events */}
             <div className="bento-card-interactive md:col-span-3 bg-surface-ivory border border-border-thin p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:border-accent-gold/40 transition-all duration-500 relative group overflow-hidden shadow-sm">
-              <img 
+              <Image 
                 src="/images/sectors/events.png" 
                 alt="Event Security" 
-                aria-hidden="true" 
-                className="absolute inset-0 w-full h-full object-cover object-[50%_25%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-[50%_25%] opacity-20 group-hover:opacity-30 pointer-events-none select-none group-hover:scale-105 transition-all duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface-ivory via-surface-ivory/60 to-transparent pointer-events-none" />
               <div className="relative z-10">

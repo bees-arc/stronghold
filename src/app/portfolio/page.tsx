@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -53,11 +54,13 @@ export default function PortfolioOverview() {
                   }`}
                 >
                   {/* Subtle watermark image overlay */}
-                  <img
+                  <Image
                     src={item.image}
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover opacity-10 pointer-events-none select-none group-hover:scale-105 transition-transform duration-700"
                   />
 
                   <div className="relative z-10">

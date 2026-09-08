@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import JsonLd from "@/components/JsonLd";
 
 const poppinsFont = Poppins({
   variable: "--font-poppins",
@@ -23,20 +24,24 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Stronghold Security & Investigation | Protection Through Discipline & Intelligence",
-  description: "Redefining protection through intelligence, discipline, and technology. Providing military-grade physical security, executive protection, and comprehensive electronic security solutions.",
-  keywords: "Stronghold Security, Security Services Sri Lanka, Manned Guarding, Special Event Security, CCTV Surveillance, Close Protection, Armed Security",
+  description: "Redefining protection through intelligence, discipline, and technology. Providing military-grade physical security, executive protection, loss prevention, and comprehensive electronic security solutions across Sri Lanka.",
+  keywords: "Stronghold Security, Security Services Sri Lanka, Manned Guarding Colombo, VIP Close Protection, Special Event Security, CCTV Surveillance Sri Lanka, Armed Security Colombo, Loss Prevention Sri Lanka",
   authors: [{ name: "Stronghold Security & Investigation (Pvt) Ltd" }],
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/logo.png", type: "image/png" }
+      { url: "/logo.png", type: "image/png" },
+      { url: "/logo.avif", type: "image/avif" }
     ],
     shortcut: "/favicon.svg",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Stronghold Security & Investigation",
-    description: "Redefining protection through intelligence, discipline, and technology. Military-grade physical & digital security.",
+    title: "Stronghold Security & Investigation | Sri Lanka's Premier Defense Firm",
+    description: "Redefining protection through intelligence, discipline, and military technology. Military-grade physical & digital security.",
     url: siteUrl,
     siteName: "Stronghold Security & Investigation",
     images: [
@@ -54,8 +59,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Stronghold Security & Investigation",
-    description: "Redefining protection through intelligence, discipline, and technology.",
+    description: "Redefining protection through intelligence, discipline, and technology in Sri Lanka.",
     images: ["/logo.png"],
+  },
+  other: {
+    "geo.region": "LK-11",
+    "geo.placename": "Colombo, Western Province, Sri Lanka",
+    "geo.position": "6.9271;79.8612",
+    "ICBM": "6.9271, 79.8612",
+    "format-detection": "telephone=no",
   },
 };
 
@@ -70,6 +82,9 @@ export default function RootLayout({
       className={`${poppinsFont.variable} font-sans h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
+      <head>
+        <JsonLd />
+      </head>
       <body
         className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent-navy selection:text-white font-sans"
         suppressHydrationWarning

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ShieldCheck,
@@ -273,11 +274,13 @@ export default function GalleryPage() {
                         </div>
                       ) : (
                         <div className="relative w-full h-full bg-[#0e1b30]">
-                          <img
+                          <Image
                             src={item.src}
                             alt={item.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             loading="lazy"
-                            className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-103"
+                            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-103"
                           />
                         </div>
                       )}
