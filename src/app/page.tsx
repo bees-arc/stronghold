@@ -24,6 +24,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import Logo from "@/components/Logo";
+import ClientsSection from "@/components/ClientsSection";
 
 import BentoVisual from "@/components/visuals/BentoVisual";
 
@@ -356,6 +357,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 2.5. ESTEEMED CLIENTELE & STRATEGIC PARTNERS */}
+      <ClientsSection />
 
       {/* 3. WHAT WE PROTECT (Bento Grid) */}
       <section id="portfolio" className="py-24 md:py-32 bg-background border-b border-border-thin relative">

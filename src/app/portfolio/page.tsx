@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ClientsSection from "@/components/ClientsSection";
 import { portfolioItems } from "@/app/portfolio/data";
 
 export default function PortfolioOverview() {
@@ -110,6 +111,9 @@ export default function PortfolioOverview() {
 
         </div>
       </section>
+
+      {/* Verified Enterprise Clientele */}
+      <ClientsSection />
 
       {/* CTA Footer */}
       <section className="py-20 bg-[#0e1b30] text-white text-center border-t border-white/10">
