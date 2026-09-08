@@ -276,9 +276,6 @@ export default function ClientsSection() {
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-accent-gold/15 to-transparent pointer-events-none" />
 
           <div className="relative z-10 flex items-center gap-4">
-            <div className="w-12 h-12 bg-accent-gold/10 border border-accent-gold/40 flex items-center justify-center shrink-0">
-              <Sparkles className="w-6 h-6 text-accent-gold" />
-            </div>
             <div>
               <h4 className="text-sm md:text-base font-sans font-bold tracking-wide uppercase text-white">
                 PROTECTING HIGH-ASSET CORPORATE ECOSYSTEMS
