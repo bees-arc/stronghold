@@ -70,7 +70,10 @@ export default function RootLayout({
       className={`${poppinsFont.variable} font-sans h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent-navy selection:text-white font-sans">
+      <body
+        className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent-navy selection:text-white font-sans"
+        suppressHydrationWarning
+      >
         <CustomCursor />
         <div className="noise-overlay" />
         <main className="flex-grow flex flex-col relative z-10 font-sans">

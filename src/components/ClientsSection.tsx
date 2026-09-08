@@ -167,6 +167,7 @@ export default function ClientsSection() {
                       src={client.logo}
                       alt={client.name}
                       fill
+                      sizes="(max-width: 640px) 112px, 144px"
                       className="object-contain"
                     />
                   </div>
@@ -201,17 +202,13 @@ export default function ClientsSection() {
                     : "border-white/10 hover:border-accent-gold/50"
                 }`}
               >
-                {/* Top Sector Badge & Established Pill */}
+                {/* Top Sector Badge */}
                 <div>
                   <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-4 mb-6">
                     <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-accent-gold uppercase">
                       {client.sector}
                     </span>
-                    {client.established && (
-                      <span className="text-[9px] font-mono text-white/70 uppercase tracking-widest px-2.5 py-1 bg-[#14233c] rounded-none border border-white/10">
-                        {client.established}
-                      </span>
-                    )}
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-gold/40" />
                   </div>
 
                   {/* Logo Container - Pure White Background for Ultimate Clarity */}

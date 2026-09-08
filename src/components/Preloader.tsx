@@ -17,8 +17,8 @@ const words = [
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({
-    width: typeof window !== "undefined" ? window.innerWidth : 1920,
-    height: typeof window !== "undefined" ? window.innerHeight : 1080
+    width: 0,
+    height: 0
   });
 
   useEffect(() => {
@@ -138,13 +138,15 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       </div>
 
       {/* Curved bottom curtain SVG - filled with white */}
-      <svg className="absolute top-0 w-full h-[calc(100%+300px)] pointer-events-none fill-white">
-        <motion.path
-          variants={curveVariants}
-          initial="initial"
-          exit="exit"
-        />
-      </svg>
+      {dimension.width > 0 && (
+        <svg className="absolute top-0 w-full h-[calc(100%+300px)] pointer-events-none fill-white">
+          <motion.path
+            variants={curveVariants}
+            initial="initial"
+            exit="exit"
+          />
+        </svg>
+      )}
     </motion.div>
   );
 }
