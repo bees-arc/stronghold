@@ -163,9 +163,6 @@ export default function Home() {
   const [accessCode, setAccessCode] = useState("");
 
   useEffect(() => {
-    if (typeof window !== "undefined" && sessionStorage.getItem("sh_intro_seen")) {
-      setShowPreloader(false);
-    }
     const timer = setTimeout(() => {
       setIsVideoReady(true);
     }, 900);
