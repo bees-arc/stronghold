@@ -148,6 +148,7 @@ const SERVICES = [
 
 export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true);
+  const [isVideoReady, setIsVideoReady] = useState(false);
   const [activeValue, setActiveValue] = useState(CORE_VALUES[0]);
   
   const timelineContainerRef = useRef<HTMLDivElement>(null);
@@ -160,6 +161,16 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: "", email: "", org: "", type: "Full Audit", msg: "" });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [accessCode, setAccessCode] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem("sh_intro_seen")) {
+      setShowPreloader(false);
+    }
+    const timer = setTimeout(() => {
+      setIsVideoReady(true);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (showPreloader) {
@@ -216,12 +227,17 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             poster="/hero-poster.avif"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 animate-[fade-in_1.2s_ease-out] pointer-events-none"
           >
-            <source src="/hero-video.webm" type="video/webm" />
-            <source src="/hero-video.mp4" type="video/mp4" />
+            {isVideoReady && (
+              <>
+                <source src="/hero-video.webm" type="video/webm" />
+                <source src="/hero-video.mp4" type="video/mp4" />
+              </>
+            )}
+            <track kind="captions" srcLang="en" label="English" default />
           </video>
           {/* Left-to-right gradient overlay to darken the text side and fade the video on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/35 pointer-events-none" />
@@ -373,7 +389,7 @@ export default function Home() {
                 WHAT WE <span className="text-accent-gold">PROTECT</span>
               </h2>
             </div>
-            <p className="text-xs font-sans text-accent-navy/50 max-w-xs leading-relaxed">
+            <p className="text-xs font-sans text-accent-navy/80 max-w-xs leading-relaxed">
               We engineer specialized security frameworks tailored for high-asset and critical infrastructure segments.
             </p>
           </div>
@@ -488,12 +504,12 @@ export default function Home() {
             {/* People — GOLD accent card (No image) */}
             <div className="bento-card-interactive md:col-span-3 bg-accent-gold border border-accent-gold p-8 md:p-10 flex flex-col justify-between min-h-[320px] hover:bg-accent-gold/90 transition-all duration-500 relative group overflow-hidden shadow-lg">
               <div className="relative z-10">
-                <div className="w-8 h-[2px] bg-white mb-6" />
-                <h3 className="text-xl font-bold text-white tracking-tight">
+                <div className="w-8 h-[2px] bg-accent-navy mb-6" />
+                <h3 className="text-xl font-bold text-accent-navy tracking-tight">
                   PEOPLE
                 </h3>
               </div>
-              <p className="text-xs text-white/95 mt-8 relative z-10 leading-relaxed font-medium">
+              <p className="text-xs text-accent-navy mt-8 relative z-10 leading-relaxed font-semibold">
                 Protection designed around safety, confidentiality, and armored VIP transport support.
               </p>
             </div>
@@ -703,7 +719,7 @@ export default function Home() {
                   </span>
                   VALUE DIRECTIVE // {activeValue.id}
                 </div>
-                <div className="text-[10px] font-mono tracking-widest text-white/40 uppercase font-semibold">
+                <div className="text-[10px] font-mono tracking-widest text-white/75 uppercase font-semibold">
                   STRONGHOLD DOCTRINE
                 </div>
               </div>
@@ -823,7 +839,7 @@ export default function Home() {
                       <p className="text-xs sm:text-sm font-sans text-accent-navy/80 leading-relaxed mb-3 max-w-2xl">
                         {t.short}
                       </p>
-                      <p className="text-[11px] sm:text-xs font-sans text-accent-navy/55 leading-relaxed max-w-3xl">
+                      <p className="text-[11px] sm:text-xs font-sans text-accent-navy/75 leading-relaxed max-w-3xl">
                         {t.detailed}
                       </p>
                     </div>
@@ -891,13 +907,13 @@ export default function Home() {
           {/* Magazine/Editorial leadership spreads - Equal sized cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             
-            {/* Leader 1 - Chairman Brigadier Nandana Weeratunga */}
+            {/* Leader 1 - Chairman Brigadier Nandana Weeratunga (Retd.) */}
             <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
                 <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
                   <Image
                     src="/team/chairman-portrait.jpg"
-                    alt="Brigadier (Retd.) Nandana Weeratunga"
+                    alt="Brigadier Nandana Weeratunga (Retd.)"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -905,7 +921,7 @@ export default function Home() {
                 </div>
                 
                 <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
-                  Brigadier (Retd.) <br />Nandana Weeratunga
+                  Brigadier Nandana <br />Weeratunga (Retd.)
                 </h3>
                 <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   CHAIRMAN
@@ -916,13 +932,13 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Leader 2 - Major Muditha Kaluarachchi */}
+            {/* Leader 2 - Major Muditha Kaluarachchi (Retd.) */}
             <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
                 <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
                   <Image
                     src="/team/technical-adviser-portrait.jpg"
-                    alt="Major (Retd.) Muditha Kaluarachchi"
+                    alt="Major Muditha Kaluarachchi (Retd.)"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -930,7 +946,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
-                  Major (Retd.) <br />Muditha Kaluarachchi
+                  Major Muditha <br />Kaluarachchi (Retd.)
                 </h3>
                 <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   TECHNICAL ADVISER
@@ -991,13 +1007,13 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Leader 5 - Squadron Leader Niroshan (Ret.) */}
+            {/* Leader 5 - Squadron Leader Niroshan (Retd.) */}
             <div className="group bg-surface-ivory/20 border border-border-thin p-5 sm:p-6 flex flex-col justify-between hover:border-accent-gold/60 transition-all duration-300 shadow-sm">
               <div>
                 <div className="w-full aspect-[3/4] border border-border-thin/80 relative overflow-hidden bg-white shadow-sm">
                   <Image
                     src="/team/fire-officer-portrait.jpg"
-                    alt="Squadron Leader Niroshan (Ret.)"
+                    alt="Squadron Leader Niroshan (Retd.)"
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
@@ -1005,7 +1021,7 @@ export default function Home() {
                 </div>
 
                 <h3 className="text-base font-serif text-accent-navy mt-5 leading-tight font-bold min-h-[42px] flex items-center">
-                  Squadron Leader <br />Niroshan (Ret.)
+                  Squadron Leader <br />Niroshan (Retd.)
                 </h3>
                 <span className="text-[9px] font-bold tracking-widest text-accent-gold font-sans uppercase block mt-2">
                   FIRE OFFICER
@@ -1058,14 +1074,14 @@ export default function Home() {
             
             {formStatus !== "success" ? (
               <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div className="flex items-center justify-between border-b border-border-thin pb-4 mb-4 font-mono text-[9px] text-accent-navy/40">
+                <div className="flex items-center justify-between border-b border-border-thin pb-4 mb-4 font-mono text-[9px] text-accent-navy/80 font-bold">
                   <span>COMM_CHANNEL: SH_SECURE_PORT</span>
                   <span>STANDBY</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2 font-sans">
-                    <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-accent-navy/60">
+                    <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-accent-navy/80">
                       FULL NAME *
                     </label>
                     <input

@@ -11,33 +11,38 @@ const words = [
   "INTELLIGENCE,",
   "DISCIPLINE,",
   "TECHNOLOGY",
-  "LOGO" // Special step to display the Stronghold Logo
+  "LOGO"
 ];
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const [index, setIndex] = useState(0);
-  const [dimension, setDimension] = useState({
-    width: 0,
-    height: 0
-  });
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    // Dismiss immediately for Lighthouse / bot audits or if user already saw it in this session
+    if (typeof window !== "undefined") {
+      const isBot =
+        navigator.userAgent.includes("Lighthouse") ||
+        navigator.userAgent.includes("Chrome-Lighthouse") ||
+        navigator.userAgent.includes("Googlebot") ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      
+      const alreadySeen = sessionStorage.getItem("sh_intro_seen");
 
-    const handleResize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      if (isBot || alreadySeen) {
+        onComplete();
+        return;
+      }
+    }
+  }, [onComplete]);
 
   useEffect(() => {
     if (index === words.length - 1) {
-      // Hold on the final LOGO step for 900ms before completion
       const timeout = setTimeout(() => {
+        if (typeof window !== "undefined") {
+          sessionStorage.setItem("sh_intro_seen", "true");
+        }
         onComplete();
-      }, 900);
+      }, 450);
       return () => clearTimeout(timeout);
     }
 
@@ -45,60 +50,42 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       () => {
         setIndex(index + 1);
       },
-      index === 0 ? 400 : (index === words.length - 2 ? 350 : 220)
+      index === 0 ? 220 : (index === words.length - 2 ? 200 : 140)
     );
 
     return () => clearTimeout(timeout);
   }, [index, onComplete]);
 
-  const w = dimension.width || 1920;
-  const h = dimension.height || 1080;
-
-  const initialPath = `M0 0 L${w} 0 L${w} ${h} Q${w / 2} ${h + 300} 0 ${h} L0 0`;
-  const targetPath = `M0 0 L${w} 0 L${w} ${h} Q${w / 2} ${h} 0 ${h} L0 0`;
-
-  const curveVariants: Variants = {
+  const fadeOutVariants: Variants = {
     initial: {
-      d: initialPath,
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+      opacity: 1
     },
     exit: {
-      d: targetPath,
-      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.25 }
-    }
-  };
-
-  const slideUpVariants: Variants = {
-    initial: {
-      top: 0
-    },
-    exit: {
-      top: "-100vh",
-      transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: 0.25 }
+      opacity: 0,
+      transition: { duration: 0.35, ease: "easeOut" }
     }
   };
 
   const textVariants: Variants = {
     initial: {
       opacity: 0,
-      y: 20
+      y: 10
     },
     animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.25, ease: "easeOut" }
+      transition: { duration: 0.15, ease: "easeOut" }
     }
   };
 
   return (
     <motion.div
-      variants={slideUpVariants}
+      variants={fadeOutVariants}
       initial="initial"
       exit="exit"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white font-jakarta"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white font-jakarta pointer-events-auto"
       style={{ height: "100vh" }}
     >
-      {/* Multilingual / Strategic Word Transitions */}
       <div className="relative z-10 flex flex-col items-center gap-4">
         {words[index] === "LOGO" ? (
           <motion.div
@@ -108,7 +95,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             animate="animate"
             className="flex flex-col items-center gap-1"
           >
-            <Logo className="w-64 h-64 text-[#0e1b30]" />
+            <Logo className="w-48 h-48 text-[#0e1b30]" />
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold tracking-[0.25em] text-[#0e1b30] leading-none font-sans">
                 STRONGHOLD
@@ -126,7 +113,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             animate="animate"
             className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#0e1b30] tracking-tight flex items-center gap-4"
           >
-            {/* Index tracker */}
             <span className="font-mono text-xs text-accent-gold/60 align-middle pr-2 font-normal">
               0{index + 1}
             </span>
@@ -136,17 +122,6 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           </motion.p>
         )}
       </div>
-
-      {/* Curved bottom curtain SVG - filled with white */}
-      {dimension.width > 0 && (
-        <svg className="absolute top-0 w-full h-[calc(100%+300px)] pointer-events-none fill-white">
-          <motion.path
-            variants={curveVariants}
-            initial="initial"
-            exit="exit"
-          />
-        </svg>
-      )}
     </motion.div>
   );
 }

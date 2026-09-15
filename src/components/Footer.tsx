@@ -138,14 +138,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Metadata & Licensing */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 text-[10px] font-sans text-accent-navy/40 tracking-wider">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-10 text-[10px] font-sans text-accent-navy/40 tracking-wider">
           <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-accent-gold/45" />
+            <Shield className="w-4 h-4 text-accent-gold/45 shrink-0" />
             <span>STRONGHOLD SECURITY & INVESTIGATION (PVT) LTD © {currentYear}. ALL RIGHTS RESERVED.</span>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <span>REGISTRATION NO: PV00268593</span>
+            <span className="hidden sm:inline text-accent-navy/20">•</span>
             <span>LICENSED BY THE MINISTRY OF DEFENCE</span>
+            <span className="hidden sm:inline text-accent-navy/20">•</span>
+            <a
+              href="https://nyx-saas.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-navy/50 hover:text-accent-gold transition-colors font-medium inline-flex items-center gap-1 group"
+            >
+              <span>POWERED BY</span>
+              <span className="font-bold text-accent-navy group-hover:text-accent-gold transition-colors">NYX</span>
+            </a>
           </div>
         </div>
       </div>

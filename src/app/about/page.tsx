@@ -35,14 +35,14 @@ const CORE_VALUES = [
 
 const LEADERSHIP_TEAM = [
   {
-    name: "Brigadier (Retd.) H. J. P. Weerathunga",
+    name: "Brigadier H. J. P. Weerathunga (Retd.)",
     role: "Chairman",
     creds: "MSc (Information Security), MPA, Dip. (Occupational Health & Safety)",
     image: "/team/chairman-circle.png",
-    bio: "Brigadier (Retired) Nandana Weeratunga, with over 30 years of distinguished military service, combines expertise in governance, cybersecurity, occupational safety, and networking. Holding an MPA, an MSc in Information Security, and diplomas in OHS and Networking, he excels in driving innovation, ensuring compliance, and delivering robust, integrated security solutions."
+    bio: "Brigadier Nandana Weeratunga (Retd.), with over 30 years of distinguished military service, combines expertise in governance, cybersecurity, occupational safety, and networking. Holding an MPA, an MSc in Information Security, and diplomas in OHS and Networking, he excels in driving innovation, ensuring compliance, and delivering robust, integrated security solutions."
   },
   {
-    name: "Major (Retd.) Muditha Kaluarachchi",
+    name: "Major Muditha Kaluarachchi (Retd.)",
     role: "Technical Adviser",
     creds: "Engineering Specialist (Telecommunication & IT)",
     image: "/team/technical-adviser-circle.png",
@@ -63,11 +63,11 @@ const LEADERSHIP_TEAM = [
     bio: "A highly skilled cybersecurity professional with a BSc in Applied Science (Computer Science & Physics) and multiple global certifications, including CEH v11, (ISC)² Certified in Cybersecurity (CC), AWS Security Operations, Splunk Security Analytics, and SentinelOne Administration. Demonstrates advanced expertise in ethical hacking, threat detection, incident response, and cloud security management."
   },
   {
-    name: "Squadron Leader (Retd.) KMM Iroshan",
+    name: "Squadron Leader KMM Iroshan (Retd.)",
     role: "Fire Officer",
     creds: "SLAF Veteran, CBRN Squadron Leader (Retd.), MBA, PGD Strategic Mgmt (UK)",
     image: "/team/fire-officer-circle.png",
-    bio: "Squadron Leader Niroshan (Ret.) offers an unparalleled foundation of strategic expertise and operational discipline forged during his service as a Fire Officer in the Sri Lanka Air Force (SLAF). His specialized credentials—including an MBA, PGD in Strategic Management (UK), and PGD in Defence Management (UOK)—ensure a robust, disciplined approach to security strategy and risk mitigation."
+    bio: "Squadron Leader Niroshan (Retd.) offers an unparalleled foundation of strategic expertise and operational discipline forged during his service as a Fire Officer in the Sri Lanka Air Force (SLAF). His specialized credentials—including an MBA, PGD in Strategic Management (UK), and PGD in Defence Management (UOK)—ensure a robust, disciplined approach to security strategy and risk mitigation."
   }
 ];
 
@@ -141,14 +141,14 @@ export default function AboutPage() {
             <div className="relative aspect-[3/4] bg-[#0e1b30] border border-[#0e1b30] overflow-hidden shadow-xl">
               <Image
                 src="/team/chairman-portrait.jpg"
-                alt="Brigadier (Retd.) H. J. P. Weerathunga"
+                alt="Brigadier H. J. P. Weerathunga (Retd.)"
                 fill
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0e1b30] via-transparent to-transparent opacity-85" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[10px] font-bold tracking-widest text-accent-gold uppercase block mb-1">CHAIRMAN</span>
-                <p className="text-base font-bold">Brigadier (Retd.) H. J. P. Weerathunga</p>
+                <p className="text-base font-bold">Brigadier H. J. P. Weerathunga (Retd.)</p>
                 <p className="text-[11px] text-accent-gold/90 font-medium">MSc (InfoSec), MPA, Dip. (OHS)</p>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
 
             <div className="mt-8 pt-6 border-t border-[#e5e0d8] flex items-center justify-between">
               <div>
-                <p className="font-bold text-[#0e1b30] text-base">Brigadier (Retd.) H. J. P. Weerathunga</p>
+                <p className="font-bold text-[#0e1b30] text-base">Brigadier H. J. P. Weerathunga (Retd.)</p>
                 <p className="text-xs text-[#0e1b30]/70 font-semibold mt-0.5">Chairman, Stronghold Security &amp; Investigation (Pvt) Ltd</p>
               </div>
               <div className="w-10 h-10 rounded-full border-2 border-accent-gold flex items-center justify-center text-accent-gold">
